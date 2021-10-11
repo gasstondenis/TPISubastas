@@ -11,8 +11,8 @@
     width: 100%;
 }
     .carousel-inner img {
-        
         object-fit: cover;
+        color: red;
     }
 
 carousel-item-next:not(.carousel-item-left),

@@ -13,6 +13,7 @@
     .carousel-inner img {
         
         object-fit: cover;
+
     }
 
 carousel-item-next:not(.carousel-item-left),

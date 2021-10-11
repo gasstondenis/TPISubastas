@@ -1,0 +1,17 @@
+﻿header {
+    background-color: rgb(255 255 255/ 0.2);
+    box-shadow: 0px 3px 10px rgb(0 0 0 / 0.1);
+    transition: all 800ms;
+    position: fixed;
+    display: block;
+    width: 100%;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
+
+#fixed-top::after {
+    display: block;
+    content: "";
+    height: 50px;
+    visibility: hidden;
+}

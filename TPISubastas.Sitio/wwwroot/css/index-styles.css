@@ -1,0 +1,22 @@
+﻿body {
+    
+}
+.carousel-inner h5{
+    color: red;
+}
+
+
+.carousel-inner {
+    background-color: black;
+    width: 100%;
+}
+    .carousel-inner img {
+        
+        object-fit: cover;
+    }
+
+carousel-item-next:not(.carousel-item-left),
+.active.carousel-item-right {
+    -webkit-transform: translateX(60%);
+    transform: translateX(30%);
+}

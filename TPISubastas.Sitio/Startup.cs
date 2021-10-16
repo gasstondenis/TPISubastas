@@ -28,7 +28,7 @@ namespace TPISubastas.Sitio
             services.AddDbContext<ContextoSubasta>(x => {
                 x.UseSqlServer(Configuration.GetConnectionString("TPISubastas.SQLServer"), x=>x.MigrationsAssembly("TPISubastas.Sitio"));               
             });
-
+            
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 

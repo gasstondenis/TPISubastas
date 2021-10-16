@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20211006235119_SubastasDatos.cs" />
-    <Compile Remove="Migrations\20211006235119_SubastasDatos.Designer.cs" />
+    <Compile Remove="Controllers\Migrations\20211006235119_SubastasDatos.cs" />
+    <Compile Remove="Controllers\Migrations\20211006235119_SubastasDatos.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

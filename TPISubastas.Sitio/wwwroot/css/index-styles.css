@@ -1,7 +1,7 @@
 ﻿body {
-    
 }
-.carousel-inner h5{
+
+.carousel-inner h5 {
     color: red;
 }
 
@@ -10,10 +10,11 @@
     background-color: black;
     width: 100%;
 }
+
     .carousel-inner img {
         object-fit: cover;
-        
     }
+
 .h2-secciones {
     text-align: center;
     margin-top: 20px;
@@ -22,8 +23,8 @@
     font-family: sans-serif;
     border-top: 2px solid darkblue;
     border-bottom: 2px solid darkblue;
-   
 }
+
 carousel-item-next:not(.carousel-item-left),
 .active.carousel-item-right {
     -webkit-transform: translateX(60%);
@@ -35,19 +36,25 @@ carousel-item-next:not(.carousel-item-left),
     grid-template-columns: repeat(auto-fit, minmax(30rem, 2fr));
     grid-gap: 20px;
 }
-#subastas-abiertas .subasta {
-    
-    height: 400px;
-    background-color: gray;
-}
 
-#subastas-abiertas .subasta .detalle-subasta{
-    
-    position: relative;
-    top: 70%;
-    width: 100%;
-    height: 30%;
-    
-    background-color: rgb(255 255 255 / 0.5);
-    backdrop-filter: blur(7px);
-}
+    #subastas-abiertas .subasta {
+        height: 400px;
+        background-color: gray;
+    }
+
+        #subastas-abiertas .subasta .detalle-subasta {
+            position: relative;
+            top: 70%;
+            width: 100%;
+            height: 30%;
+            background-color: rgb(255 255 255);
+            backdrop-filter: blur(8px);
+
+        }
+            #subastas-abiertas .subasta .detalle-subasta .cover-detalle {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(9 66 147);
+                z-index: 11;
+            }

@@ -7,17 +7,22 @@
   <ItemGroup>
     <Compile Remove="Controllers\Migrations\20211006235119_SubastasDatos.cs" />
     <Compile Remove="Controllers\Migrations\20211006235119_SubastasDatos.Designer.cs" />
+    <Compile Remove="Controllers\Migrations\20211007001151_SubastasDatos.cs" />
+    <Compile Remove="Controllers\Migrations\20211007001151_SubastasDatos.Designer.cs" />
+    <Compile Remove="Migrations\20211022144920_Subastas.Datos.cs" />
+    <Compile Remove="Migrations\20211022144920_Subastas.Datos.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.19" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.19" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.19">
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.20" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.20">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.19" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.19">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.20">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -27,6 +32,11 @@
   <ItemGroup>
     <ProjectReference Include="..\TPISubastas.AccesoDatos\TPISubastas.AccesoDatos.csproj" />
     <ProjectReference Include="..\TPISubastas.Dominio\TPISubastas.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Migrations\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

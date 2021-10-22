@@ -7,7 +7,7 @@ namespace TPISubastas.Dominio
 {
     public class Usuario
     {
-        
+
         public int IdUsuario { get; set; }
         [Required]
         [MaxLength(256)]
@@ -37,12 +37,8 @@ namespace TPISubastas.Dominio
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaCreacion { get; set; }
 
-
-
-        //Propiedades de navegacion
-
+        //Propiedad de Navegacion
         //public IList<Subasta> Subastas { get; set; }
-
         //public IList<Oferta> Ofertas { get; set; }
     }
 }

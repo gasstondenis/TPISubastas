@@ -10,14 +10,14 @@ using TPISubastas.AccesoDatos;
 namespace TPISubastas.Sitio.Migrations
 {
     [DbContext(typeof(ContextoSubasta))]
-    [Migration("20211007001151_SubastasDatos")]
-    partial class SubastasDatos
+    [Migration("20211022144949_Subastas")]
+    partial class Subastas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.19")
+                .HasAnnotation("ProductVersion", "3.1.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -29,8 +29,8 @@ namespace TPISubastas.Sitio.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descripcion")
-                        .HasColumnType("nvarchar(64)")
-                        .HasMaxLength(64);
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -55,6 +55,9 @@ namespace TPISubastas.Sitio.Migrations
                     b.Property<int>("IdSubasta")
                         .HasColumnType("int");
 
+                    b.Property<int>("IdSubastaProducto")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdUsuario")
                         .HasColumnType("int");
 
@@ -64,6 +67,8 @@ namespace TPISubastas.Sitio.Migrations
                     b.HasKey("IdOferta");
 
                     b.HasIndex("IdSubasta");
+
+                    b.HasIndex("IdSubastaProducto");
 
                     b.HasIndex("IdUsuario");
 
@@ -112,10 +117,8 @@ namespace TPISubastas.Sitio.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("DescripcionProducto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(4096);
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Duracion")
                         .HasColumnType("int");
@@ -129,6 +132,29 @@ namespace TPISubastas.Sitio.Migrations
                     b.Property<DateTime?>("FechaInicio")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("Habilitada")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdSubasta");
+
+                    b.ToTable("Subasta");
+                });
+
+            modelBuilder.Entity("TPISubastas.Dominio.SubastaProducto", b =>
+                {
+                    b.Property<int>("IdSubastaProducto")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DescripcionProducto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(4096);
+
                     b.Property<string>("FormaPago")
                         .IsRequired()
                         .HasColumnType("nvarchar(256)")
@@ -138,6 +164,9 @@ namespace TPISubastas.Sitio.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("IdProducto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdSubasta")
                         .HasColumnType("int");
 
                     b.Property<int>("IdUsuario")
@@ -164,15 +193,15 @@ namespace TPISubastas.Sitio.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.HasKey("IdSubasta");
+                    b.HasKey("IdSubastaProducto");
 
                     b.HasIndex("IdEstadoSubasta");
 
                     b.HasIndex("IdProducto");
 
-                    b.HasIndex("IdUsuario");
+                    b.HasIndex("IdSubasta");
 
-                    b.ToTable("Subasta");
+                    b.ToTable("SubastaProducto");
                 });
 
             modelBuilder.Entity("TPISubastas.Dominio.Usuario", b =>
@@ -246,6 +275,13 @@ namespace TPISubastas.Sitio.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("TPISubastas.Dominio.SubastaProducto", null)
+                        .WithMany()
+                        .HasForeignKey("IdSubastaProducto")
+                        .HasConstraintName("FK_Oferta_SubastaProducto")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.HasOne("TPISubastas.Dominio.Usuario", null)
                         .WithMany()
                         .HasForeignKey("IdUsuario")
@@ -254,24 +290,25 @@ namespace TPISubastas.Sitio.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TPISubastas.Dominio.Subasta", b =>
+            modelBuilder.Entity("TPISubastas.Dominio.SubastaProducto", b =>
                 {
                     b.HasOne("TPISubastas.Dominio.EstadoSubasta", null)
                         .WithMany()
                         .HasForeignKey("IdEstadoSubasta")
-                        .HasConstraintName("FK_Subasta_EstadoSubasta")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_SubastaProducto_EstadoSubasta")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("TPISubastas.Dominio.Producto", null)
                         .WithMany()
                         .HasForeignKey("IdProducto")
-                        .HasConstraintName("FK_Subasta_Producto");
+                        .HasConstraintName("FK_Subasta_Producto")
+                        .OnDelete(DeleteBehavior.NoAction);
 
-                    b.HasOne("TPISubastas.Dominio.Usuario", null)
+                    b.HasOne("TPISubastas.Dominio.Subasta", null)
                         .WithMany()
-                        .HasForeignKey("IdUsuario")
-                        .HasConstraintName("FK_Subasta_Usuario")
+                        .HasForeignKey("IdSubasta")
+                        .HasConstraintName("FK_SubastaProducto_Subasta")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });

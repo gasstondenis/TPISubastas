@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TPISubastas.Sitio.Migrations
 {
-    public partial class SubastasDatos : Migration
+    public partial class Subastas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace TPISubastas.Sitio.Migrations
                     IdEstadoSubasta = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(maxLength: 64, nullable: false),
-                    Descripcion = table.Column<string>(maxLength: 64, nullable: true)
+                    Descripcion = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -36,6 +36,25 @@ namespace TPISubastas.Sitio.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Producto", x => x.IdProducto);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subasta",
+                columns: table => new
+                {
+                    IdSubasta = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FechaCreacion = table.Column<DateTime>(nullable: false),
+                    FechaInicio = table.Column<DateTime>(nullable: true),
+                    FechaCierre = table.Column<DateTime>(nullable: true),
+                    Duracion = table.Column<int>(nullable: false),
+                    Nombre = table.Column<string>(nullable: true),
+                    Descripcion = table.Column<string>(nullable: true),
+                    Habilitada = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subasta", x => x.IdSubasta);
                 });
 
             migrationBuilder.CreateTable(
@@ -63,46 +82,41 @@ namespace TPISubastas.Sitio.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Subasta",
+                name: "SubastaProducto",
                 columns: table => new
                 {
-                    IdSubasta = table.Column<int>(nullable: false)
+                    IdSubastaProducto = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FechaCreacion = table.Column<DateTime>(nullable: false),
-                    FechaInicio = table.Column<DateTime>(nullable: true),
-                    FechaCierre = table.Column<DateTime>(nullable: true),
-                    Duracion = table.Column<int>(nullable: false),
+                    IdSubasta = table.Column<int>(nullable: false),
                     NombreProducto = table.Column<string>(maxLength: 256, nullable: false),
                     MarcaProducto = table.Column<string>(maxLength: 128, nullable: false),
                     DescripcionProducto = table.Column<string>(maxLength: 4096, nullable: false),
                     ImagenProducto = table.Column<string>(maxLength: 1024, nullable: false),
                     FormaPago = table.Column<string>(maxLength: 256, nullable: false),
                     MontoInicial = table.Column<decimal>(type: "Money", nullable: false),
-                    IdEstadoSubasta = table.Column<int>(nullable: false),
                     IdUsuario = table.Column<int>(nullable: false),
                     IdUsuarioComprador = table.Column<int>(nullable: true),
-                    IdProducto = table.Column<int>(nullable: true)
+                    IdProducto = table.Column<int>(nullable: true),
+                    IdEstadoSubasta = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subasta", x => x.IdSubasta);
+                    table.PrimaryKey("PK_SubastaProducto", x => x.IdSubastaProducto);
                     table.ForeignKey(
-                        name: "FK_Subasta_EstadoSubasta",
+                        name: "FK_SubastaProducto_EstadoSubasta",
                         column: x => x.IdEstadoSubasta,
                         principalTable: "EstadoSubasta",
-                        principalColumn: "IdEstadoSubasta",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdEstadoSubasta");
                     table.ForeignKey(
                         name: "FK_Subasta_Producto",
                         column: x => x.IdProducto,
                         principalTable: "Producto",
-                        principalColumn: "IdProducto",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "IdProducto");
                     table.ForeignKey(
-                        name: "FK_Subasta_Usuario",
-                        column: x => x.IdUsuario,
-                        principalTable: "Usuario",
-                        principalColumn: "IdUsuario");
+                        name: "FK_SubastaProducto_Subasta",
+                        column: x => x.IdSubasta,
+                        principalTable: "Subasta",
+                        principalColumn: "IdSubasta");
                 });
 
             migrationBuilder.CreateTable(
@@ -112,6 +126,7 @@ namespace TPISubastas.Sitio.Migrations
                     IdOferta = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdSubasta = table.Column<int>(nullable: false),
+                    IdSubastaProducto = table.Column<int>(nullable: false),
                     IdUsuario = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false),
                     Monto = table.Column<decimal>(type: "Money", nullable: false)
@@ -125,6 +140,11 @@ namespace TPISubastas.Sitio.Migrations
                         principalTable: "Subasta",
                         principalColumn: "IdSubasta");
                     table.ForeignKey(
+                        name: "FK_Oferta_SubastaProducto",
+                        column: x => x.IdSubastaProducto,
+                        principalTable: "SubastaProducto",
+                        principalColumn: "IdSubastaProducto");
+                    table.ForeignKey(
                         name: "FK_Oferta_Usuario",
                         column: x => x.IdUsuario,
                         principalTable: "Usuario",
@@ -137,24 +157,29 @@ namespace TPISubastas.Sitio.Migrations
                 column: "IdSubasta");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Oferta_IdSubastaProducto",
+                table: "Oferta",
+                column: "IdSubastaProducto");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Oferta_IdUsuario",
                 table: "Oferta",
                 column: "IdUsuario");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subasta_IdEstadoSubasta",
-                table: "Subasta",
+                name: "IX_SubastaProducto_IdEstadoSubasta",
+                table: "SubastaProducto",
                 column: "IdEstadoSubasta");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subasta_IdProducto",
-                table: "Subasta",
+                name: "IX_SubastaProducto_IdProducto",
+                table: "SubastaProducto",
                 column: "IdProducto");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subasta_IdUsuario",
-                table: "Subasta",
-                column: "IdUsuario");
+                name: "IX_SubastaProducto_IdSubasta",
+                table: "SubastaProducto",
+                column: "IdSubasta");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -163,7 +188,10 @@ namespace TPISubastas.Sitio.Migrations
                 name: "Oferta");
 
             migrationBuilder.DropTable(
-                name: "Subasta");
+                name: "SubastaProducto");
+
+            migrationBuilder.DropTable(
+                name: "Usuario");
 
             migrationBuilder.DropTable(
                 name: "EstadoSubasta");
@@ -172,7 +200,7 @@ namespace TPISubastas.Sitio.Migrations
                 name: "Producto");
 
             migrationBuilder.DropTable(
-                name: "Usuario");
+                name: "Subasta");
         }
     }
 }

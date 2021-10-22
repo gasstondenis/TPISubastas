@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TPISubastas.AccesoDatos;
 
+
 namespace TPISubastas.Sitio
 {
     public class Startup
@@ -29,12 +30,14 @@ namespace TPISubastas.Sitio
                 x.UseSqlServer(Configuration.GetConnectionString("TPISubastas.SQLServer"), x=>x.MigrationsAssembly("TPISubastas.Sitio"));               
             });
             
+  
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -49,6 +52,8 @@ namespace TPISubastas.Sitio
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

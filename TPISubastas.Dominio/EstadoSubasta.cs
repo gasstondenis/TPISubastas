@@ -11,7 +11,7 @@ namespace TPISubastas.Dominio
         [Required]
         [MaxLength(64)]
         public string Nombre { get; set; }
-        [MaxLength(64)]
+        [MaxLength(256)]
         public string Descripcion { get; set; }
     }
 }

@@ -23,39 +23,46 @@ namespace TPISubastas.AccesoDatos
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                //entity.ToTable("NombreTabla");
+                //entity.ToTable("Usuario");
                 entity.HasKey(e => e.IdUsuario);
                 //entity.Property(e => e.Nombre).HasMaxLength(256).IsRequired();
-                //entity.HasMany<Subasta>(e=>e.Subastas).WithOne().HasForeignKey(x => x.IdUsuario).HasConstraintName("FK_Subasta_Usuario");
-                //entity.HasMany<Oferta>(o=>o.Ofertas).WithOne().HasForeignKey(x => x.IdUsuario).HasConstraintName("FK_Oferta_Usuario");
-                entity.HasMany<Subasta>().WithOne().HasForeignKey(x => x.IdUsuario).HasConstraintName("FK_Subasta_Usuario").OnDelete(DeleteBehavior.NoAction);
+                //entity.HasMany<Subasta>(e => e.Subastas).WithOne().HasForeignKey(x=> x.IdUsuario).HasConstraintName("FK_Subasta_Usuario");
+                //entity.HasMany<Oferta>(o=> o.Ofertas).WithOne().HasForeignKey(x => x.IdUsuario).HasConstraintName("FK_Oferta_Usuario");
                 entity.HasMany<Oferta>().WithOne().HasForeignKey(x => x.IdUsuario).HasConstraintName("FK_Oferta_Usuario").OnDelete(DeleteBehavior.NoAction);
-
             }
-            );
+           );
 
             modelBuilder.Entity<Subasta>(entity =>
             {
                 entity.HasKey(e => e.IdSubasta);
-                entity.Property(x => x.MontoInicial).HasColumnType("Money");
-                // entity.HasOne<Usuario>();
+                //entity.HasOne<Usuario>();
                 //entity.HasOne<Producto>();
-                entity.HasMany<Oferta>().WithOne().HasForeignKey(x => x.IdSubasta).HasConstraintName("FK_Oferta_Subasta").OnDelete(DeleteBehavior.NoAction); 
+                entity.HasMany<Oferta>().WithOne().HasForeignKey(x => x.IdSubasta).HasConstraintName("FK_Oferta_Subasta").OnDelete(DeleteBehavior.NoAction);
+                entity.HasMany<SubastaProducto>().WithOne().HasForeignKey(x => x.IdSubasta).HasConstraintName("FK_SubastaProducto_Subasta").OnDelete(DeleteBehavior.NoAction);
+            }
+            );
+
+            modelBuilder.Entity<SubastaProducto>(entity =>
+            {
+                entity.HasKey(e => e.IdSubastaProducto);
+                entity.Property(x => x.MontoInicial).HasColumnType("Money");
+                //entity.HasOne<Usuario>();
+                //entity.HasOne<Producto>();
+                entity.HasMany<Oferta>().WithOne().HasForeignKey(x => x.IdSubastaProducto).HasConstraintName("FK_Oferta_SubastaProducto").OnDelete(DeleteBehavior.NoAction);
             }
             );
 
             modelBuilder.Entity<EstadoSubasta>(entity =>
             {
-
                 entity.HasKey(e => e.IdEstadoSubasta);
-                entity.HasMany<Subasta>().WithOne().HasForeignKey(x => x.IdEstadoSubasta).HasConstraintName("FK_Subasta_EstadoSubasta");
-
+                entity.HasMany<SubastaProducto>().WithOne().HasForeignKey(x => x.IdEstadoSubasta).HasConstraintName("FK_SubastaProducto_EstadoSubasta").OnDelete(DeleteBehavior.NoAction);
             }
-           );
+            );
+
             modelBuilder.Entity<Producto>(entity =>
             {
                 entity.HasKey(e => e.IdProducto);
-                entity.HasMany<Subasta>().WithOne().HasForeignKey(x => x.IdProducto).HasConstraintName("FK_Subasta_Producto");
+                entity.HasMany<SubastaProducto>().WithOne().HasForeignKey(x => x.IdProducto).HasConstraintName("FK_Subasta_Producto").OnDelete(DeleteBehavior.NoAction);
             }
             );
 
@@ -63,13 +70,12 @@ namespace TPISubastas.AccesoDatos
             {
                 entity.HasKey(e => e.IdOferta);
                 entity.Property(x => x.Monto).HasColumnType("Money");
-                //entity.HasOne<Subasta>(s=>s.Subasta);
-                //entity.HasOne<Usuario>(u=>u.Usuario);
+                //entity.HasOne<Subasta>(s => s.Subasta);
+                //entity.HasOne<Usuario>(u=> u.Usuario);
                 // entity.HasOne<Subasta>();
                 //entity.HasOne<Usuario>();
             }
             );
-
             base.OnModelCreating(modelBuilder);
         }
 

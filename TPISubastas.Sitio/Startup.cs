@@ -29,7 +29,13 @@ namespace TPISubastas.Sitio
             services.AddDbContext<ContextoSubasta>(x => {
                 x.UseSqlServer(Configuration.GetConnectionString("TPISubastas.SQLServer"), x=>x.MigrationsAssembly("TPISubastas.Sitio"));               
             });
-            
+            services.AddDbContext<Security.SecurityContext>(x =>{
+                x.UseSqlServer(Configuration.GetConnectionString("TPISubastas.Seguridad"), x => x.MigrationsAssembly("TPISubastas.Sitio"));
+            });
+          
+            services.AddIdentity<Security.SecurityUser, Security.SecurityRole>(o =>{
+                o.User.RequireUniqueEmail = true; 
+            }).AddEntityFrameworkStores<Security.SecurityContext>();      
   
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
@@ -37,6 +43,8 @@ namespace TPISubastas.Sitio
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+
 
             if (env.IsDevelopment())
             {

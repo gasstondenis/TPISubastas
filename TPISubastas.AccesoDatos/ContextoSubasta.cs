@@ -16,6 +16,7 @@ namespace TPISubastas.AccesoDatos
         public DbSet<Producto> Producto { get; set; }
         public DbSet<EstadoSubasta> EstadoSubasta { get; set; }
         public DbSet<Oferta> Oferta { get; set; }
+        public DbSet<SubastaProducto> SubastaProducto { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

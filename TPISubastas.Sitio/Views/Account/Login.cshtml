@@ -1,0 +1,27 @@
+﻿@model TPISubastas.Sitio.Security.SecurityLogin
+@{
+
+}
+@Html.BeginForm("Login", "Account", FormMethod.Post)
+
+<form method="post" action="/Account/Login">
+    <table>
+        <tr>
+           <td><label for="Usuario">Usuario</label></td>
+            <td><input name="Usuario" type="text"/></td>
+        </tr>
+    </table>
+</form>
+
+
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>@Html.LabelFor(m => m.Usuario)</td>
+        <td>@Html.TextBoxFor(m => m.Usuario)</td>
+    </tr>
+</table>
+
+}

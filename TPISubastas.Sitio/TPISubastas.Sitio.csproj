@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\Migrations\20211006235119_SubastasDatos.cs" />
-    <Compile Remove="Controllers\Migrations\20211006235119_SubastasDatos.Designer.cs" />
-    <Compile Remove="Controllers\Migrations\20211007001151_SubastasDatos.cs" />
-    <Compile Remove="Controllers\Migrations\20211007001151_SubastasDatos.Designer.cs" />
     <Compile Remove="Migrations\20211022144920_Subastas.Datos.cs" />
     <Compile Remove="Migrations\20211022144920_Subastas.Datos.Designer.cs" />
   </ItemGroup>
@@ -32,10 +28,6 @@
   <ItemGroup>
     <ProjectReference Include="..\TPISubastas.AccesoDatos\TPISubastas.AccesoDatos.csproj" />
     <ProjectReference Include="..\TPISubastas.Dominio\TPISubastas.Dominio.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\Migrations\" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using TPISubastas.Dominio;
 
 namespace TPISubastas.Sitio.Security
 {
@@ -13,10 +14,27 @@ namespace TPISubastas.Sitio.Security
     {
         [MinLength(8)]
         [Display(Name ="Nombre de usuario")]
+        [Required]
         public string Usuario { get; set; }
         [MinLength(8)]
+        [Required]
         public string Contraseña { get; set; }
 
+    }
+
+    public class SecurityRegister : Usuario
+    {
+        [MinLength(8)]
+        [Display(Name = "Nombre de usuario")]
+        [Required]
+        public string Usuario { get; set; }
+        [MinLength(8)]
+        [Required]
+        public string Contraseña { get; set; }
+        [MinLength(8)]
+        [Required]
+        [Compare("Contraseña", ErrorMessage = "Las contraseñas ingresadas deben ser iguales")]
+        public string RepetirContraseña { get; set; }
     }
 
     public class SecurityRole : IdentityRole

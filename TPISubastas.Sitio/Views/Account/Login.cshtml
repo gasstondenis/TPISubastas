@@ -1,27 +1,47 @@
-﻿@model TPISubastas.Sitio.Security.SecurityLogin
+﻿
 @{
-
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
-@Html.BeginForm("Login", "Account", FormMethod.Post)
+@model TPISubastas.Sitio.Security.SecurityLogin
 
-<form method="post" action="/Account/Login">
-    <table>
-        <tr>
-           <td><label for="Usuario">Usuario</label></td>
-            <td><input name="Usuario" type="text"/></td>
-        </tr>
-    </table>
-</form>
+@*<form method="post" action="/Account/Login">
+        <table>
+            <tr>
+                <td><label for="Usuario">Usuario</label></td>
+                <td><input name="Usuarioa" type="text" /></td>
 
+            </tr>
+            <tr>
+                <td><label for="Contraseña">Contraseña</label></td>
+                <td><input name="Contraseña" type="password" /></td>
+            </tr>
+            <tr><td colspan="2"><button type="submit">Ingresar</button></td></tr>
+        </table>
+    </form>*@
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Login-styles.css"/>
+</head>
 
 
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
 {
-<table>
-    <tr>
-        <td>@Html.LabelFor(m => m.Usuario)</td>
-        <td>@Html.TextBoxFor(m => m.Usuario)</td>
-    </tr>
-</table>
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary();
 
+
+
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.Usuario)</td>
+            <td>@Html.TextBoxFor(m => m.Usuario)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Contraseña)</td>
+            <td>@Html.PasswordFor(m => m.Contraseña)</td>
+        </tr>
+        <tr><td colspan="2"><button type="submit">Ingresar</button></td></tr>
+        <tr><td colspan="2"><a href="/Account/Register">Registrarse</a></td></tr>
+    </table>
 }

@@ -18,6 +18,7 @@ namespace TPISubastas.Sitio.Security
         public string Usuario { get; set; }
         [MinLength(8)]
         [Required]
+        [DataType(DataType.Password)]
         public string Contraseña { get; set; }
 
     }
@@ -30,10 +31,13 @@ namespace TPISubastas.Sitio.Security
         public string Usuario { get; set; }
         [MinLength(8)]
         [Required]
+        [DataType(DataType.Password)]
         public string Contraseña { get; set; }
         [MinLength(8)]
+        [Display(Name = "Confirmar contraseña")]
         [Required]
         [Compare("Contraseña", ErrorMessage = "Las contraseñas ingresadas deben ser iguales")]
+        [DataType(DataType.Password)]
         public string RepetirContraseña { get; set; }
     }
 

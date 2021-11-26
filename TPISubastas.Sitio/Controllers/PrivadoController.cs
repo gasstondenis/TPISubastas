@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace TPISubastas.Sitio.Controllers
 {   
-    [Authorize]
+    
     public class PrivadoController : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
             return View();

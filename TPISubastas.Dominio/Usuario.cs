@@ -34,6 +34,7 @@ namespace TPISubastas.Dominio
         [MaxLength(256)]
         public string Email { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaCreacion { get; set; }
 

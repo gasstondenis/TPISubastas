@@ -9,13 +9,13 @@ namespace TPISubastas.Dominio
     {
 
         public int IdUsuario { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El nombre es requerido")]
         [MaxLength(256)]
         public string Nombre { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El apellido es requerido")]
         [MaxLength(256)]
         public string Apellido { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El documento es requerido")]
         [MaxLength(64)]
         public string Documento { get; set; }
         [MaxLength(1024)]
@@ -26,14 +26,14 @@ namespace TPISubastas.Dominio
         public string CodigoPostal { get; set; }
         [MaxLength(1024)]
         public string Ciudad { get; set; }
-        [MaxLength(128)]
+        [MaxLength(128)]       
         public string Provincia { get; set; }
         [MaxLength(64)]
         public string Telefono { get; set; }
-        [Required]
-        [MaxLength(256)]
+        [Required(ErrorMessage = "El Email es requerido")]    
+        [MaxLength(256)]       
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "La fecha de nacimiento es requerida")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaCreacion { get; set; }

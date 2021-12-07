@@ -15,5 +15,11 @@ namespace TPISubastas.Sitio.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public IActionResult Ayuda()
+        {
+            return View();
+        }
+
     }
 }

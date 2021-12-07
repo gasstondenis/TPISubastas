@@ -18,27 +18,31 @@
         <hr />
         <div class="card-body">
             <form asp-controller="Account" asp-action="Register" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <span asp-validation-sumary="All" class="text-danger"></span>
                 <div class="form-group">
                     <label asp-for="Usuario" class="control-label"></label>
                     <input asp-for="Usuario" class="form-control" />
                     <span asp-validation-for="Usuario" class="text-danger"></span>
                 </div>
+               
                 <div class="form-group">
                     <label asp-for="Contraseña" class="control-label"></label>
                     <input asp-for="Contraseña" class="form-control" />
                     <span asp-validation-for="Contraseña" class="text-danger"></span>
                 </div>
+              
                 <div class="form-group">
                     <label asp-for="RepetirContraseña" class="control-label"></label>
                     <input asp-for="RepetirContraseña" class="form-control" />
                     <span asp-validation-for="RepetirContraseña" class="text-danger"></span>
                 </div>
+              
                 <div class="form-group">
                     <label asp-for="Nombre" class="control-label"></label>
                     <input asp-for="Nombre" class="form-control" />
                     <span asp-validation-for="Nombre" class="text-danger"></span>
                 </div>
+                
                 <div class="form-group">
                     <label asp-for="Apellido" class="control-label"></label>
                     <input asp-for="Apellido" class="form-control" />
@@ -82,12 +86,13 @@
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
                     <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <span asp-validation-for="Email" class="text-danger"></span>                    
                 </div>
+                
                 <div class="form-group">
                     <label asp-for="FechaNacimiento" class="control-label"></label>
                     <input asp-for="FechaNacimiento" class="form-control" />
-                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+
                 </div>
 
                 <div class="form-group">

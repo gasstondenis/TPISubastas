@@ -5,6 +5,13 @@ using System.Text;
 
 namespace TPISubastas.Dominio
 {
+    public enum Estados
+    {
+        Propuesto = 1,
+        Aprobado = 2,
+        Vendido = 3
+    }
+
     public class EstadoSubasta
     {
         public int IdEstadoSubasta { get; set; }

@@ -34,7 +34,13 @@ namespace TPISubastas.Sitio
             });
           
             services.AddIdentity<Security.SecurityUser, Security.SecurityRole>(o =>{
-                o.User.RequireUniqueEmail = true; 
+                o.User.RequireUniqueEmail = true;
+                o.Password.RequiredLength = 8;
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequireUppercase = true;
+                o.Password.RequireDigit = true;
+                o.Password.RequireLowercase = true;
+               
             }).AddEntityFrameworkStores<Security.SecurityContext>();      
   
             services.AddControllersWithViews().AddRazorRuntimeCompilation();

@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using TPISubastas.Dominio;
+
+
 namespace TPISubastas.AccesoDatos
 {
     public class ContextoSubasta : DbContext

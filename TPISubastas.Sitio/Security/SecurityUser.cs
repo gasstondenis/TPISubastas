@@ -14,10 +14,10 @@ namespace TPISubastas.Sitio.Security
     {
         [MinLength(8)]
         [Display(Name ="Nombre de usuario")]
-        [Required]
+        [Required(ErrorMessage = "El nombre de usuario es requerido")]
         public string Usuario { get; set; }
         [MinLength(8)]
-        [Required]
+        [Required(ErrorMessage = "La contraseña es requerida")]
         [DataType(DataType.Password)]
         public string Contraseña { get; set; }
 
@@ -27,15 +27,17 @@ namespace TPISubastas.Sitio.Security
     {
         [MinLength(8)]
         [Display(Name = "Nombre de usuario")]
-        [Required]
+        [Required(ErrorMessage = "El nombre de usuario es requerido")]
         public string Usuario { get; set; }
         [MinLength(8)]
-        [Required]
+       
+        [Required(ErrorMessage = "La contraseña es requerida")]
+       
         [DataType(DataType.Password)]
         public string Contraseña { get; set; }
         [MinLength(8)]
-        [Display(Name = "Confirmar contraseña")]
-        [Required]
+        [Display(Name = "Confirmar contraseña")]       
+        [Required(ErrorMessage = "La confirmación de contraseña es requerida")]
         [Compare("Contraseña", ErrorMessage = "Las contraseñas ingresadas deben ser iguales")]
         [DataType(DataType.Password)]
         public string RepetirContraseña { get; set; }

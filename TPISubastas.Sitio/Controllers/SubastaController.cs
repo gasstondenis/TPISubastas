@@ -34,9 +34,7 @@ namespace TPISubastas.Sitio.Controllers
         }
         private void CargarFormaPago(SubastaProductoFormulario modelo)
         {
-            modelo.OpcionesPago = new List<SelectListItem>();
-            modelo.OpcionesPago.Add(new SelectListItem() { Text = "Tarjeta de débito", Value = "1" });
-            modelo.OpcionesPago.Add(new SelectListItem() { Text = "Tarjeta de crédito", Value = "2" });
+            
             
         }
 
@@ -63,8 +61,8 @@ namespace TPISubastas.Sitio.Controllers
                 nuevo.MontoInicial = modelo.MontoInicial;
                 nuevo.NombreProducto = modelo.NombreProducto;
                 nuevo.DescripcionProducto = modelo.DescripcionProducto;
-                var pagoSeleccionado = modelo.OpcionesPago.Where(o => o.Selected);
-                nuevo.FormaPago = pagoSeleccionado.ToString();
+                nuevo.FormaPago = modelo.FormaPago;
+                
 
                 var usuario = await _UserManager.GetUserAsync(User);
                 nuevo.IdUsuario = usuario.IdUsuarioSubasta.Value;

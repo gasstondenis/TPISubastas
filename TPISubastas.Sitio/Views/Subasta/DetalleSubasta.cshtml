@@ -1,0 +1,18 @@
+﻿@model SubastaDetalle
+@{
+}
+
+<ul class="card-deck">
+    @foreach (var item in Model.Productos)
+    {
+        <li class="card">
+            <div>
+                <a href="/Subasta/Oferta?IdSubasta=@item.IdSubasta&IdSubastaProducto=@item.IdSubastaProducto">
+                    <img src="@item.ImagenProducto" class="card-img-top" />
+                    <p class="card-title">@item.NombreProducto</p>
+                    <p class="card-text">Monto Inicial : @item.MontoInicial</p>
+                </a>
+            </div>
+        </li>
+    }
+</ul>

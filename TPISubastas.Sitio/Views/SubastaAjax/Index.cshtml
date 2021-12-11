@@ -1,0 +1,15 @@
+﻿@{
+}
+<ul id="listaSubastas" class="card-group"></ul>
+<nav>
+    <ul id="subastasPaginas" class="pagination"></ul>
+</nav>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            cargarSubastas(1, 4);
+        });
+    </script>
+}

@@ -1,0 +1,36 @@
+﻿@model TPISubastas.Sitio.Models.SubastaListado
+@{
+
+}
+
+<ul>
+    @foreach (var item in Model.Subastas)
+    {
+        <li>
+            <div>
+
+                <a href="/Subasta/DetalleSubasta?IdSubasta=@item.IdSubasta">@item.Nombre</a>
+                <h3>Fecha inicio: @item.FechaInicio</h3>
+                <h3>Fecha de finalización: @item.FechaCierre</h3>
+            </div>
+
+        </li>
+    }
+</ul>
+
+<ul>
+    @for (int i = 0; i < Model.TotalPaginas; i++)
+    {
+        <li>
+            @if (i + 1 == Model.Pagina)
+            {
+                @(i+1)
+            }
+            else
+            {
+                <a href="/Subasta?Pagina=@(i+1)&Cantidad=@Model.Cantidad">@(i+1)</a>
+            }
+        </li>
+    }
+</ul>
+

@@ -21,9 +21,28 @@ namespace TPISubastas.Sitio.Controllers
             _UserManager = userManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int Pagina = 1, int Cantidad = 4)
         {
-            return View();
+            if (Pagina < 1)
+            {
+                Pagina = 1;
+            }
+            if (Cantidad > 10)
+            {
+                Cantidad = 4;
+            }
+            if (Cantidad < 1)
+            {
+                Cantidad = 1;
+            }
+            SubastaListado listado = new SubastaListado();
+            var consulta = _contexto.Subasta.Where(x => x.Habilitada && x.FechaCierre > DateTime.Now && x.FechaInicio < DateTime.Now);
+            int totalelementos = consulta.Count();
+            listado.Subastas = consulta.Skip((Pagina - 1) * Cantidad).Take(Cantidad).Select(fuente => new SubastaItem(fuente)).ToList();
+            listado.TotalPaginas = (totalelementos / Cantidad) + 1;
+            listado.Cantidad = Cantidad;
+            listado.Pagina = Pagina;
+            return View(listado);
         }
 
         private void CargarSubastasDisponibles(SubastaProductoFormulario modelo)
@@ -75,8 +94,16 @@ namespace TPISubastas.Sitio.Controllers
             {
                 CargarSubastasDisponibles(modelo);
             }
-            return View(modelo);
+            return View(modelo);            
         }
+
+        public IActionResult DetalleSubasta (int IdSubasta)
+        {
+            var detalle = new SubastaDetalle();
+            detalle.Productos = _contexto.SubastaProducto.Where(x=> x.IdSubasta == IdSubasta /*&& x.IdEstadoSubasta ==  (int)TPISubastas.Dominio.Estados.Aprobado*/).ToList();
+
+            return View(detalle);
+        } 
 
 
     }

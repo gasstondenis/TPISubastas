@@ -5,15 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace TPISubastas.Sitio.Controllers
 {
     public class AccountController : Controller
     {
+        
+        
         private UserManager<Security.SecurityUser> _UserManager;
         private SignInManager<Security.SecurityUser> _SignInManager;
         private Security.SecurityContext _SecurityContext;
         private ContextoSubasta _ContextoSubasta;
+        public string LastUrl { get; set; }
+
         public AccountController(UserManager<Security.SecurityUser> usermanager, SignInManager<Security.SecurityUser> signinmanager, Security.SecurityContext securitycontext, ContextoSubasta contextosubasta)
         {
 
@@ -27,9 +32,13 @@ namespace TPISubastas.Sitio.Controllers
             return View();
         }
 
+        
+        [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> Login(Security.SecurityLogin datos, string ReturnUrl)
+        public async Task<IActionResult> Login(Security.SecurityLogin datos, string returnUrl)
         {
+          
+            
             if (!ModelState.IsValid)
             {
                 return View(datos);
@@ -37,15 +46,21 @@ namespace TPISubastas.Sitio.Controllers
             var resultado = await _SignInManager.PasswordSignInAsync(datos.Usuario, datos.Contraseña, false, false);
             if (resultado.Succeeded)
             {
-                if (string.IsNullOrWhiteSpace(ReturnUrl))
+                if (string.IsNullOrWhiteSpace(returnUrl))
                     return Redirect("/");
-                return Redirect("/Index");
+                return Redirect(returnUrl);
             }
             else
             {
                 ModelState.AddModelError("UserError", "El usuario y/o la contraseña son erroneos");
             }
             return View(datos);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _SignInManager.SignOutAsync();            
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -61,7 +76,7 @@ namespace TPISubastas.Sitio.Controllers
             if (!ModelState.IsValid)
             {
                 return View(datos);
-               
+
             }
 
             /*

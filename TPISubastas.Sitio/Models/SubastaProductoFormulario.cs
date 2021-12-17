@@ -13,5 +13,6 @@ namespace TPISubastas.Sitio.Models
         public List<SelectListItem> SubastasDisponibles { get; set; }
         
         public List<SelectListItem> OpcionesPago { get; set; }
+        
     }
 }

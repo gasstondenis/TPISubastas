@@ -1,0 +1,54 @@
+﻿body {
+}
+
+body {
+}
+
+
+
+
+.h2-secciones {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: darkblue;
+    font-family: sans-serif;
+    border-top: 2px solid darkblue;
+    border-bottom: 2px solid darkblue;
+}
+
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 20px;
+}
+
+    .content li {
+        box-shadow: 0px 0px 4px rgb(0 0 0/0.5);
+    }
+
+    .content .tarjeta {
+        width: 100%;
+    }
+
+        .content .tarjeta img {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .content .tarjeta a {
+         
+            text-decoration: none;
+        }
+
+            .content .tarjeta a h5
+            {
+                margin-top: 10px;
+                color: black;
+            }
+            .content .tarjeta a h4 {
+                color: green;
+                bottom: 0;
+            }

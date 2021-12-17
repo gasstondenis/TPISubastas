@@ -6,21 +6,46 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TPISubastas.Sitio.Models;
+using TPISubastas.Sitio.Controllers;
+using TPISubastas.AccesoDatos;
 
 namespace TPISubastas.Sitio.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ContextoSubasta _contexto;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ContextoSubasta contexto)
         {
             _logger = logger;
+            _contexto = contexto;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int Pagina = 1, int Cantidad = 6)
         {
-            return View();
+            if (Pagina < 1)
+            {
+                Pagina = 1;
+            }
+            if (Cantidad > 10)
+            {
+                Cantidad = 6;
+            }
+            if (Cantidad < 1)
+            {
+                Cantidad = 1;
+            }
+            SubastaListado listado = new SubastaListado();
+            var ahora = DateTime.Now;
+            var consulta = _contexto.Subasta.Where(x => x.Habilitada && x.FechaCierre > ahora && x.FechaInicio < ahora);
+            int totalelementos = consulta.Count();
+            listado.Subastas = consulta.Skip((Pagina - 1) * Cantidad).Take(Cantidad).Select(x => new SubastaItem(x)).ToList();
+            listado.TotalPaginas = (totalelementos / Cantidad) + 1;
+            listado.Cantidad = Cantidad;
+            listado.Pagina = Pagina;
+            return View(listado);
+
         }
 
         public IActionResult Privacy()

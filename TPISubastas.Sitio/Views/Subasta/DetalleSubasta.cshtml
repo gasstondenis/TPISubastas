@@ -1,16 +1,42 @@
 ﻿@model SubastaDetalle
 @{
+    @*
+    if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout_login.cshtml";
+    }
+        *@
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
-<ul class="card-deck">
+
+<header>
+    <link rel="stylesheet" type="text/css" href="~/css/DetalleStyles.css" />
+</header>
+
+<div id="fixed-top">
+
+</div>
+<br />
+<h2 class="h2-secciones">Productos de la subasta</h2>
+<br />
+
+<ul class="list-group content">
     @foreach (var item in Model.Productos)
     {
-        <li class="card">
-            <div>
+        <li class="list-group-item">
+            <div class="tarjeta">
                 <a href="/Subasta/Oferta?IdSubasta=@item.IdSubasta&IdSubastaProducto=@item.IdSubastaProducto">
                     <img src="@item.ImagenProducto" class="card-img-top" />
-                    <p class="card-title">@item.NombreProducto</p>
-                    <p class="card-text">Monto Inicial : @item.MontoInicial</p>
+                    
+                    <h5 class="card-title">@item.NombreProducto</h5>
+                    <br />
+                    <h4 class="card-text">Monto inicial: $@item.MontoInicial</h4>
                 </a>
             </div>
         </li>

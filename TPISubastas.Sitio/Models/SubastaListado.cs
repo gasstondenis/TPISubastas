@@ -20,6 +20,7 @@ namespace TPISubastas.Sitio.Models
             this.Habilitada = fuente.Habilitada;
             this.IdSubasta = fuente.IdSubasta;
             this.Nombre = fuente.Nombre;
+            
 
         }
         public string FechaInicioStr { get { return string.Format("{0:dd/MM/yyyy}", FechaInicio); } }

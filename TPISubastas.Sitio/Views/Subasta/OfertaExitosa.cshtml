@@ -1,0 +1,8 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SubastaDetalle
+
+<h1 class="card-body">Felicidades, su oferta ha sido exitosa!</h1>
+
+<a class="btn btn-primary" href="/Subasta/Oferta?IdSubasta=@Model.detalleProducto.IdSubasta&IdSubastaProducto=@Model.detalleProducto.IdSubastaProducto">Volver</a>

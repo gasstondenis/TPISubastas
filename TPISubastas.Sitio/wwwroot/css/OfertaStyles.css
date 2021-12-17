@@ -1,0 +1,12 @@
+﻿body {
+}
+
+
+#img-producto{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}

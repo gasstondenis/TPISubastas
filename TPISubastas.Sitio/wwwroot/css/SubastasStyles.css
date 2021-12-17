@@ -1,0 +1,81 @@
+﻿body {
+}
+
+
+
+
+.h2-secciones {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: darkblue;
+    font-family: sans-serif;
+    border-top: 2px solid darkblue;
+    border-bottom: 2px solid darkblue;
+}
+
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 20px;
+}
+
+    .content li {
+        border: 0px !important;
+    }
+
+    .content .tarjeta {
+        width: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+        .content .tarjeta img {
+            width: 90%;
+            margin-top: 15px;
+            border: 1px solid black;
+        }
+
+        .content .tarjeta a {
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 200ms;
+            box-shadow: 0px 0px 4px rgb(0 0 0/0.5);
+            border: 1px solid rgba(0,0,0,.125);
+        }
+
+    .content a:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 6px rgb(0 0 0/0.5);
+    }
+
+    .content a:active {
+        box-shadow: 0px 0px 6px rgb(0 0 0 / 0.5) inset;
+    }
+
+    .content .tarjeta a h3 {
+        margin-top: 10px;
+        text-align: center;
+        color: black;
+        text-decoration: solid;
+        text-transform: uppercase;
+    }
+
+    .content .tarjeta a h5 {
+       
+        color: green;
+        font-family: sans-serif;
+    }
+    .content .tarjeta a p{
+        color: darkblue;
+    } 
+
+#nav-paginacion {
+    margin-top: 20px;
+}

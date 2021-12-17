@@ -8,6 +8,7 @@ using TPISubastas.AccesoDatos;
 using Microsoft.AspNetCore.Identity;
 using TPISubastas.Sitio.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TPISubastas.Sitio.Controllers
 {
@@ -21,7 +22,7 @@ namespace TPISubastas.Sitio.Controllers
             _UserManager = userManager;
         }
 
-        public IActionResult Index(int Pagina = 1, int Cantidad = 4)
+        public IActionResult Index(int Pagina = 1, int Cantidad = 6)
         {
             if (Pagina < 1)
             {
@@ -29,7 +30,7 @@ namespace TPISubastas.Sitio.Controllers
             }
             if (Cantidad > 10)
             {
-                Cantidad = 4;
+                Cantidad = 6;
             }
             if (Cantidad < 1)
             {
@@ -57,6 +58,7 @@ namespace TPISubastas.Sitio.Controllers
             
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Crear()
         {
@@ -66,6 +68,7 @@ namespace TPISubastas.Sitio.Controllers
             return View(modelo);
         }
 
+    
         [HttpPost]
         public async Task<IActionResult> Crear(SubastaProductoFormulario modelo)
         {
@@ -103,7 +106,43 @@ namespace TPISubastas.Sitio.Controllers
             detalle.Productos = _contexto.SubastaProducto.Where(x=> x.IdSubasta == IdSubasta /*&& x.IdEstadoSubasta ==  (int)TPISubastas.Dominio.Estados.Aprobado*/).ToList();
 
             return View(detalle);
-        } 
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult Oferta(int IdSubasta, int IdSubastaProducto)
+        {
+            var detalle = new SubastaDetalle();
+            detalle.detalleProducto = _contexto.SubastaProducto.FirstOrDefault(x=>x.IdSubasta==IdSubasta && x.IdSubastaProducto == IdSubastaProducto);
+            detalle.ofertaRealizada = _contexto.Oferta.Where(x => x.IdSubasta == IdSubasta && x.IdSubastaProducto == IdSubastaProducto).OrderByDescending(x => x.Monto).Select(x => x.Monto).FirstOrDefault();
+
+            return View(detalle);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Oferta(SubastaDetalle modelo)
+        {
+            if (modelo.detalleProducto != null && modelo.ofertaRealizada > 0 && modelo.detalleProducto.IdSubasta !=0 && modelo.detalleProducto.IdSubastaProducto != 0)
+            {
+                TPISubastas.Dominio.Oferta nuevo = new Dominio.Oferta();
+                nuevo.IdSubasta = modelo.detalleProducto.IdSubasta;
+                nuevo.IdSubastaProducto = modelo.detalleProducto.IdSubastaProducto;
+
+                var usuario = await _UserManager.GetUserAsync(User);
+                nuevo.IdUsuario = usuario.IdUsuarioSubasta.Value;
+                nuevo.Fecha = DateTime.Now;
+                nuevo.Monto = modelo.ofertaRealizada;
+
+                _contexto.Oferta.Add(nuevo);
+                _contexto.SaveChanges();
+            }
+            else
+            {
+                return View(modelo);
+            }
+
+            return View("OfertaExitosa", modelo);
+        }
 
 
     }

@@ -6,39 +6,54 @@
     <title>@ViewData["Title"] - TPISubastas.Sitio</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <!--<link rel="stylesheet" href="~/css/layout-styles.css" />  -->
+    <link rel="stylesheet" href="~/css/layout-styles.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="card-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Ingematica</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">TPISubastas</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-               
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto ">
-                       
-                        <li class="nav-item active">
-                            <a class="nav-link" asp-controller="Account" asp-action="Register">Registrarse <span class="sr-only">(current)</span></a>
 
-                        </li>
-                        <li  class="nav-item active">
-                            <a class="nav-link" asp-controller="Account" asp-action="Login">Ingresar <span class="sr-only">(current)</span></a>
-                        </li>
-                        
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="navbarSupportedContent">
+                    <ul>
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <a class="p-2 bd-highlight" id="vender" asp-controller="Subasta" asp-action="Crear">Vender</a>
+                            </li>
+                            <li>
+                                <a class="p-2 bd-highlight" asp-controller="Account" asp-action="Register">Registrarse</a>
+                            </li>
+
+                            <li>
+                                <a class="p-2 bd-highlight" id="login" asp-controller="Account" asp-action="Login">Iniciar Sesión</a>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li>
+                                <a class="p-2 bd-highlight" id="vender" asp-controller="Subasta" asp-action="Crear">Vender</a>
+                            </li>
+                            <li>
+                                <a id="logout" class="p-2 bd-highlight" id="vender" asp-controller="Account" asp-action="Logout">Cerrar sesión</a>
+                            </li>
+                        }
+
+
 
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                    </form>
+
                 </div>
             </nav>
         </div>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
 

@@ -1,36 +1,84 @@
 ﻿@model TPISubastas.Sitio.Models.SubastaListado
 @{
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/SubastasStyles.css" />
+</head>
 
-<ul>
-    @foreach (var item in Model.Subastas)
-    {
-        <li>
-            <div>
 
-                <a href="/Subasta/DetalleSubasta?IdSubasta=@item.IdSubasta">@item.Nombre</a>
-                <h3>Fecha inicio: @item.FechaInicio</h3>
-                <h3>Fecha de finalización: @item.FechaCierre</h3>
-            </div>
 
-        </li>
-    }
-</ul>
+<div id="fixed-top">
 
-<ul>
-    @for (int i = 0; i < Model.TotalPaginas; i++)
-    {
-        <li>
-            @if (i + 1 == Model.Pagina)
+</div>
+<br />
+<h2 class="h2-secciones">Subastas abiertas</h2>
+<br />
+<div class="container">
+    <div class="">
+        <ul class="list-group content">
+
+            @foreach (var item in Model.Subastas)
             {
-                @(i+1)
+                <li class="list-group-item">
+                    <div class="tarjeta">
+                        <a href="/Subasta/DetalleSubasta?IdSubasta=@item.IdSubasta">
+                            <img src="~/img/subastas.jpg" />
+                            <h3>@item.Nombre</h3>
+                            <h5>Abierta desde el @item.FechaInicioStr</h5>
+                            <h5>Hasta el @item.FechaCierreStr</h5>
+                            <p>@item.Descripcion</p>
+                        </a>
+                    </div>
+                </li>
+            }
+
+        </ul>
+    </div>
+
+    <nav id="nav-paginacion" aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            @if (Model.Pagina < 2)
+            {
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                </li>
             }
             else
             {
-                <a href="/Subasta?Pagina=@(i+1)&Cantidad=@Model.Cantidad">@(i+1)</a>
+                <li class="page-item">
+                    <a class="page-link" href="/Home?Pagina=@(Model.Pagina-1)&Cantidad=@Model.Cantidad" tabindex="1">Anterior</a>
+                </li>
             }
-        </li>
-    }
-</ul>
+            @for (int i = 0; i < Model.TotalPaginas; i++)
+            {
+                if (i + 1 == Model.Pagina)
+                {
+                    <li class="page-item active">
+                        <a class="page-link" href="#">@(i + 1)</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Home?Pagina=@(i + 1)&Cantidad=@Model.Cantidad">@(i + 1)</a>
+                    </li>
+                }
+            }
+            @if (Model.Pagina == Model.TotalPaginas)
+            {
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Siguiente</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Home?Pagina=@(Model.Pagina+1)&Cantidad=@Model.Cantidad" tabindex="1">Siguiente</a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+</div>
 

@@ -1,5 +1,6 @@
 ﻿@model TPISubastas.Sitio.Models.SubastaProductoFormulario
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
 {
@@ -14,7 +15,7 @@
     <div class="col-12">
         <div class="card border">
             <div class="card-header">
-                <h3><strong>Solicitud de publicación</strong></h3>
+                <h3><strong>Solicitud de publicación de un producto</strong></h3>
             </div>
         </div>
         <hr />

@@ -1,15 +1,15 @@
 ﻿@model SubastaDetalle
 @{
     @*
-    if (!User.Identity.IsAuthenticated)
-    {
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    else
-    {
-        Layout = "~/Views/Shared/_Layout_login.cshtml";
-    }
-        *@
+        if (!User.Identity.IsAuthenticated)
+        {
+            Layout = "~/Views/Shared/_Layout.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_Layout_login.cshtml";
+        }
+    *@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
@@ -25,20 +25,79 @@
 <br />
 <h2 class="h2-secciones">Productos de la subasta</h2>
 <br />
+<div class="container">
+    <div>
+        <ul class="list-group content">
+            @foreach (var item in Model.Productos)
+            {
+                <li class="list-group-item">
+                    <div class="tarjeta">
+                        <a href="/Subasta/Oferta?IdSubasta=@item.IdSubasta&IdSubastaProducto=@item.IdSubastaProducto">
+                            <img src="@item.ImagenProducto" class="card-img-top" />
 
-<ul class="list-group content">
-    @foreach (var item in Model.Productos)
-    {
-        <li class="list-group-item">
-            <div class="tarjeta">
-                <a href="/Subasta/Oferta?IdSubasta=@item.IdSubasta&IdSubastaProducto=@item.IdSubastaProducto">
-                    <img src="@item.ImagenProducto" class="card-img-top" />
-                    
-                    <h5 class="card-title">@item.NombreProducto</h5>
-                    <br />
-                    <h4 class="card-text">Monto inicial: $@item.MontoInicial</h4>
-                </a>
-            </div>
-        </li>
-    }
-</ul>
+                            <h5 class="card-title">@item.NombreProducto</h5>
+                            <br />
+                            <h4 class="card-text">Monto inicial: $@item.MontoInicial</h4>
+
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+
+        <br />
+        <br />
+        <nav id="nav-paginacion" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                @if (Model.Pagina < 2)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                    </li>
+                }
+                else
+                {
+
+                    <li class="page-item">
+                        <a class="page-link" href="/Subasta/DetalleSubasta?IdSubasta=@Model.IdSubasta&Pagina=@(Model.Pagina-1)&Cantidad=@Model.Cantidad" tabindex="1">Anterior</a>
+                    </li>
+
+
+                }
+                @for (int i = 0; i < Model.TotalPaginas; i++)
+                {
+                    if (i + 1 == Model.Pagina)
+                    {
+                        <li class="page-item active">
+                            <a class="page-link" href="#">@(i + 1)</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="/Subasta/DetalleSubasta?IdSubasta=@Model.IdSubasta&Pagina=@(i + 1)&Cantidad=@Model.Cantidad">@(i + 1)</a>
+                        </li>
+                    }
+                }
+                @if (Model.Pagina == Model.TotalPaginas)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Siguiente</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Subasta/DetalleSubasta?IdSubasta=@Model.IdSubasta&Pagina=@(Model.Pagina+1)&Cantidad=@Model.Cantidad" tabindex="1">Siguiente</a>
+                    </li>
+                }
+
+            </ul>
+            <a id="volver" href="/Home/Index" class="btn btn-secondary">Ver todas las subastas</a>
+        </nav>
+    </div>
+
+    
+</div>
+
+

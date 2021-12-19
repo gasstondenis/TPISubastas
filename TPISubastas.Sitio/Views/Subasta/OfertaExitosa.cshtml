@@ -1,8 +1,15 @@
-﻿@{ 
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model SubastaDetalle
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="card card-group border-success" style="padding: 10px;">
+        <h1 style="text-align: center" class="card-body">🎉👏🎉 ¡Felicidades, su oferta ha sido exitosa! 👏🎉👏</h1>
 
-<h1 class="card-body">Felicidades, su oferta ha sido exitosa!</h1>
+        <a class="btn btn-success btn-block" href="/Subasta/Oferta?IdSubasta=@Model.detalleProducto.IdSubasta&IdSubastaProducto=@Model.detalleProducto.IdSubastaProducto">Volver al producto</a>
+        <a class="btn btn-primary btn-block" href="/Subasta/DetalleSubasta?IdSubasta=@Model.detalleProducto.IdSubasta">Volver a la subasta</a>
 
-<a class="btn btn-primary" href="/Subasta/Oferta?IdSubasta=@Model.detalleProducto.IdSubasta&IdSubastaProducto=@Model.detalleProducto.IdSubastaProducto">Volver</a>
+    </div>

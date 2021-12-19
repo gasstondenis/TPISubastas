@@ -1,4 +1,4 @@
-﻿ using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,27 +48,27 @@ namespace TPISubastas.Sitio.Controllers
 
         private void CargarSubastasDisponibles(SubastaProductoFormulario modelo)
         {
-            modelo.SubastasDisponibles = new List<SelectListItem>();          
+            modelo.SubastasDisponibles = new List<SelectListItem>();
             var subastas = _contexto.Subasta.Where(s => s.Habilitada && s.FechaInicio > DateTime.Now).Select(s => new SelectListItem() { Text = s.Nombre, Value = s.IdSubasta.ToString() });
             modelo.SubastasDisponibles.AddRange(subastas);
         }
         private void CargarFormaPago(SubastaProductoFormulario modelo)
         {
-            
-            
+
+
         }
 
         [Authorize]
         [HttpGet]
         public IActionResult Crear()
         {
-            SubastaProductoFormulario modelo = new SubastaProductoFormulario(); 
+            SubastaProductoFormulario modelo = new SubastaProductoFormulario();
             CargarSubastasDisponibles(modelo);
             CargarFormaPago(modelo);
             return View(modelo);
         }
 
-    
+
         [HttpPost]
         public async Task<IActionResult> Crear(SubastaProductoFormulario modelo)
         {
@@ -84,7 +84,7 @@ namespace TPISubastas.Sitio.Controllers
                 nuevo.NombreProducto = modelo.NombreProducto;
                 nuevo.DescripcionProducto = modelo.DescripcionProducto;
                 nuevo.FormaPago = modelo.FormaPago;
-                
+
 
                 var usuario = await _UserManager.GetUserAsync(User);
                 nuevo.IdUsuario = usuario.IdUsuarioSubasta.Value;
@@ -97,15 +97,44 @@ namespace TPISubastas.Sitio.Controllers
             {
                 CargarSubastasDisponibles(modelo);
             }
-            return View(modelo);            
+            return View(modelo);
         }
 
-        public IActionResult DetalleSubasta (int IdSubasta)
+        public IActionResult DetalleSubasta(int IdSubasta, int Pagina = 1, int Cantidad = 6)
         {
-            var detalle = new SubastaDetalle();
-            detalle.Productos = _contexto.SubastaProducto.Where(x=> x.IdSubasta == IdSubasta /*&& x.IdEstadoSubasta ==  (int)TPISubastas.Dominio.Estados.Aprobado*/).ToList();
+            if (Pagina < 1)
+            {
+                Pagina = 1;
+            }
+            if (Cantidad > 10)
+            {
+                Cantidad = 3;
+            }
+            if (Cantidad < 1)
+            {
+                Cantidad = 1;
+            }
+            SubastaDetalle listado = new SubastaDetalle();
+            var consulta = _contexto.SubastaProducto.Where(x => x.IdSubasta == IdSubasta /*&& x.IdEstadoSubasta ==  (int)TPISubastas.Dominio.Estados.Aprobado*/).ToList();
+            int totalelementos = consulta.Count();
+            listado.Productos = consulta.Skip((Pagina - 1) * Cantidad).Take(Cantidad).ToList();
+            listado.TotalPaginas = (totalelementos / Cantidad) + 1;
+            listado.Cantidad = Cantidad;
+            listado.Pagina = Pagina;
+            listado.IdSubasta = IdSubasta;
 
-            return View(detalle);
+            /*
+                        var detalle = new ProductoListado();
+                        detalle.Productos = _contexto.SubastaProducto.Where(x=> x.IdSubasta == IdSubasta /*&& x.IdEstadoSubasta ==  (int)TPISubastas.Dominio.Estados.Aprobado*//*).ToList();
+                        int totalelementos = detalle.Productos.Count();
+                        detalle.TotalPaginas = (totalelementos / Cantidad) + 1;
+                        detalle = detalle.Productos.Skip((Pagina - 1) * Cantidad).Take(Cantidad).Select().ToList();
+                        detalle.Cantidad = Cantidad;
+                        detalle.Pagina = Pagina;
+                        detalle.IdSubasta = IdSubasta;
+                        */
+            return View(listado);
+
         }
 
         [Authorize]
@@ -113,7 +142,7 @@ namespace TPISubastas.Sitio.Controllers
         public IActionResult Oferta(int IdSubasta, int IdSubastaProducto)
         {
             var detalle = new SubastaDetalle();
-            detalle.detalleProducto = _contexto.SubastaProducto.FirstOrDefault(x=>x.IdSubasta==IdSubasta && x.IdSubastaProducto == IdSubastaProducto);
+            detalle.detalleProducto = _contexto.SubastaProducto.FirstOrDefault(x => x.IdSubasta == IdSubasta && x.IdSubastaProducto == IdSubastaProducto);
             detalle.ofertaRealizada = _contexto.Oferta.Where(x => x.IdSubasta == IdSubasta && x.IdSubastaProducto == IdSubastaProducto).OrderByDescending(x => x.Monto).Select(x => x.Monto).FirstOrDefault();
 
             return View(detalle);
@@ -122,7 +151,7 @@ namespace TPISubastas.Sitio.Controllers
         [HttpPost]
         public async Task<IActionResult> Oferta(SubastaDetalle modelo)
         {
-            if (modelo.detalleProducto != null && modelo.ofertaRealizada > 0 && modelo.detalleProducto.IdSubasta !=0 && modelo.detalleProducto.IdSubastaProducto != 0)
+            if (modelo.detalleProducto != null && modelo.ofertaRealizada > 0 && modelo.detalleProducto.IdSubasta != 0 && modelo.detalleProducto.IdSubastaProducto != 0)
             {
                 TPISubastas.Dominio.Oferta nuevo = new Dominio.Oferta();
                 nuevo.IdSubasta = modelo.detalleProducto.IdSubasta;

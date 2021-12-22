@@ -10,7 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TPISubastas.AccesoDatos;
-
+using TPISubastas.Sitio.Models;
+using TPISubastas.Sitio.HostedServices;
 
 namespace TPISubastas.Sitio
 {
@@ -25,7 +26,8 @@ namespace TPISubastas.Sitio
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {            
+
             services.AddDbContext<ContextoSubasta>(x => {
                 x.UseSqlServer(Configuration.GetConnectionString("TPISubastas.SQLServer"), x=>x.MigrationsAssembly("TPISubastas.Sitio"));               
             });
@@ -43,15 +45,14 @@ namespace TPISubastas.Sitio
                
             }).AddEntityFrameworkStores<Security.SecurityContext>();      
   
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();   
+            
+            services.AddHostedService<UsuarioGanadorHostedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

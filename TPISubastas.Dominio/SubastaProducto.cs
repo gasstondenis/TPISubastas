@@ -41,5 +41,7 @@ namespace TPISubastas.Dominio
         public int? IdUsuarioComprador { get; set; }
         public int? IdProducto { get; set; }
         public int IdEstadoSubasta { get; set; }
+
+        public bool Notificado { get; set; }
     }
 }

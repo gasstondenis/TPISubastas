@@ -14,5 +14,6 @@ namespace TPISubastas.Dominio
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public bool Habilitada { get; set; }
+
     }
 }

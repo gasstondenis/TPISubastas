@@ -45,9 +45,10 @@ namespace TPISubastas.Sitio
                
             }).AddEntityFrameworkStores<Security.SecurityContext>();      
   
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();   
-            
-            services.AddHostedService<UsuarioGanadorHostedService>();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            services.AddHostedService<EstadoSubastaHostedService>();
+            services.AddHostedService<UsuarioGanadorHostedService>();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

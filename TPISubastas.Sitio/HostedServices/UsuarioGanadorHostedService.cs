@@ -24,7 +24,7 @@ namespace TPISubastas.Sitio.HostedServices
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _timer = new Timer(ObtenerGanadores, null, TimeSpan.Zero, TimeSpan.FromMinutes(1));
+            _timer = new Timer(ObtenerGanadores, null, TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1));
             return Task.CompletedTask;
         }
 
@@ -45,35 +45,27 @@ namespace TPISubastas.Sitio.HostedServices
                 var _ContextoSubasta = scope.ServiceProvider.GetRequiredService<ContextoSubasta>();
 
                 var subastas = _ContextoSubasta.Subasta.Where(x => x.FechaCierre <= DateTime.Now).Select(x => x.IdSubasta).ToList();
-                var productos = _ContextoSubasta.SubastaProducto.Where(x => x.IdEstadoSubasta == 3 && !x.Notificado && subastas.Contains(x.IdSubasta)).ToList();
+                var productos = _ContextoSubasta.SubastaProducto.Where(x => (x.IdEstadoSubasta == 3 || x.IdEstadoSubasta == 5) && !x.Notificado && subastas.Contains(x.IdSubasta)).ToList();
                 SubastaProducto producto = new SubastaProducto();
 
-
+              
                 foreach (var item2 in productos)
                 {
                     producto = item2;
                     var oferta = _ContextoSubasta.Oferta.Where(x => x.IdSubastaProducto == producto.IdSubastaProducto).OrderByDescending(x => x.Monto).FirstOrDefault();
-
-                    if (oferta != null)
-                    {
-                        try
-                        {
-                            NotificarGanador(oferta, producto, _ContextoSubasta);
-                            item2.Notificado = true;
-                            item2.IdUsuarioComprador = oferta.IdUsuario;
-                            _ContextoSubasta.Entry(item2).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                            _ContextoSubasta.SaveChanges();
-                        }
-                        catch(Exception e)
-                        {
-                            
-                        }                        
+                    if (producto.IdEstadoSubasta == 3)
+                    {                       
+                        NotificarGanador(oferta, producto, _ContextoSubasta);
+                        producto.Notificado = true;
+                        producto.IdUsuarioComprador = oferta.IdUsuario;
+                        _ContextoSubasta.Entry(producto).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        _ContextoSubasta.SaveChanges();
                     }
-                    else
+                    else if(producto.IdEstadoSubasta == 5)
                     {
                         NotificarVendedor(oferta, producto, _ContextoSubasta);
-                        item2.Notificado = true;
-                        _ContextoSubasta.Entry(item2).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        producto.Notificado = true;
+                        _ContextoSubasta.Entry(producto).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                         _ContextoSubasta.SaveChanges();
                     }
 

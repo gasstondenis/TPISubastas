@@ -9,7 +9,8 @@ namespace TPISubastas.Dominio
     {
         Propuesto = 1,
         Aprobado = 2,
-        Vendido = 3
+        Vendido = 3,
+        NoVendido = 5
     }
 
     public class EstadoSubasta

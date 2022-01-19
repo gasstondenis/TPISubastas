@@ -1,11 +1,16 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TPISubastas.AccesoDatos;
+using TPISubastas.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
 
 namespace TPISubastas.Sitio.Controllers
 {
@@ -17,16 +22,58 @@ namespace TPISubastas.Sitio.Controllers
         private SignInManager<Security.SecurityUser> _SignInManager;
         private Security.SecurityContext _SecurityContext;
         private ContextoSubasta _ContextoSubasta;
+        private TokenValidationParameters _ParametrosToken;
         public string LastUrl { get; set; }
 
-        public AccountController(UserManager<Security.SecurityUser> usermanager, SignInManager<Security.SecurityUser> signinmanager, Security.SecurityContext securitycontext, ContextoSubasta contextosubasta)
+        public AccountController(UserManager<Security.SecurityUser> usermanager, SignInManager<Security.SecurityUser> signinmanager, Security.SecurityContext securitycontext, ContextoSubasta contextosubasta, TokenValidationParameters parametrosToken)
         {
-
             _UserManager = usermanager;
             _SignInManager = signinmanager;
             _SecurityContext = securitycontext;
             _ContextoSubasta = contextosubasta;
+            _ParametrosToken = parametrosToken;
         }
+
+        private TokenSeguridad GenerarToken(Security.SecurityUser usuario)
+        {
+            ClaimsIdentity identidad = new ClaimsIdentity(new GenericIdentity(usuario.UserName, "TokenAuthentication"), new[] { new Claim("UserId", usuario.Id )});
+            DateTime expiracion = DateTime.Now.AddMinutes(5);
+
+            var generador = new JwtSecurityTokenHandler();
+            var token = generador.CreateToken(new Microsoft.IdentityModel.Tokens.SecurityTokenDescriptor { 
+                Issuer = _ParametrosToken.ValidIssuer,
+                Audience = _ParametrosToken.ValidAudience,
+                SigningCredentials = new SigningCredentials(_ParametrosToken.IssuerSigningKey, SecurityAlgorithms.HmacSha256Signature),
+                Subject  = identidad,
+                NotBefore = DateTime.Now,
+                Expires = expiracion
+            });
+
+            return new TokenSeguridad() { Token = generador.WriteToken(token), Expiracion = expiracion };
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ObtenerToken([FromBody]CredencialesToken model)
+        {
+            try
+            {
+                var resultado = await _SignInManager.PasswordSignInAsync(model.Usuario, model.Contraseña, false, false);
+                if (resultado.Succeeded)
+                {
+                    var usuario = await _UserManager.FindByNameAsync(model.Usuario);
+                    return Json(GenerarToken(usuario));
+                }
+                else
+                {
+                    return Json(new TokenSeguridad() { Token = "ERROR" });
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public IActionResult Login()
         {
             return View();

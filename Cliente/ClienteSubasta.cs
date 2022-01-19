@@ -15,6 +15,8 @@ namespace Cliente
     {
         private string _Dominio = null;
         private string _baseapi = null;
+
+         
         public ClienteSubasta(string dominio)
         {
             _Dominio = dominio;

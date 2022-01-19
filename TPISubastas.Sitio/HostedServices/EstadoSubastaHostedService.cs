@@ -23,7 +23,7 @@ namespace TPISubastas.Sitio.HostedServices
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _timer = new Timer(DefinirEstadoSubasta, null, TimeSpan.FromSeconds(10), TimeSpan.FromMinutes(1));
+            _timer = new Timer(DefinirEstadoSubasta, null, TimeSpan.FromSeconds(30), TimeSpan.FromMinutes(1));
             return Task.CompletedTask;
         }
 

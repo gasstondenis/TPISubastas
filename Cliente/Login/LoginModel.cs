@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Cliente.LoginModel
 {
-    internal static class User
+    public static class User
     {
-        internal static string Usuario { get; set; }
-        internal static string Contraseña { get; set; }
+        public static string Usuario { get; set; }
+        public static string Contraseña { get; set; }
+        
     }
 }

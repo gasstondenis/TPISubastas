@@ -78,11 +78,11 @@
   <ItemGroup>
     <Compile Include="ClienteAPI.cs" />
     <Compile Include="ClienteSubasta.cs" />
-    <Compile Include="FrmDashboard.cs">
+    <Compile Include="FrmPublicacionesSolicitadas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDashboard.Designer.cs">
-      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    <Compile Include="FrmPublicacionesSolicitadas.Designer.cs">
+      <DependentUpon>FrmPublicacionesSolicitadas.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginAPI.cs" />
     <Compile Include="Login\FrmLogin.cs">
@@ -136,8 +136,8 @@
     <Compile Include="Login\LoginModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmDashboard.resx">
-      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPublicacionesSolicitadas.resx">
+      <DependentUpon>FrmPublicacionesSolicitadas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

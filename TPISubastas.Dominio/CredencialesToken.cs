@@ -13,6 +13,6 @@ namespace TPISubastas.Dominio
     public class CredencialesToken
     {
         public string Usuario { get; set; }
-        public string Contraseña { get; set; }
+        public string Contraseña { get; set; }        
     }
 }

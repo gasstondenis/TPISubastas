@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Cliente
 {
-    public partial class FrmDashboard : Form
-    {
-        public FrmDashboard()
-        {
-            InitializeComponent();
-        }
-    }
+   public partial class FrmPublicacionesSolicitadas : Form
+   {
+      public FrmPublicacionesSolicitadas()
+      {
+         InitializeComponent();
+      }
+   }
 }

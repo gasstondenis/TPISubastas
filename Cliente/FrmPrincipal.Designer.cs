@@ -173,6 +173,7 @@ namespace Cliente
             this.btnProductosSinOfertas.IconZoom = 70D;
             this.btnProductosSinOfertas.IsTab = true;
             this.btnProductosSinOfertas.Location = new System.Drawing.Point(12, 554);
+            this.btnProductosSinOfertas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProductosSinOfertas.Name = "btnProductosSinOfertas";
             this.btnProductosSinOfertas.Normalcolor = System.Drawing.Color.Transparent;
             this.btnProductosSinOfertas.OnHovercolor = System.Drawing.Color.Transparent;
@@ -183,7 +184,7 @@ namespace Cliente
             this.btnProductosSinOfertas.Text = "   PRODUCTOS SIN OFERTAS";
             this.btnProductosSinOfertas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductosSinOfertas.Textcolor = System.Drawing.Color.White;
-            this.btnProductosSinOfertas.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnProductosSinOfertas.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductosSinOfertas.Click += new System.EventHandler(this.btnProductosSinOfertas_Click);
             // 
             // btnInformes
@@ -208,6 +209,7 @@ namespace Cliente
             this.btnInformes.IconZoom = 70D;
             this.btnInformes.IsTab = true;
             this.btnInformes.Location = new System.Drawing.Point(12, 746);
+            this.btnInformes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Normalcolor = System.Drawing.Color.Transparent;
             this.btnInformes.OnHovercolor = System.Drawing.Color.Transparent;
@@ -218,7 +220,7 @@ namespace Cliente
             this.btnInformes.Text = "   INFORMES";
             this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInformes.Textcolor = System.Drawing.Color.White;
-            this.btnInformes.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnInformes.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // btnUsuariosDelSitio
@@ -243,6 +245,7 @@ namespace Cliente
             this.btnUsuariosDelSitio.IconZoom = 70D;
             this.btnUsuariosDelSitio.IsTab = true;
             this.btnUsuariosDelSitio.Location = new System.Drawing.Point(12, 680);
+            this.btnUsuariosDelSitio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUsuariosDelSitio.Name = "btnUsuariosDelSitio";
             this.btnUsuariosDelSitio.Normalcolor = System.Drawing.Color.Transparent;
             this.btnUsuariosDelSitio.OnHovercolor = System.Drawing.Color.Transparent;
@@ -253,7 +256,7 @@ namespace Cliente
             this.btnUsuariosDelSitio.Text = "   USUARIOS DEL SITIO";
             this.btnUsuariosDelSitio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuariosDelSitio.Textcolor = System.Drawing.Color.White;
-            this.btnUsuariosDelSitio.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnUsuariosDelSitio.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuariosDelSitio.Click += new System.EventHandler(this.btnUsuariosDelSitio_Click);
             // 
             // btnGanancias
@@ -278,6 +281,7 @@ namespace Cliente
             this.btnGanancias.IconZoom = 70D;
             this.btnGanancias.IsTab = true;
             this.btnGanancias.Location = new System.Drawing.Point(12, 621);
+            this.btnGanancias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGanancias.Name = "btnGanancias";
             this.btnGanancias.Normalcolor = System.Drawing.Color.Transparent;
             this.btnGanancias.OnHovercolor = System.Drawing.Color.Transparent;
@@ -288,7 +292,7 @@ namespace Cliente
             this.btnGanancias.Text = "   GANANCIAS";
             this.btnGanancias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGanancias.Textcolor = System.Drawing.Color.White;
-            this.btnGanancias.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnGanancias.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGanancias.Click += new System.EventHandler(this.btnGanancias_Click);
             // 
             // btnDashboard
@@ -297,7 +301,7 @@ namespace Cliente
             this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
             this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDashboard.BorderRadius = 0;
-            this.btnDashboard.ButtonText = "   DASHBOARD";
+            this.btnDashboard.ButtonText = "   APROBACIONES";
             this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDashboard.DisabledColor = System.Drawing.Color.Gray;
             this.btnDashboard.Iconcolor = System.Drawing.Color.Transparent;
@@ -313,6 +317,7 @@ namespace Cliente
             this.btnDashboard.IconZoom = 70D;
             this.btnDashboard.IsTab = true;
             this.btnDashboard.Location = new System.Drawing.Point(12, 298);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Normalcolor = System.Drawing.Color.Transparent;
             this.btnDashboard.OnHovercolor = System.Drawing.Color.Transparent;
@@ -320,10 +325,10 @@ namespace Cliente
             this.btnDashboard.selected = false;
             this.btnDashboard.Size = new System.Drawing.Size(236, 40);
             this.btnDashboard.TabIndex = 9;
-            this.btnDashboard.Text = "   DASHBOARD";
+            this.btnDashboard.Text = "   APROBACIONES";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Textcolor = System.Drawing.Color.White;
-            this.btnDashboard.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnDashboard.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnProductosVendidos
@@ -348,6 +353,7 @@ namespace Cliente
             this.btnProductosVendidos.IconZoom = 70D;
             this.btnProductosVendidos.IsTab = true;
             this.btnProductosVendidos.Location = new System.Drawing.Point(12, 490);
+            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProductosVendidos.Name = "btnProductosVendidos";
             this.btnProductosVendidos.Normalcolor = System.Drawing.Color.Transparent;
             this.btnProductosVendidos.OnHovercolor = System.Drawing.Color.Transparent;
@@ -358,7 +364,7 @@ namespace Cliente
             this.btnProductosVendidos.Text = "   PRODUCTOS VENDIDOS";
             this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductosVendidos.Textcolor = System.Drawing.Color.White;
-            this.btnProductosVendidos.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnProductosVendidos.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductosVendidos.Click += new System.EventHandler(this.btnProductosVendidos_Click);
             // 
             // btnSubastasCerradas
@@ -383,6 +389,7 @@ namespace Cliente
             this.btnSubastasCerradas.IconZoom = 70D;
             this.btnSubastasCerradas.IsTab = true;
             this.btnSubastasCerradas.Location = new System.Drawing.Point(12, 361);
+            this.btnSubastasCerradas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubastasCerradas.Name = "btnSubastasCerradas";
             this.btnSubastasCerradas.Normalcolor = System.Drawing.Color.Transparent;
             this.btnSubastasCerradas.OnHovercolor = System.Drawing.Color.Transparent;
@@ -393,7 +400,7 @@ namespace Cliente
             this.btnSubastasCerradas.Text = "   SUBASTAS CERRADAS";
             this.btnSubastasCerradas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubastasCerradas.Textcolor = System.Drawing.Color.White;
-            this.btnSubastasCerradas.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnSubastasCerradas.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubastasCerradas.Click += new System.EventHandler(this.btnSubastasCerradas_Click);
             // 
             // btnSubastasAbiertas
@@ -417,7 +424,8 @@ namespace Cliente
             this.btnSubastasAbiertas.IconVisible = true;
             this.btnSubastasAbiertas.IconZoom = 70D;
             this.btnSubastasAbiertas.IsTab = true;
-            this.btnSubastasAbiertas.Location = new System.Drawing.Point(12, 424);
+            this.btnSubastasAbiertas.Location = new System.Drawing.Point(12, 423);
+            this.btnSubastasAbiertas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubastasAbiertas.Name = "btnSubastasAbiertas";
             this.btnSubastasAbiertas.Normalcolor = System.Drawing.Color.Transparent;
             this.btnSubastasAbiertas.OnHovercolor = System.Drawing.Color.Transparent;
@@ -428,7 +436,7 @@ namespace Cliente
             this.btnSubastasAbiertas.Text = "   SUBASTAS ABIERTAS";
             this.btnSubastasAbiertas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubastasAbiertas.Textcolor = System.Drawing.Color.White;
-            this.btnSubastasAbiertas.TextFont = new System.Drawing.Font("Dubai", 10F);
+            this.btnSubastasAbiertas.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubastasAbiertas.Click += new System.EventHandler(this.btnSubastasAbiertas_Click);
             // 
             // lblNombreUsuario
@@ -437,7 +445,7 @@ namespace Cliente
             this.lblNombreUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(94, 228);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(63, 231);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(78, 23);
             this.lblNombreUsuario.TabIndex = 3;

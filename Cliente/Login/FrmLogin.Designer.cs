@@ -138,7 +138,7 @@ namespace Cliente
             this.txtBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUsuario.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUsuario.ForeColor = System.Drawing.Color.White;
-            this.txtBoxUsuario.Location = new System.Drawing.Point(453, 131);
+            this.txtBoxUsuario.Location = new System.Drawing.Point(452, 131);
             this.txtBoxUsuario.Name = "txtBoxUsuario";
             this.txtBoxUsuario.Size = new System.Drawing.Size(232, 33);
             this.txtBoxUsuario.TabIndex = 7;
@@ -147,11 +147,11 @@ namespace Cliente
             // 
             this.txtBoxContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
             this.txtBoxContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxContraseña.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxContraseña.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxContraseña.ForeColor = System.Drawing.Color.White;
-            this.txtBoxContraseña.Location = new System.Drawing.Point(452, 234);
+            this.txtBoxContraseña.Location = new System.Drawing.Point(451, 230);
             this.txtBoxContraseña.Name = "txtBoxContraseña";
-            this.txtBoxContraseña.Size = new System.Drawing.Size(232, 21);
+            this.txtBoxContraseña.Size = new System.Drawing.Size(232, 28);
             this.txtBoxContraseña.TabIndex = 8;
             this.txtBoxContraseña.UseSystemPasswordChar = true;
             // 
@@ -177,6 +177,7 @@ namespace Cliente
             this.btnIniciarSesion.IconZoom = 90D;
             this.btnIniciarSesion.IsTab = false;
             this.btnIniciarSesion.Location = new System.Drawing.Point(448, 295);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnIniciarSesion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(100)))));

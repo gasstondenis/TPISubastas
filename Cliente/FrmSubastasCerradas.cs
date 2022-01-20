@@ -1,4 +1,5 @@
 ﻿using Cliente.frmNotificaciones;
+using Cliente.LoginModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,8 @@ namespace Cliente
     public partial class FrmSubastasCerradas : Form
     {
 
-        private ClienteAPI<TPISubastas.Dominio.Subasta> cliente = new ClienteAPI<TPISubastas.Dominio.Subasta>("https://localhost:44347/", "Subasta", "UsuarioPrueba", "Password1234");
-        private ClienteAPI<TPISubastas.Dominio.SubastaProducto> clienteProductos = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", "UsuarioPrueba", "Password1234");
+      private ClienteAPI<TPISubastas.Dominio.Subasta> cliente = new ClienteAPI<TPISubastas.Dominio.Subasta>("https://localhost:44347/", "Subasta", User.Usuario, User.Contraseña);
+      private ClienteAPI<TPISubastas.Dominio.SubastaProducto> clienteProductos = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", User.Usuario, User.Contraseña);
 
         public FrmSubastasCerradas()
         {

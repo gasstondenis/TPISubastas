@@ -469,13 +469,13 @@ namespace Cliente
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaProductosVendidos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaProductosVendidos.Location = new System.Drawing.Point(23, 104);
+            this.tablaProductosVendidos.Location = new System.Drawing.Point(23, 92);
             this.tablaProductosVendidos.Name = "tablaProductosVendidos";
             this.tablaProductosVendidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.tablaProductosVendidos.RowHeadersVisible = false;
             this.tablaProductosVendidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaProductosVendidos.Size = new System.Drawing.Size(1597, 712);
-            this.tablaProductosVendidos.TabIndex = 6;
+            this.tablaProductosVendidos.TabIndex = 7;
             // 
             // FrmProductosVendidos
             // 
@@ -545,6 +545,6 @@ namespace Cliente
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView tablaProductosVendidos;
-    }
+      private System.Windows.Forms.DataGridView tablaProductosVendidos;
+   }
 }

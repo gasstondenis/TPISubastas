@@ -37,6 +37,7 @@ namespace TPISubastas.Dominio
         [Display(Name = "Monto inicial")]
         [Required]
         public decimal MontoInicial { get; set; }
+      
         public int IdUsuario { get; set; }
         public int? IdUsuarioComprador { get; set; }
         public int? IdProducto { get; set; }

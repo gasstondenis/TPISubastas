@@ -38,6 +38,7 @@ namespace Cliente
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblTotalSolicitudes = new System.Windows.Forms.Label();
@@ -45,9 +46,9 @@ namespace Cliente
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.dgvProductosSinOfertas = new System.Windows.Forms.DataGridView();
+            this.btnAplicarCambios = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.dgvPublicacionesSolicitadas = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -56,7 +57,7 @@ namespace Cliente
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosSinOfertas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPublicacionesSolicitadas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -136,6 +137,13 @@ namespace Cliente
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1650, 1000);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(404, 123);
+            this.panel1.TabIndex = 0;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel10);
@@ -205,21 +213,48 @@ namespace Cliente
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel12.Controls.Add(this.dgvProductosSinOfertas);
+            this.panel12.Controls.Add(this.btnAplicarCambios);
+            this.panel12.Controls.Add(this.dgvPublicacionesSolicitadas);
             this.panel12.Controls.Add(this.textBox1);
             this.panel12.Location = new System.Drawing.Point(3, 132);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1647, 838);
             this.panel12.TabIndex = 3;
             // 
-            // dgvProductosSinOfertas
+            // btnAplicarCambios
             // 
-            this.dgvProductosSinOfertas.AllowUserToResizeColumns = false;
-            this.dgvProductosSinOfertas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvProductosSinOfertas.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProductosSinOfertas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProductosSinOfertas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvProductosSinOfertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.btnAplicarCambios.ActiveBorderThickness = 1;
+            this.btnAplicarCambios.ActiveCornerRadius = 20;
+            this.btnAplicarCambios.ActiveFillColor = System.Drawing.Color.SteelBlue;
+            this.btnAplicarCambios.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAplicarCambios.ActiveLineColor = System.Drawing.Color.SteelBlue;
+            this.btnAplicarCambios.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAplicarCambios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAplicarCambios.BackgroundImage")));
+            this.btnAplicarCambios.ButtonText = "Aplicar cambios";
+            this.btnAplicarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAplicarCambios.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAplicarCambios.ForeColor = System.Drawing.Color.White;
+            this.btnAplicarCambios.IdleBorderThickness = 1;
+            this.btnAplicarCambios.IdleCornerRadius = 20;
+            this.btnAplicarCambios.IdleFillColor = System.Drawing.Color.SteelBlue;
+            this.btnAplicarCambios.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnAplicarCambios.IdleLineColor = System.Drawing.Color.SteelBlue;
+            this.btnAplicarCambios.Location = new System.Drawing.Point(1301, 25);
+            this.btnAplicarCambios.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnAplicarCambios.Name = "btnAplicarCambios";
+            this.btnAplicarCambios.Size = new System.Drawing.Size(286, 53);
+            this.btnAplicarCambios.TabIndex = 7;
+            this.btnAplicarCambios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAplicarCambios.Click += new System.EventHandler(this.btnAplicarCambios_Click);
+            // 
+            // dgvPublicacionesSolicitadas
+            // 
+            this.dgvPublicacionesSolicitadas.AllowUserToAddRows = false;
+            this.dgvPublicacionesSolicitadas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPublicacionesSolicitadas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPublicacionesSolicitadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPublicacionesSolicitadas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPublicacionesSolicitadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -228,14 +263,14 @@ namespace Cliente
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductosSinOfertas.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProductosSinOfertas.Location = new System.Drawing.Point(23, 25);
-            this.dgvProductosSinOfertas.Name = "dgvProductosSinOfertas";
-            this.dgvProductosSinOfertas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvProductosSinOfertas.RowHeadersVisible = false;
-            this.dgvProductosSinOfertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvProductosSinOfertas.Size = new System.Drawing.Size(1597, 791);
-            this.dgvProductosSinOfertas.TabIndex = 6;
+            this.dgvPublicacionesSolicitadas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPublicacionesSolicitadas.Location = new System.Drawing.Point(23, 90);
+            this.dgvPublicacionesSolicitadas.Name = "dgvPublicacionesSolicitadas";
+            this.dgvPublicacionesSolicitadas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPublicacionesSolicitadas.RowHeadersVisible = false;
+            this.dgvPublicacionesSolicitadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvPublicacionesSolicitadas.Size = new System.Drawing.Size(1597, 726);
+            this.dgvPublicacionesSolicitadas.TabIndex = 6;
             // 
             // textBox1
             // 
@@ -246,13 +281,6 @@ namespace Cliente
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(372, 33);
             this.textBox1.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(404, 123);
-            this.panel1.TabIndex = 0;
             // 
             // FrmPublicacionesSolicitadas
             // 
@@ -274,7 +302,7 @@ namespace Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosSinOfertas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPublicacionesSolicitadas)).EndInit();
             this.ResumeLayout(false);
 
       }
@@ -296,7 +324,8 @@ namespace Cliente
       private System.Windows.Forms.Panel panel11;
       private System.Windows.Forms.PictureBox pictureBox4;
       private System.Windows.Forms.Panel panel12;
-      private System.Windows.Forms.DataGridView dgvProductosSinOfertas;
+      private System.Windows.Forms.DataGridView dgvPublicacionesSolicitadas;
       private System.Windows.Forms.TextBox textBox1;
+      private Bunifu.Framework.UI.BunifuThinButton2 btnAplicarCambios;
    }
 }

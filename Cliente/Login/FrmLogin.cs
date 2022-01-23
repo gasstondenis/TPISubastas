@@ -67,7 +67,36 @@ namespace Cliente
 
       private void btnSalir_Click(object sender, EventArgs e)
       {
-         Application.Exit();
+         DialogResult resultado = new DialogResult();
+         Form mensaje2 = new FrmInformation("¿Desea salir del sistema?");
+         
+         resultado = mensaje2.ShowDialog();
+
+         if (resultado == DialogResult.OK)
+         {
+            mensaje2.Close();
+            Application.Exit();
+         }
+      }
+      int m, mx, my;
+      private void FrmLogin_MouseDown(object sender, MouseEventArgs e)
+      {
+         m = 1;
+         mx = e.X;
+         my = e.Y;
+      }
+
+      private void FrmLogin_MouseMove(object sender, MouseEventArgs e)
+      {
+         if (m == 1)
+         {
+            this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+         }
+      }
+
+      private void FrmLogin_MouseUp(object sender, MouseEventArgs e)
+      {
+         m = 0;
       }
    }
 }

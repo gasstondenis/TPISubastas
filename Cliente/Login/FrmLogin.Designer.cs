@@ -177,7 +177,7 @@ namespace Cliente
             this.btnIniciarSesion.IconZoom = 90D;
             this.btnIniciarSesion.IsTab = false;
             this.btnIniciarSesion.Location = new System.Drawing.Point(448, 295);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Normalcolor = System.Drawing.Color.RoyalBlue;
             this.btnIniciarSesion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(100)))));
@@ -225,6 +225,9 @@ namespace Cliente
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

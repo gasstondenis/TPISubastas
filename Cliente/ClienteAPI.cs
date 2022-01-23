@@ -208,14 +208,14 @@ namespace Cliente
             client.BaseAddress = new Uri(_baseapi);
             client.DefaultRequestHeaders.Add("Authorization", "Bearer " + _token.Token);
             HttpContent mensaje = GenerarMensaje(elemento);
-            var response = client.PostAsync(Id, mensaje).GetAwaiter().GetResult();
+            var response = client.PutAsync(Id, mensaje).GetAwaiter().GetResult();
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
                _token = null;
                AsegurarToken();
                client.DefaultRequestHeaders.Remove("Authorization");
                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + _token.Token);
-               response = client.PostAsync(Id, mensaje).GetAwaiter().GetResult();
+               response = client.PutAsync(Id, mensaje).GetAwaiter().GetResult();
             }
             response.EnsureSuccessStatusCode();
             if (!response.IsSuccessStatusCode)

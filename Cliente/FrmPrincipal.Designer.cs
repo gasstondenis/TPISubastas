@@ -1,38 +1,38 @@
 ﻿
 namespace Cliente
 {
-    partial class FrmPrincipal
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+   partial class FrmPrincipal
+   {
+      /// <summary>
+      /// Required designer variable.
+      /// </summary>
+      private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      /// <summary>
+      /// Clean up any resources being used.
+      /// </summary>
+      /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+      protected override void Dispose(bool disposing)
+      {
+         if (disposing && (components != null))
+         {
+            components.Dispose();
+         }
+         base.Dispose(disposing);
+      }
 
-        #region Windows Form Designer generated code
+      #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+      /// <summary>
+      /// Required method for Designer support - do not modify
+      /// the contents of this method with the code editor.
+      /// </summary>
+      private void InitializeComponent()
+      {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.Header = new System.Windows.Forms.Panel();
+            this.btnSalir = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblDashboard = new System.Windows.Forms.Label();
-            this.Salir = new System.Windows.Forms.PictureBox();
             this.Wrapper = new System.Windows.Forms.Panel();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,7 +50,7 @@ namespace Cliente
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Salir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Flecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,13 +59,30 @@ namespace Cliente
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
+            this.Header.Controls.Add(this.btnSalir);
             this.Header.Controls.Add(this.lblDashboard);
-            this.Header.Controls.Add(this.Salir);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(270, 0);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(1170, 60);
             this.Header.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageActive = null;
+            this.btnSalir.Location = new System.Drawing.Point(1108, 7);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(50, 50);
+            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSalir.TabIndex = 0;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Zoom = 20;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblDashboard
             // 
@@ -77,17 +94,6 @@ namespace Cliente
             this.lblDashboard.Size = new System.Drawing.Size(128, 24);
             this.lblDashboard.TabIndex = 1;
             this.lblDashboard.Text = "DASHBOARD";
-            // 
-            // Salir
-            // 
-            this.Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Salir.Image = ((System.Drawing.Image)(resources.GetObject("Salir.Image")));
-            this.Salir.Location = new System.Drawing.Point(1110, 6);
-            this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(48, 48);
-            this.Salir.TabIndex = 0;
-            this.Salir.TabStop = false;
-            this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // Wrapper
             // 
@@ -101,7 +107,7 @@ namespace Cliente
             // 
             // Sidebar
             // 
-            this.Sidebar.BackColor = System.Drawing.Color.Transparent;
+            this.Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(34)))));
             this.Sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Sidebar.BackgroundImage")));
             this.Sidebar.Controls.Add(this.panel1);
             this.Sidebar.Controls.Add(this.LineShapeSidebar);
@@ -173,7 +179,7 @@ namespace Cliente
             this.btnProductosSinOfertas.IconZoom = 70D;
             this.btnProductosSinOfertas.IsTab = true;
             this.btnProductosSinOfertas.Location = new System.Drawing.Point(12, 554);
-            this.btnProductosSinOfertas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductosSinOfertas.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductosSinOfertas.Name = "btnProductosSinOfertas";
             this.btnProductosSinOfertas.Normalcolor = System.Drawing.Color.Transparent;
             this.btnProductosSinOfertas.OnHovercolor = System.Drawing.Color.Transparent;
@@ -209,7 +215,7 @@ namespace Cliente
             this.btnInformes.IconZoom = 70D;
             this.btnInformes.IsTab = true;
             this.btnInformes.Location = new System.Drawing.Point(12, 746);
-            this.btnInformes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInformes.Margin = new System.Windows.Forms.Padding(4);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Normalcolor = System.Drawing.Color.Transparent;
             this.btnInformes.OnHovercolor = System.Drawing.Color.Transparent;
@@ -245,7 +251,7 @@ namespace Cliente
             this.btnUsuariosDelSitio.IconZoom = 70D;
             this.btnUsuariosDelSitio.IsTab = true;
             this.btnUsuariosDelSitio.Location = new System.Drawing.Point(12, 680);
-            this.btnUsuariosDelSitio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUsuariosDelSitio.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsuariosDelSitio.Name = "btnUsuariosDelSitio";
             this.btnUsuariosDelSitio.Normalcolor = System.Drawing.Color.Transparent;
             this.btnUsuariosDelSitio.OnHovercolor = System.Drawing.Color.Transparent;
@@ -281,7 +287,7 @@ namespace Cliente
             this.btnGanancias.IconZoom = 70D;
             this.btnGanancias.IsTab = true;
             this.btnGanancias.Location = new System.Drawing.Point(12, 621);
-            this.btnGanancias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGanancias.Margin = new System.Windows.Forms.Padding(4);
             this.btnGanancias.Name = "btnGanancias";
             this.btnGanancias.Normalcolor = System.Drawing.Color.Transparent;
             this.btnGanancias.OnHovercolor = System.Drawing.Color.Transparent;
@@ -317,7 +323,7 @@ namespace Cliente
             this.btnDashboard.IconZoom = 70D;
             this.btnDashboard.IsTab = true;
             this.btnDashboard.Location = new System.Drawing.Point(12, 298);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Normalcolor = System.Drawing.Color.Transparent;
             this.btnDashboard.OnHovercolor = System.Drawing.Color.Transparent;
@@ -353,7 +359,7 @@ namespace Cliente
             this.btnProductosVendidos.IconZoom = 70D;
             this.btnProductosVendidos.IsTab = true;
             this.btnProductosVendidos.Location = new System.Drawing.Point(12, 490);
-            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductosVendidos.Name = "btnProductosVendidos";
             this.btnProductosVendidos.Normalcolor = System.Drawing.Color.Transparent;
             this.btnProductosVendidos.OnHovercolor = System.Drawing.Color.Transparent;
@@ -389,7 +395,7 @@ namespace Cliente
             this.btnSubastasCerradas.IconZoom = 70D;
             this.btnSubastasCerradas.IsTab = true;
             this.btnSubastasCerradas.Location = new System.Drawing.Point(12, 361);
-            this.btnSubastasCerradas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubastasCerradas.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubastasCerradas.Name = "btnSubastasCerradas";
             this.btnSubastasCerradas.Normalcolor = System.Drawing.Color.Transparent;
             this.btnSubastasCerradas.OnHovercolor = System.Drawing.Color.Transparent;
@@ -425,7 +431,7 @@ namespace Cliente
             this.btnSubastasAbiertas.IconZoom = 70D;
             this.btnSubastasAbiertas.IsTab = true;
             this.btnSubastasAbiertas.Location = new System.Drawing.Point(12, 423);
-            this.btnSubastasAbiertas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubastasAbiertas.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubastasAbiertas.Name = "btnSubastasAbiertas";
             this.btnSubastasAbiertas.Normalcolor = System.Drawing.Color.Transparent;
             this.btnSubastasAbiertas.OnHovercolor = System.Drawing.Color.Transparent;
@@ -489,35 +495,35 @@ namespace Cliente
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Salir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.Sidebar.ResumeLayout(false);
             this.Sidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Flecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
-        }
+      }
 
-        #endregion
+      #endregion
 
-        private System.Windows.Forms.Panel Header;
-        private System.Windows.Forms.PictureBox Salir;
-        private System.Windows.Forms.Panel Wrapper;
-        private System.Windows.Forms.Panel Sidebar;
-        private System.Windows.Forms.Label lblDashboard;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnUsuariosDelSitio;
-        private Bunifu.Framework.UI.BunifuFlatButton btnGanancias;
-        private Bunifu.Framework.UI.BunifuFlatButton btnDashboard;
-        private Bunifu.Framework.UI.BunifuFlatButton btnProductosVendidos;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSubastasCerradas;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSubastasAbiertas;
-        private System.Windows.Forms.Label lblNombreUsuario;
-        private Bunifu.Framework.UI.BunifuFlatButton btnInformes;
-        private System.Windows.Forms.PictureBox Flecha;
-        private Bunifu.Framework.UI.BunifuFlatButton btnProductosSinOfertas;
-        private System.Windows.Forms.Panel LineShapeSidebar;
-        private System.Windows.Forms.Panel panel1;
-    }
+      private System.Windows.Forms.Panel Header;
+      private System.Windows.Forms.Panel Wrapper;
+      private System.Windows.Forms.Panel Sidebar;
+      private System.Windows.Forms.Label lblDashboard;
+      private System.Windows.Forms.PictureBox pictureBox1;
+      private System.Windows.Forms.Label label1;
+      private Bunifu.Framework.UI.BunifuFlatButton btnUsuariosDelSitio;
+      private Bunifu.Framework.UI.BunifuFlatButton btnGanancias;
+      private Bunifu.Framework.UI.BunifuFlatButton btnDashboard;
+      private Bunifu.Framework.UI.BunifuFlatButton btnProductosVendidos;
+      private Bunifu.Framework.UI.BunifuFlatButton btnSubastasCerradas;
+      private Bunifu.Framework.UI.BunifuFlatButton btnSubastasAbiertas;
+      private System.Windows.Forms.Label lblNombreUsuario;
+      private Bunifu.Framework.UI.BunifuFlatButton btnInformes;
+      private System.Windows.Forms.PictureBox Flecha;
+      private Bunifu.Framework.UI.BunifuFlatButton btnProductosSinOfertas;
+      private System.Windows.Forms.Panel LineShapeSidebar;
+      private System.Windows.Forms.Panel panel1;
+      private Bunifu.Framework.UI.BunifuImageButton btnSalir;
+   }
 }

@@ -34,7 +34,7 @@ namespace Cliente
       }
       private void setNombreUsuario()
       {
-         
+
          lblNombreUsuario.Text = User.Usuario;
       }
 
@@ -88,7 +88,7 @@ namespace Cliente
       {
          SeleccionandoBotones((Bunifu.Framework.UI.BunifuFlatButton)sender);
          SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-         AbrirFormulariosEnWrapper(new FrmDashboard());
+         AbrirFormulariosEnWrapper(new FrmPublicacionesSolicitadas());
       }
       private void btnSubastasAbiertas_Click(object sender, EventArgs e)
       {
@@ -152,6 +152,19 @@ namespace Cliente
          formHijo.Show();
       }
 
+      private void btnSalir_Click(object sender, EventArgs e)
+      {
+         DialogResult resultado = new DialogResult();
+         Form mensaje2 = new FrmInformation("¿Desea cerrar la sesión actual?");
 
+         resultado = mensaje2.ShowDialog();
+
+         if (resultado == DialogResult.OK)
+         {
+            mensaje2.Close();
+            Close();
+            new FrmLogin().Show();
+         }
+      }
    }
 }

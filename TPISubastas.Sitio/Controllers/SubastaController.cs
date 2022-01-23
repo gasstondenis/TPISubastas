@@ -115,7 +115,7 @@ namespace TPISubastas.Sitio.Controllers
                 Cantidad = 1;
             }
             SubastaDetalle listado = new SubastaDetalle();
-            var consulta = _contexto.SubastaProducto.Where(x => x.IdSubasta == IdSubasta /*&& x.IdEstadoSubasta ==  (int)TPISubastas.Dominio.Estados.Aprobado*/).ToList();
+            var consulta = _contexto.SubastaProducto.Where(x => x.IdSubasta == IdSubasta && x.IdEstadoSubasta ==  (int)TPISubastas.Dominio.Estados.Aprobado).ToList();
             int totalelementos = consulta.Count();
             listado.Productos = consulta.Skip((Pagina - 1) * Cantidad).Take(Cantidad).ToList();
             listado.TotalPaginas = (totalelementos / Cantidad) + 1;

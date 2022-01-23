@@ -66,9 +66,12 @@ namespace Cliente
          tablaProductosVendidos.Columns[8].Width = 100;  //IdUsuarioVendedor
          tablaProductosVendidos.Columns[9].Width = 100; //IdUsuarioComprador
          tablaProductosVendidos.Columns[11].Width = 100; //IdEstadoSubasta
+         tablaProductosVendidos.Columns[12].Width = 100;
+         tablaProductosVendidos.Columns[13].Width = 150;
 
          tablaProductosVendidos.Columns[8].HeaderText = "IdUsuarioVendedor";
          tablaProductosVendidos.Columns[10].Visible = false;
+        
       }
 
    }

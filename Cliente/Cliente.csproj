@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Tecnicatura Universitaria en Programacion\2DO AÑO\4TO CUATRIMESTRE\01-RECURSANDO\Metodología de Sistemas I\TPI\Aplicación de escritorio\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -50,6 +52,18 @@
   <PropertyGroup>
     <StartupObject>
     </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E1175450BE004CE841DD79699B16EB1420FE82CF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Cliente_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
@@ -78,6 +92,18 @@
   <ItemGroup>
     <Compile Include="ClienteAPI.cs" />
     <Compile Include="ClienteSubasta.cs" />
+    <Compile Include="FrmCrearSubasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCrearSubasta.Designer.cs">
+      <DependentUpon>FrmCrearSubasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFuturasSubastas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFuturasSubastas.Designer.cs">
+      <DependentUpon>FrmFuturasSubastas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPublicacionesSolicitadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +162,12 @@
     <Compile Include="Login\LoginModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCrearSubasta.resx">
+      <DependentUpon>FrmCrearSubasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFuturasSubastas.resx">
+      <DependentUpon>FrmFuturasSubastas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPublicacionesSolicitadas.resx">
       <DependentUpon>FrmPublicacionesSolicitadas.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +204,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Cliente_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TPISubastas.Dominio.EstadoSubasta.datasource" />
     <None Include="Properties\DataSources\TPISubastas.Dominio.Oferta.datasource" />

@@ -134,6 +134,7 @@ namespace Cliente
             // 
             // txtBoxUsuario
             // 
+            this.txtBoxUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtBoxUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
             this.txtBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUsuario.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,6 +143,7 @@ namespace Cliente
             this.txtBoxUsuario.Name = "txtBoxUsuario";
             this.txtBoxUsuario.Size = new System.Drawing.Size(232, 33);
             this.txtBoxUsuario.TabIndex = 7;
+            this.txtBoxUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxUsuario_KeyDown);
             // 
             // txtBoxContraseña
             // 
@@ -154,6 +156,7 @@ namespace Cliente
             this.txtBoxContraseña.Size = new System.Drawing.Size(232, 28);
             this.txtBoxContraseña.TabIndex = 8;
             this.txtBoxContraseña.UseSystemPasswordChar = true;
+            this.txtBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxContraseña_KeyDown);
             // 
             // btnIniciarSesion
             // 

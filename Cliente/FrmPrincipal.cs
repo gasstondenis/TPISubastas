@@ -19,7 +19,7 @@ namespace Cliente
       public FrmPrincipal()
       {
          InitializeComponent();
-         setNombreUsuario();
+         setNombreUsuario();         
       }
 
       private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -34,7 +34,6 @@ namespace Cliente
       }
       private void setNombreUsuario()
       {
-
          lblNombreUsuario.Text = User.Usuario;
       }
 
@@ -64,9 +63,9 @@ namespace Cliente
          btnSubastasCerradas.Textcolor = Color.White;
          btnSubastasAbiertas.Textcolor = Color.White;
          btnProductosVendidos.Textcolor = Color.White;
+         btnFuturasSubastas.Textcolor = Color.White;
          btnProductosSinOfertas.Textcolor = Color.White;
-         btnGanancias.Textcolor = Color.White;
-         btnUsuariosDelSitio.Textcolor = Color.White;
+         btnCrearSubasta.Textcolor = Color.White;         
          btnInformes.Textcolor = Color.White;
 
          sender.selected = true;
@@ -89,6 +88,12 @@ namespace Cliente
          SeleccionandoBotones((Bunifu.Framework.UI.BunifuFlatButton)sender);
          SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
          AbrirFormulariosEnWrapper(new FrmPublicacionesSolicitadas());
+      }
+      private void btnCrearSubasta_Click(object sender, EventArgs e)
+      {
+         SeleccionandoBotones((Bunifu.Framework.UI.BunifuFlatButton)sender);
+         SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
+         AbrirFormulariosEnWrapper(new FrmCrearSubasta());
       }
       private void btnSubastasAbiertas_Click(object sender, EventArgs e)
       {
@@ -117,18 +122,15 @@ namespace Cliente
          AbrirFormulariosEnWrapper(new FrmProdSinOfertas());
 
       }
-
-      private void btnGanancias_Click(object sender, EventArgs e)
+      private void btnFuturasSubastas_Click(object sender, EventArgs e)
       {
          SeleccionandoBotones((Bunifu.Framework.UI.BunifuFlatButton)sender);
          SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
+         AbrirFormulariosEnWrapper(new FrmFuturasSubastas());
       }
 
-      private void btnUsuariosDelSitio_Click(object sender, EventArgs e)
-      {
-         SeleccionandoBotones((Bunifu.Framework.UI.BunifuFlatButton)sender);
-         SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-      }
+
+      
 
       private void btnInformes_Click(object sender, EventArgs e)
       {
@@ -166,5 +168,7 @@ namespace Cliente
             new FrmLogin().Show();
          }
       }
+
+      
    }
 }

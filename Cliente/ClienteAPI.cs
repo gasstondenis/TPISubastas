@@ -97,9 +97,6 @@ namespace Cliente
             }
          }
       }
-
-
-
       public List<T> Listar()
       {
          AsegurarToken();

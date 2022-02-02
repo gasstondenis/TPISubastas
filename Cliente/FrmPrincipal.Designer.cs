@@ -35,13 +35,13 @@ namespace Cliente
             this.lblDashboard = new System.Windows.Forms.Label();
             this.Wrapper = new System.Windows.Forms.Panel();
             this.Sidebar = new System.Windows.Forms.Panel();
+            this.btnFuturasSubastas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LineShapeSidebar = new System.Windows.Forms.Panel();
             this.Flecha = new System.Windows.Forms.PictureBox();
             this.btnProductosSinOfertas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInformes = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnUsuariosDelSitio = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnGanancias = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCrearSubasta = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnProductosVendidos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSubastasCerradas = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -58,6 +58,7 @@ namespace Cliente
             // 
             // Header
             // 
+            this.Header.AutoSize = true;
             this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.Header.Controls.Add(this.btnSalir);
             this.Header.Controls.Add(this.lblDashboard);
@@ -97,8 +98,11 @@ namespace Cliente
             // 
             // Wrapper
             // 
+            this.Wrapper.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Wrapper.AutoSize = true;
             this.Wrapper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
-            this.Wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Wrapper.Location = new System.Drawing.Point(270, 60);
             this.Wrapper.Name = "Wrapper";
             this.Wrapper.Size = new System.Drawing.Size(1170, 824);
@@ -114,8 +118,7 @@ namespace Cliente
             this.Sidebar.Controls.Add(this.Flecha);
             this.Sidebar.Controls.Add(this.btnProductosSinOfertas);
             this.Sidebar.Controls.Add(this.btnInformes);
-            this.Sidebar.Controls.Add(this.btnUsuariosDelSitio);
-            this.Sidebar.Controls.Add(this.btnGanancias);
+            this.Sidebar.Controls.Add(this.btnCrearSubasta);
             this.Sidebar.Controls.Add(this.btnDashboard);
             this.Sidebar.Controls.Add(this.btnProductosVendidos);
             this.Sidebar.Controls.Add(this.btnSubastasCerradas);
@@ -123,11 +126,48 @@ namespace Cliente
             this.Sidebar.Controls.Add(this.lblNombreUsuario);
             this.Sidebar.Controls.Add(this.pictureBox1);
             this.Sidebar.Controls.Add(this.label1);
+            this.Sidebar.Controls.Add(this.btnFuturasSubastas);
             this.Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.Sidebar.Location = new System.Drawing.Point(0, 0);
             this.Sidebar.Name = "Sidebar";
             this.Sidebar.Size = new System.Drawing.Size(270, 884);
             this.Sidebar.TabIndex = 2;
+            // 
+            // btnFuturasSubastas
+            // 
+            this.btnFuturasSubastas.Activecolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.BackColor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFuturasSubastas.BorderRadius = 0;
+            this.btnFuturasSubastas.ButtonText = "   FUTURAS SUBASTAS";
+            this.btnFuturasSubastas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFuturasSubastas.DisabledColor = System.Drawing.Color.Gray;
+            this.btnFuturasSubastas.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFuturasSubastas.Iconimage")));
+            this.btnFuturasSubastas.Iconimage_right = null;
+            this.btnFuturasSubastas.Iconimage_right_Selected = null;
+            this.btnFuturasSubastas.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnFuturasSubastas.Iconimage_Selected")));
+            this.btnFuturasSubastas.IconMarginLeft = 0;
+            this.btnFuturasSubastas.IconMarginRight = 0;
+            this.btnFuturasSubastas.IconRightVisible = true;
+            this.btnFuturasSubastas.IconRightZoom = 0D;
+            this.btnFuturasSubastas.IconVisible = true;
+            this.btnFuturasSubastas.IconZoom = 70D;
+            this.btnFuturasSubastas.IsTab = true;
+            this.btnFuturasSubastas.Location = new System.Drawing.Point(12, 677);
+            this.btnFuturasSubastas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFuturasSubastas.Name = "btnFuturasSubastas";
+            this.btnFuturasSubastas.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.OnHovercolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(195)))), ((int)(((byte)(140)))));
+            this.btnFuturasSubastas.selected = false;
+            this.btnFuturasSubastas.Size = new System.Drawing.Size(236, 40);
+            this.btnFuturasSubastas.TabIndex = 15;
+            this.btnFuturasSubastas.Text = "   FUTURAS SUBASTAS";
+            this.btnFuturasSubastas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFuturasSubastas.Textcolor = System.Drawing.Color.White;
+            this.btnFuturasSubastas.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuturasSubastas.Click += new System.EventHandler(this.btnFuturasSubastas_Click);
             // 
             // panel1
             // 
@@ -149,6 +189,7 @@ namespace Cliente
             // 
             // Flecha
             // 
+            this.Flecha.BackColor = System.Drawing.Color.Transparent;
             this.Flecha.Image = ((System.Drawing.Image)(resources.GetObject("Flecha.Image")));
             this.Flecha.Location = new System.Drawing.Point(237, 298);
             this.Flecha.Name = "Flecha";
@@ -163,7 +204,7 @@ namespace Cliente
             this.btnProductosSinOfertas.BackColor = System.Drawing.Color.Transparent;
             this.btnProductosSinOfertas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProductosSinOfertas.BorderRadius = 0;
-            this.btnProductosSinOfertas.ButtonText = "   PRODUCTOS SIN OFERTAS";
+            this.btnProductosSinOfertas.ButtonText = "    PRODUCTOS SIN OFERTAS";
             this.btnProductosSinOfertas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductosSinOfertas.DisabledColor = System.Drawing.Color.Gray;
             this.btnProductosSinOfertas.Iconcolor = System.Drawing.Color.Transparent;
@@ -178,7 +219,7 @@ namespace Cliente
             this.btnProductosSinOfertas.IconVisible = true;
             this.btnProductosSinOfertas.IconZoom = 70D;
             this.btnProductosSinOfertas.IsTab = true;
-            this.btnProductosSinOfertas.Location = new System.Drawing.Point(12, 554);
+            this.btnProductosSinOfertas.Location = new System.Drawing.Point(9, 613);
             this.btnProductosSinOfertas.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductosSinOfertas.Name = "btnProductosSinOfertas";
             this.btnProductosSinOfertas.Normalcolor = System.Drawing.Color.Transparent;
@@ -187,10 +228,10 @@ namespace Cliente
             this.btnProductosSinOfertas.selected = false;
             this.btnProductosSinOfertas.Size = new System.Drawing.Size(236, 40);
             this.btnProductosSinOfertas.TabIndex = 14;
-            this.btnProductosSinOfertas.Text = "   PRODUCTOS SIN OFERTAS";
+            this.btnProductosSinOfertas.Text = "    PRODUCTOS SIN OFERTAS";
             this.btnProductosSinOfertas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductosSinOfertas.Textcolor = System.Drawing.Color.White;
-            this.btnProductosSinOfertas.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosSinOfertas.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductosSinOfertas.Click += new System.EventHandler(this.btnProductosSinOfertas_Click);
             // 
             // btnInformes
@@ -214,7 +255,7 @@ namespace Cliente
             this.btnInformes.IconVisible = true;
             this.btnInformes.IconZoom = 70D;
             this.btnInformes.IsTab = true;
-            this.btnInformes.Location = new System.Drawing.Point(12, 746);
+            this.btnInformes.Location = new System.Drawing.Point(12, 735);
             this.btnInformes.Margin = new System.Windows.Forms.Padding(4);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Normalcolor = System.Drawing.Color.Transparent;
@@ -226,80 +267,44 @@ namespace Cliente
             this.btnInformes.Text = "   INFORMES";
             this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInformes.Textcolor = System.Drawing.Color.White;
-            this.btnInformes.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformes.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
-            // btnUsuariosDelSitio
+            // btnCrearSubasta
             // 
-            this.btnUsuariosDelSitio.Activecolor = System.Drawing.Color.Transparent;
-            this.btnUsuariosDelSitio.BackColor = System.Drawing.Color.Transparent;
-            this.btnUsuariosDelSitio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUsuariosDelSitio.BorderRadius = 0;
-            this.btnUsuariosDelSitio.ButtonText = "   USUARIOS DEL SITIO";
-            this.btnUsuariosDelSitio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsuariosDelSitio.DisabledColor = System.Drawing.Color.Gray;
-            this.btnUsuariosDelSitio.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnUsuariosDelSitio.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnUsuariosDelSitio.Iconimage")));
-            this.btnUsuariosDelSitio.Iconimage_right = null;
-            this.btnUsuariosDelSitio.Iconimage_right_Selected = null;
-            this.btnUsuariosDelSitio.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnUsuariosDelSitio.Iconimage_Selected")));
-            this.btnUsuariosDelSitio.IconMarginLeft = 0;
-            this.btnUsuariosDelSitio.IconMarginRight = 0;
-            this.btnUsuariosDelSitio.IconRightVisible = true;
-            this.btnUsuariosDelSitio.IconRightZoom = 0D;
-            this.btnUsuariosDelSitio.IconVisible = true;
-            this.btnUsuariosDelSitio.IconZoom = 70D;
-            this.btnUsuariosDelSitio.IsTab = true;
-            this.btnUsuariosDelSitio.Location = new System.Drawing.Point(12, 680);
-            this.btnUsuariosDelSitio.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUsuariosDelSitio.Name = "btnUsuariosDelSitio";
-            this.btnUsuariosDelSitio.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnUsuariosDelSitio.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnUsuariosDelSitio.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(195)))), ((int)(((byte)(140)))));
-            this.btnUsuariosDelSitio.selected = false;
-            this.btnUsuariosDelSitio.Size = new System.Drawing.Size(236, 40);
-            this.btnUsuariosDelSitio.TabIndex = 11;
-            this.btnUsuariosDelSitio.Text = "   USUARIOS DEL SITIO";
-            this.btnUsuariosDelSitio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuariosDelSitio.Textcolor = System.Drawing.Color.White;
-            this.btnUsuariosDelSitio.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuariosDelSitio.Click += new System.EventHandler(this.btnUsuariosDelSitio_Click);
-            // 
-            // btnGanancias
-            // 
-            this.btnGanancias.Activecolor = System.Drawing.Color.Transparent;
-            this.btnGanancias.BackColor = System.Drawing.Color.Transparent;
-            this.btnGanancias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGanancias.BorderRadius = 0;
-            this.btnGanancias.ButtonText = "   GANANCIAS";
-            this.btnGanancias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGanancias.DisabledColor = System.Drawing.Color.Gray;
-            this.btnGanancias.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnGanancias.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGanancias.Iconimage")));
-            this.btnGanancias.Iconimage_right = null;
-            this.btnGanancias.Iconimage_right_Selected = null;
-            this.btnGanancias.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnGanancias.Iconimage_Selected")));
-            this.btnGanancias.IconMarginLeft = 0;
-            this.btnGanancias.IconMarginRight = 0;
-            this.btnGanancias.IconRightVisible = true;
-            this.btnGanancias.IconRightZoom = 0D;
-            this.btnGanancias.IconVisible = true;
-            this.btnGanancias.IconZoom = 70D;
-            this.btnGanancias.IsTab = true;
-            this.btnGanancias.Location = new System.Drawing.Point(12, 621);
-            this.btnGanancias.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGanancias.Name = "btnGanancias";
-            this.btnGanancias.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnGanancias.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnGanancias.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(195)))), ((int)(((byte)(140)))));
-            this.btnGanancias.selected = false;
-            this.btnGanancias.Size = new System.Drawing.Size(236, 40);
-            this.btnGanancias.TabIndex = 10;
-            this.btnGanancias.Text = "   GANANCIAS";
-            this.btnGanancias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGanancias.Textcolor = System.Drawing.Color.White;
-            this.btnGanancias.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGanancias.Click += new System.EventHandler(this.btnGanancias_Click);
+            this.btnCrearSubasta.Activecolor = System.Drawing.Color.Transparent;
+            this.btnCrearSubasta.BackColor = System.Drawing.Color.Transparent;
+            this.btnCrearSubasta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCrearSubasta.BorderRadius = 0;
+            this.btnCrearSubasta.ButtonText = "   CREAR SUBASTAS";
+            this.btnCrearSubasta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCrearSubasta.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCrearSubasta.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCrearSubasta.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCrearSubasta.Iconimage")));
+            this.btnCrearSubasta.Iconimage_right = null;
+            this.btnCrearSubasta.Iconimage_right_Selected = null;
+            this.btnCrearSubasta.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnCrearSubasta.Iconimage_Selected")));
+            this.btnCrearSubasta.IconMarginLeft = 0;
+            this.btnCrearSubasta.IconMarginRight = 0;
+            this.btnCrearSubasta.IconRightVisible = true;
+            this.btnCrearSubasta.IconRightZoom = 0D;
+            this.btnCrearSubasta.IconVisible = true;
+            this.btnCrearSubasta.IconZoom = 70D;
+            this.btnCrearSubasta.IsTab = true;
+            this.btnCrearSubasta.Location = new System.Drawing.Point(12, 358);
+            this.btnCrearSubasta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearSubasta.Name = "btnCrearSubasta";
+            this.btnCrearSubasta.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnCrearSubasta.OnHovercolor = System.Drawing.Color.Transparent;
+            this.btnCrearSubasta.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(195)))), ((int)(((byte)(140)))));
+            this.btnCrearSubasta.selected = false;
+            this.btnCrearSubasta.Size = new System.Drawing.Size(236, 40);
+            this.btnCrearSubasta.TabIndex = 10;
+            this.btnCrearSubasta.Text = "   CREAR SUBASTAS";
+            this.btnCrearSubasta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCrearSubasta.Textcolor = System.Drawing.Color.White;
+            this.btnCrearSubasta.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearSubasta.Click += new System.EventHandler(this.btnCrearSubasta_Click);
             // 
             // btnDashboard
             // 
@@ -334,7 +339,7 @@ namespace Cliente
             this.btnDashboard.Text = "   APROBACIONES";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Textcolor = System.Drawing.Color.White;
-            this.btnDashboard.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnProductosVendidos
@@ -358,7 +363,7 @@ namespace Cliente
             this.btnProductosVendidos.IconVisible = true;
             this.btnProductosVendidos.IconZoom = 70D;
             this.btnProductosVendidos.IsTab = true;
-            this.btnProductosVendidos.Location = new System.Drawing.Point(12, 490);
+            this.btnProductosVendidos.Location = new System.Drawing.Point(12, 551);
             this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductosVendidos.Name = "btnProductosVendidos";
             this.btnProductosVendidos.Normalcolor = System.Drawing.Color.Transparent;
@@ -370,7 +375,7 @@ namespace Cliente
             this.btnProductosVendidos.Text = "   PRODUCTOS VENDIDOS";
             this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductosVendidos.Textcolor = System.Drawing.Color.White;
-            this.btnProductosVendidos.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosVendidos.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductosVendidos.Click += new System.EventHandler(this.btnProductosVendidos_Click);
             // 
             // btnSubastasCerradas
@@ -394,7 +399,7 @@ namespace Cliente
             this.btnSubastasCerradas.IconVisible = true;
             this.btnSubastasCerradas.IconZoom = 70D;
             this.btnSubastasCerradas.IsTab = true;
-            this.btnSubastasCerradas.Location = new System.Drawing.Point(12, 361);
+            this.btnSubastasCerradas.Location = new System.Drawing.Point(12, 425);
             this.btnSubastasCerradas.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubastasCerradas.Name = "btnSubastasCerradas";
             this.btnSubastasCerradas.Normalcolor = System.Drawing.Color.Transparent;
@@ -406,7 +411,7 @@ namespace Cliente
             this.btnSubastasCerradas.Text = "   SUBASTAS CERRADAS";
             this.btnSubastasCerradas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubastasCerradas.Textcolor = System.Drawing.Color.White;
-            this.btnSubastasCerradas.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubastasCerradas.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubastasCerradas.Click += new System.EventHandler(this.btnSubastasCerradas_Click);
             // 
             // btnSubastasAbiertas
@@ -430,7 +435,7 @@ namespace Cliente
             this.btnSubastasAbiertas.IconVisible = true;
             this.btnSubastasAbiertas.IconZoom = 70D;
             this.btnSubastasAbiertas.IsTab = true;
-            this.btnSubastasAbiertas.Location = new System.Drawing.Point(12, 423);
+            this.btnSubastasAbiertas.Location = new System.Drawing.Point(13, 488);
             this.btnSubastasAbiertas.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubastasAbiertas.Name = "btnSubastasAbiertas";
             this.btnSubastasAbiertas.Normalcolor = System.Drawing.Color.Transparent;
@@ -442,7 +447,7 @@ namespace Cliente
             this.btnSubastasAbiertas.Text = "   SUBASTAS ABIERTAS";
             this.btnSubastasAbiertas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubastasAbiertas.Textcolor = System.Drawing.Color.White;
-            this.btnSubastasAbiertas.TextFont = new System.Drawing.Font("Dubai Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubastasAbiertas.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubastasAbiertas.Click += new System.EventHandler(this.btnSubastasAbiertas_Click);
             // 
             // lblNombreUsuario
@@ -460,6 +465,7 @@ namespace Cliente
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(62, 80);
             this.pictureBox1.Name = "pictureBox1";
@@ -484,6 +490,7 @@ namespace Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1440, 884);
             this.Controls.Add(this.Wrapper);
             this.Controls.Add(this.Header);
@@ -501,6 +508,7 @@ namespace Cliente
             ((System.ComponentModel.ISupportInitialize)(this.Flecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
       }
 
@@ -512,8 +520,7 @@ namespace Cliente
       private System.Windows.Forms.Label lblDashboard;
       private System.Windows.Forms.PictureBox pictureBox1;
       private System.Windows.Forms.Label label1;
-      private Bunifu.Framework.UI.BunifuFlatButton btnUsuariosDelSitio;
-      private Bunifu.Framework.UI.BunifuFlatButton btnGanancias;
+      private Bunifu.Framework.UI.BunifuFlatButton btnCrearSubasta;
       private Bunifu.Framework.UI.BunifuFlatButton btnDashboard;
       private Bunifu.Framework.UI.BunifuFlatButton btnProductosVendidos;
       private Bunifu.Framework.UI.BunifuFlatButton btnSubastasCerradas;
@@ -525,5 +532,6 @@ namespace Cliente
       private System.Windows.Forms.Panel LineShapeSidebar;
       private System.Windows.Forms.Panel panel1;
       private Bunifu.Framework.UI.BunifuImageButton btnSalir;
+      private Bunifu.Framework.UI.BunifuFlatButton btnFuturasSubastas;
    }
 }

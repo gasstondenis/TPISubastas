@@ -83,7 +83,7 @@ namespace Cliente
          dgvPublicacionesSolicitadas.Columns[6].Width = 100; //FormaPago 
          dgvPublicacionesSolicitadas.Columns[7].Width = 150; //MontoInicial
          dgvPublicacionesSolicitadas.Columns[8].Width = 100;  //IdUsuarioVendedor
-         
+
          dgvPublicacionesSolicitadas.Columns[11].Width = 100; //IdEstadoSubasta
 
 
@@ -106,7 +106,9 @@ namespace Cliente
             cliente.Actualizar(item, id);
          }
          Listar();
-         
+
       }
+
+      
    }
 }

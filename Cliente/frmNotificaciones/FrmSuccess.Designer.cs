@@ -37,7 +37,6 @@ namespace Cliente
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMensaje = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnOk = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,23 +83,12 @@ namespace Cliente
             // lblMensaje
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(12, 235);
+            this.lblMensaje.Location = new System.Drawing.Point(12, 226);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(330, 38);
+            this.lblMensaje.Size = new System.Drawing.Size(330, 144);
             this.lblMensaje.TabIndex = 2;
             this.lblMensaje.Text = "MENSAJE";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(12, 333);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 42);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Accion realizada correctamente";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOk
             // 
@@ -146,7 +134,6 @@ namespace Cliente
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(354, 461);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.doubleBitmapControl1);
@@ -170,7 +157,6 @@ namespace Cliente
         private Bunifu.Framework.UI.BunifuFormFadeTransition FadeTransition;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFlatButton btnOk;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMensaje;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;

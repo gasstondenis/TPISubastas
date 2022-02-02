@@ -12,71 +12,72 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace TPISubastas.Sitio.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class SubastaAPIController : ControllerBase
-    {
-        private readonly ContextoSubasta _contexto;
+   [Route("api/[controller]")]
+   [ApiController]
+   [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+   public class SubastaAPIController : ControllerBase
+   {
+      private readonly ContextoSubasta _contexto;
 
 
-        public SubastaAPIController(ContextoSubasta context)
-        {
-            _contexto = context;
-        }
+      public SubastaAPIController(ContextoSubasta context)
+      {
+         _contexto = context;
+      }
 
-        // GET: api/<SubastaAPIController>
-        [HttpGet]
-        public IEnumerable<Subasta> Get()
-        {
-            return _contexto.Subasta.ToList();
-        }
+      // GET: api/<SubastaAPIController>
+      [HttpGet]
+      public IEnumerable<Subasta> Get()
+      {
+         return _contexto.Subasta.ToList();
+      }
 
-        // GET api/<SubastaAPIController>/5
-        [HttpGet("{id}")]
-        public Subasta Get(int id)
-        {
-            return _contexto.Subasta.FirstOrDefault(x => x.IdSubasta == id);
-        }
+      // GET api/<SubastaAPIController>/5
+      [HttpGet("{id}")]
+      public Subasta Get(int id)
+      {
+         return _contexto.Subasta.FirstOrDefault(x => x.IdSubasta == id);
+      }
 
-        // POST api/<SubastaAPIController>
-        [HttpPost]
-        public void Post([FromBody] Subasta value)
-        {
-            _contexto.Subasta.Add(value);
+      // POST api/<SubastaAPIController>
+      [HttpPost]
+      public void Post([FromBody] Subasta value)
+      {
+         _contexto.Subasta.Add(value);
+         _contexto.SaveChanges();
+      }
+
+      // PUT api/<SubastaAPIController>/5
+      [HttpPut("{id}")]
+      public void Put(int id, [FromBody] Subasta value)
+      {
+         var original = _contexto.Subasta.FirstOrDefault(x => x.IdSubasta == id);
+         if (original != null)
+         {
+            original.Descripcion = value.Descripcion;
+            original.Duracion = value.Duracion;
+            original.FechaCierre = value.FechaCierre;
+            original.FechaCreacion = value.FechaCreacion;
+            original.FechaInicio = value.FechaInicio;
+            original.Habilitada = value.Habilitada;
+            original.IdSubasta = value.IdSubasta;
+            original.Nombre = value.Nombre;
+            _contexto.Entry(original).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _contexto.SaveChanges();
-        }
+         }
+      }
 
-        // PUT api/<SubastaAPIController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Subasta value)
-        {
-            var original = _contexto.Subasta.FirstOrDefault(x => x.IdSubasta == id);
-            if (original != null)
-            {
-                original.Descripcion = value.Descripcion;
-                original.Duracion = value.Duracion;
-                original.FechaCierre = value.FechaCierre;
-                original.FechaCreacion = value.FechaCreacion;
-                original.FechaInicio = value.FechaInicio;
-                original.Habilitada = value.Habilitada;
-                original.IdSubasta = value.IdSubasta;
-                original.Nombre = value.Nombre;
-                _contexto.Entry(original).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                _contexto.SaveChanges();
-            }
-        }
+      // DELETE api/<SubastaAPIController>/5
+      [HttpDelete("{id}")]
+      public void Delete(int id)
+      {
+         var original = _contexto.Subasta.FirstOrDefault(x => x.IdSubasta == id);
 
-        // DELETE api/<SubastaAPIController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            var original = _contexto.Subasta.FirstOrDefault(x => x.IdSubasta == id);
-
-            if(original != null)
-            {
-                _contexto.Entry(original).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-            }
-        }
-    }
+         if (original != null)
+         {
+            _contexto.Entry(original).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+            _contexto.SaveChanges();
+         }
+      }
+   }
 }

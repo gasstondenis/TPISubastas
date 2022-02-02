@@ -31,6 +31,7 @@ namespace Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubastasCerradas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -375,10 +376,17 @@ namespace Cliente
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaSubastasCerradas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaSubastasCerradas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tablaSubastasCerradas.Location = new System.Drawing.Point(23, 21);
             this.tablaSubastasCerradas.Name = "tablaSubastasCerradas";
             this.tablaSubastasCerradas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.tablaSubastasCerradas.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaSubastasCerradas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaSubastasCerradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaSubastasCerradas.Size = new System.Drawing.Size(1597, 794);
             this.tablaSubastasCerradas.TabIndex = 5;

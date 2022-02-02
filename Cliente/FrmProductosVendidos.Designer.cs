@@ -31,45 +31,37 @@ namespace Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductosVendidos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProductosSinOfertas = new System.Windows.Forms.Label();
+            this.lbl10 = new System.Windows.Forms.Label();
             this.lineShape = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblMarcas = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTotalVendidos = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.txtBoxBusqueda = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tablaProductosVendidos = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -85,11 +77,9 @@ namespace Cliente
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel12);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1650, 1000);
@@ -107,8 +97,8 @@ namespace Cliente
             // 
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.lblProductosSinOfertas);
+            this.panel5.Controls.Add(this.lbl10);
             this.panel5.Controls.Add(this.lineShape);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Location = new System.Drawing.Point(4, 7);
@@ -116,28 +106,28 @@ namespace Cliente
             this.panel5.Size = new System.Drawing.Size(400, 113);
             this.panel5.TabIndex = 0;
             // 
-            // label2
+            // lblProductosSinOfertas
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(292, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 50);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "10";
+            this.lblProductosSinOfertas.BackColor = System.Drawing.Color.Transparent;
+            this.lblProductosSinOfertas.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductosSinOfertas.ForeColor = System.Drawing.Color.Gray;
+            this.lblProductosSinOfertas.Location = new System.Drawing.Point(292, 13);
+            this.lblProductosSinOfertas.Name = "lblProductosSinOfertas";
+            this.lblProductosSinOfertas.Size = new System.Drawing.Size(73, 50);
+            this.lblProductosSinOfertas.TabIndex = 3;
+            this.lblProductosSinOfertas.Text = "10";
             // 
-            // label1
+            // lbl10
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(10, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "PRODUCTOS VENDIDOS";
+            this.lbl10.AutoSize = true;
+            this.lbl10.BackColor = System.Drawing.Color.Transparent;
+            this.lbl10.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl10.ForeColor = System.Drawing.Color.Gray;
+            this.lbl10.Location = new System.Drawing.Point(10, 74);
+            this.lbl10.Name = "lbl10";
+            this.lbl10.Size = new System.Drawing.Size(189, 25);
+            this.lbl10.TabIndex = 2;
+            this.lbl10.Text = "PRODUCTOS SIN OFERTAS";
             // 
             // lineShape
             // 
@@ -160,75 +150,10 @@ namespace Cliente
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Location = new System.Drawing.Point(413, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(404, 123);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Location = new System.Drawing.Point(7, 7);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(400, 113);
-            this.panel6.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(292, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 50);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "10";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(10, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "CATEGORÍAS";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Silver;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.ForeColor = System.Drawing.Color.Silver;
-            this.panel7.Location = new System.Drawing.Point(15, 69);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(350, 2);
-            this.panel7.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel8);
-            this.panel3.Location = new System.Drawing.Point(823, 3);
+            this.panel3.Location = new System.Drawing.Point(413, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(404, 123);
             this.panel3.TabIndex = 2;
@@ -237,7 +162,7 @@ namespace Cliente
             // 
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel8.Controls.Add(this.label5);
+            this.panel8.Controls.Add(this.lblMarcas);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.pictureBox3);
@@ -246,16 +171,16 @@ namespace Cliente
             this.panel8.Size = new System.Drawing.Size(400, 113);
             this.panel8.TabIndex = 4;
             // 
-            // label5
+            // lblMarcas
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(292, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 50);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "10";
+            this.lblMarcas.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarcas.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarcas.ForeColor = System.Drawing.Color.Gray;
+            this.lblMarcas.Location = new System.Drawing.Point(292, 13);
+            this.lblMarcas.Name = "lblMarcas";
+            this.lblMarcas.Size = new System.Drawing.Size(73, 50);
+            this.lblMarcas.TabIndex = 3;
+            this.lblMarcas.Text = "10";
             // 
             // label6
             // 
@@ -293,7 +218,7 @@ namespace Cliente
             // panel4
             // 
             this.panel4.Controls.Add(this.panel10);
-            this.panel4.Location = new System.Drawing.Point(1233, 3);
+            this.panel4.Location = new System.Drawing.Point(823, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(404, 123);
             this.panel4.TabIndex = 1;
@@ -302,8 +227,8 @@ namespace Cliente
             // 
             this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
             this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Controls.Add(this.label7);
-            this.panel10.Controls.Add(this.label8);
+            this.panel10.Controls.Add(this.lblTotalVendidos);
+            this.panel10.Controls.Add(this.lbl6);
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Controls.Add(this.pictureBox4);
             this.panel10.Location = new System.Drawing.Point(7, 7);
@@ -311,28 +236,28 @@ namespace Cliente
             this.panel10.Size = new System.Drawing.Size(400, 113);
             this.panel10.TabIndex = 4;
             // 
-            // label7
+            // lblTotalVendidos
             // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(292, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 50);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "10";
+            this.lblTotalVendidos.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalVendidos.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVendidos.ForeColor = System.Drawing.Color.Gray;
+            this.lblTotalVendidos.Location = new System.Drawing.Point(292, 13);
+            this.lblTotalVendidos.Name = "lblTotalVendidos";
+            this.lblTotalVendidos.Size = new System.Drawing.Size(73, 50);
+            this.lblTotalVendidos.TabIndex = 3;
+            this.lblTotalVendidos.Text = "10";
             // 
-            // label8
+            // lbl6
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(10, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 25);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "TOTALES";
+            this.lbl6.AutoSize = true;
+            this.lbl6.BackColor = System.Drawing.Color.Transparent;
+            this.lbl6.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl6.ForeColor = System.Drawing.Color.Gray;
+            this.lbl6.Location = new System.Drawing.Point(10, 74);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(132, 25);
+            this.lbl6.TabIndex = 2;
+            this.lbl6.Text = "TOTAL VENDIDOS";
             // 
             // panel11
             // 
@@ -359,98 +284,60 @@ namespace Cliente
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel12.Controls.Add(this.tablaProductosVendidos);
-            this.panel12.Controls.Add(this.textBox1);
+            this.panel12.Controls.Add(this.lblBusqueda);
+            this.panel12.Controls.Add(this.txtBoxBusqueda);
             this.panel12.Controls.Add(this.pictureBox6);
             this.panel12.Controls.Add(this.pictureBox5);
-            this.panel12.Controls.Add(this.bunifuThinButton22);
-            this.panel12.Controls.Add(this.bunifuThinButton21);
+            this.panel12.Controls.Add(this.tablaProductosVendidos);
             this.panel12.Location = new System.Drawing.Point(3, 132);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1647, 838);
             this.panel12.TabIndex = 3;
             // 
-            // textBox1
+            // lblBusqueda
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(75, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 33);
-            this.textBox1.TabIndex = 4;
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.ForeColor = System.Drawing.Color.Gray;
+            this.lblBusqueda.Location = new System.Drawing.Point(82, 20);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(249, 25);
+            this.lblBusqueda.TabIndex = 10;
+            this.lblBusqueda.Text = "Buscar productos por marca";
+            // 
+            // txtBoxBusqueda
+            // 
+            this.txtBoxBusqueda.BackColor = System.Drawing.Color.White;
+            this.txtBoxBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxBusqueda.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxBusqueda.Location = new System.Drawing.Point(86, 43);
+            this.txtBoxBusqueda.Name = "txtBoxBusqueda";
+            this.txtBoxBusqueda.Size = new System.Drawing.Size(372, 33);
+            this.txtBoxBusqueda.TabIndex = 11;
+            this.txtBoxBusqueda.TextChanged += new System.EventHandler(this.txtBoxBusqueda_TextChanged);
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(31, 23);
+            this.pictureBox6.Location = new System.Drawing.Point(42, 41);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(37, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 3;
+            this.pictureBox6.TabIndex = 9;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(23, 19);
+            this.pictureBox5.Location = new System.Drawing.Point(34, 37);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(431, 45);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
-            // 
-            // bunifuThinButton22
-            // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "Marcas";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton22.Location = new System.Drawing.Point(1316, 12);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(286, 53);
-            this.bunifuThinButton22.TabIndex = 1;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Categorías";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(941, 12);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(286, 53);
-            this.bunifuThinButton21.TabIndex = 0;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tablaProductosVendidos
             // 
@@ -469,12 +356,28 @@ namespace Cliente
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaProductosVendidos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaProductosVendidos.Location = new System.Drawing.Point(23, 92);
+            this.tablaProductosVendidos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tablaProductosVendidos.Location = new System.Drawing.Point(23, 98);
             this.tablaProductosVendidos.Name = "tablaProductosVendidos";
             this.tablaProductosVendidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaProductosVendidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaProductosVendidos.RowHeadersVisible = false;
+            this.tablaProductosVendidos.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaProductosVendidos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaProductosVendidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaProductosVendidos.Size = new System.Drawing.Size(1597, 712);
+            this.tablaProductosVendidos.Size = new System.Drawing.Size(1597, 706);
             this.tablaProductosVendidos.TabIndex = 7;
             // 
             // FrmProductosVendidos
@@ -491,10 +394,6 @@ namespace Cliente
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -517,34 +416,27 @@ namespace Cliente
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel lineShape;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblProductosSinOfertas;
+        private System.Windows.Forms.Label lbl10;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblMarcas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTotalVendidos;
+        private System.Windows.Forms.Label lbl6;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel12;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox1;
       private System.Windows.Forms.DataGridView tablaProductosVendidos;
+      private System.Windows.Forms.Label lblBusqueda;
+      private System.Windows.Forms.TextBox txtBoxBusqueda;
+      private System.Windows.Forms.PictureBox pictureBox6;
+      private System.Windows.Forms.PictureBox pictureBox5;
    }
 }

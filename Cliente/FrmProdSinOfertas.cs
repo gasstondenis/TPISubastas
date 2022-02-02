@@ -15,27 +15,44 @@ namespace Cliente
    public partial class FrmProdSinOfertas : Form
    {
       private ClienteAPI<TPISubastas.Dominio.SubastaProducto> cliente = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", User.Usuario, User.Contraseña);
+      List<string> marcas = null;
+      List<string> productosMarcas = new List<string>();
+      List<TPISubastas.Dominio.SubastaProducto> productos = new List<TPISubastas.Dominio.SubastaProducto>();
+
+
+
       public FrmProdSinOfertas()
       {
          InitializeComponent();
          ListarProductos();
+         marcas = Marcas();
          DimensionarColumnas();
+
       }
+
+
+
       public void ListarProductos()
       {
          try
          {
             List<TPISubastas.Dominio.SubastaProducto> productosSinOferta = new List<TPISubastas.Dominio.SubastaProducto>();
-            var productos = cliente.Listar();
+            List<TPISubastas.Dominio.SubastaProducto> productosVendidos = new List<TPISubastas.Dominio.SubastaProducto>();
+
+            productos = cliente.Listar();
             foreach (var item in productos)
             {
-               if (item.IdEstadoSubasta == 5)
+               if (item.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.NoVendido))
                {
                   productosSinOferta.Add(item);
                }
+               else if (item.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.Vendido))
+                  productosVendidos.Add(item);
             }
             dgvProductosSinOfertas.DataSource = productosSinOferta;
-
+            lblTotales.Text = productosSinOferta.Count().ToString();
+            lblProductosVendidos.Text = productosVendidos.Count().ToString();
+            lblMarcas.Text = Marcas().Count().ToString();
          }
          catch (Exception ex)
          {
@@ -51,6 +68,42 @@ namespace Cliente
          }
       }
 
+      private void BuscarMarcas()
+      {
+         string sPattern = txtBoxBusqueda.Text;
+         List<TPISubastas.Dominio.SubastaProducto> prodToDgv = new List<TPISubastas.Dominio.SubastaProducto>();
+         IEnumerable<TPISubastas.Dominio.SubastaProducto> prod = null;
+         foreach (var item in productosMarcas)
+         {
+            if (System.Text.RegularExpressions.Regex.IsMatch(item, sPattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+            {
+               prod = productos.Where(x => x.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.NoVendido) && x.MarcaProducto.ToUpper().Trim() == item);
+               prodToDgv.AddRange(prod);
+            }
+         }
+         dgvProductosSinOfertas.DataSource = prodToDgv.Distinct().ToArray();
+         dgvProductosSinOfertas.Refresh();
+      }
+
+
+
+      private List<string> Marcas()
+      {
+         var productos = cliente.Listar();
+         List<string> marcasLbl = new List<string>();
+         //List<string> marcasProd = new List<string>();
+         foreach (var item in productos)
+         {
+            var marca = item.MarcaProducto.ToUpper().Trim();
+            if (!marcasLbl.Contains(marca))
+            {
+               marcasLbl.Add(marca);
+            }
+
+            productosMarcas.Add(marca);
+         }
+         return marcasLbl;
+      }
       public void DimensionarColumnas()
       {
          dgvProductosSinOfertas.Columns[0].Width = 100; //IdSubastaProducto
@@ -68,6 +121,18 @@ namespace Cliente
          dgvProductosSinOfertas.Columns[8].HeaderText = "IdUsuarioVendedor";
          dgvProductosSinOfertas.Columns[10].Visible = false;
       }
+
+      private void txtBoxBusqueda_TextChanged(object sender, EventArgs e)
+      {
+         if (txtBoxBusqueda.Text != "")
+         {
+            BuscarMarcas();
+            return;
+         }
+
+         ListarProductos();
+      }
+
 
    }
 }

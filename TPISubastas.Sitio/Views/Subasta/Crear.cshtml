@@ -25,7 +25,7 @@
                 <div class="form-group row">
                     <label asp-for="IdSubasta" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
-                        <select asp-for="IdSubasta" asp-items="@(Model.SubastasDisponibles)" class="form-control"><option>Elija una subasta</option></select>
+                        <select asp-for="IdSubasta" asp-items="@(Model.SubastasDisponibles)" class="form-control"><option value="" >Elija una subasta</option></select>
                         <span asp-validation-for="IdSubasta" class="text-danger"></span>
                     </div>
                 </div>

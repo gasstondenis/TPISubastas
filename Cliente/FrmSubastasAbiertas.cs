@@ -19,11 +19,11 @@ namespace Cliente
         public FrmSubastasAbiertas()
         {
             InitializeComponent();
-            ListarProductos();
+            ListarSubastas();
             DimensionarColumnas();
         }
 
-        public void ListarProductos()
+        public void ListarSubastas()
         {
             try
             {
@@ -31,13 +31,12 @@ namespace Cliente
                 var subastas = cliente.Listar();
                 foreach (var item in subastas)
                 {
-                    if(item.FechaCierre > DateTime.Now && item.Habilitada)
+                    if(item.FechaCierre > DateTime.Now.Date && item.FechaInicio <= DateTime.Now.Date && item.Habilitada)
                     {
                         subastasAbiertas.Add(item);
                     }
                 }
-                tablaSubastasAbiertas.DataSource = subastasAbiertas;
-                         
+                tablaSubastasAbiertas.DataSource = subastasAbiertas;                         
             }
             catch (Exception ex)
             {
@@ -48,7 +47,6 @@ namespace Cliente
                 if (resultado == DialogResult.OK)
                 {
                     mensaje.Close();
-
                 }
             }
         }
@@ -87,11 +85,6 @@ namespace Cliente
             }
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            var caracter = int.Parse(txtBuscar.Text);
-
-            BuscarElementos(caracter);
-        }
+        
     }
 }

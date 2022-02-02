@@ -19,6 +19,10 @@ namespace Cliente
          Invalidate();
       }
 
+      public FrmSuccess()
+      {
+      }
+
       private void FrmSuccess_Load(object sender, EventArgs e)
       {
          FadeTransition.ShowAsyc(this);

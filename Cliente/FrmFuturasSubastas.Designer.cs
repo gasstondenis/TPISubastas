@@ -81,7 +81,7 @@ namespace Cliente
             this.btnGuardarCambios.IconVisible = true;
             this.btnGuardarCambios.IconZoom = 55D;
             this.btnGuardarCambios.IsTab = true;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(1394, 22);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(1402, 28);
             this.btnGuardarCambios.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));

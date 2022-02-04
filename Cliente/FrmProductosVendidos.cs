@@ -19,11 +19,14 @@ namespace Cliente
       private ClienteAPI<TPISubastas.Dominio.SubastaProducto> cliente = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", User.Usuario, User.Contraseña);
       List<string> productosMarcas = new List<string>();
       List<TPISubastas.Dominio.SubastaProducto> productos = new List<TPISubastas.Dominio.SubastaProducto>();
+      List<string> lblMarcasNoVendidas = new List<string>();
+      List<string> lblMarcasVendidas = new List<string>();
 
 
       public FrmProductosVendidos()
       {
          InitializeComponent();
+         Marcas();
          ListarProductos();
          DimensionarColumnas();
       }
@@ -44,7 +47,7 @@ namespace Cliente
                   productosVendidos.Add(item);
             }
             tablaProductosVendidos.DataSource = productosVendidos;
-            lblMarcas.Text = Marcas().Count().ToString();
+            lblMarcas.Text = lblMarcasVendidas.Count().ToString();
             lblTotalVendidos.Text = productosVendidos.Count().ToString();
             lblProductosSinOfertas.Text = productosSinOferta.Count().ToString();
          }
@@ -80,7 +83,7 @@ namespace Cliente
 
 
 
-      private List<string> Marcas()
+      private void Marcas()
       {
          var productos = cliente.Listar();
          List<string> marcasLbl = new List<string>();
@@ -88,14 +91,14 @@ namespace Cliente
          foreach (var item in productos)
          {
             var marca = item.MarcaProducto.ToUpper().Trim();
-            if (!marcasLbl.Contains(marca))
-            {
-               marcasLbl.Add(marca);
-            }
+            if (!lblMarcasVendidas.Contains(marca) && item.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.Vendido))
+               lblMarcasVendidas.Add(marca);
+
+            if (item.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.NoVendido) && !lblMarcasNoVendidas.Contains(marca))
+               lblMarcasNoVendidas.Add(marca);
 
             productosMarcas.Add(marca);
-         }
-         return marcasLbl;
+         } 
       }
 
       public void DimensionarColumnas()
@@ -131,6 +134,34 @@ namespace Cliente
          }
 
          ListarProductos();
+      }
+
+      private void btnExportarExcel_Click(object sender, EventArgs e)
+      {
+         exportarExcel(tablaProductosVendidos);
+      }
+      public void exportarExcel(DataGridView tabla)
+      {
+         Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+         excel.Application.Workbooks.Add(true);
+         int IndiceColumna = 0;
+         foreach (DataGridViewColumn col in tabla.Columns)
+         {
+            IndiceColumna++;
+            excel.Cells[1, IndiceColumna] = col.Name;
+         }
+         int IndeceFila = 0;
+         foreach (DataGridViewRow row in tabla.Rows)
+         {
+            IndeceFila++;
+            IndiceColumna = 0;
+            foreach (DataGridViewColumn col in tabla.Columns)
+            {
+               IndiceColumna++;
+               excel.Cells[IndeceFila + 1, IndiceColumna] = row.Cells[col.Name].Value;
+            }
+         }
+         excel.Visible = true;
       }
    }
 }

@@ -12,6 +12,8 @@ namespace TPISubastas.Sitio.HostedServices
 {
    public class EstadoSubastaHostedService : IHostedService, IDisposable
    {
+      //Este servicio setea los estados de los productos de subastas cerradas en Vendido y NoVendido
+
       private IServiceScopeFactory _ScopeFactory;
       private Timer _timer;
 
@@ -43,7 +45,7 @@ namespace TPISubastas.Sitio.HostedServices
          {
             var _ContextoSubasta = scope.ServiceProvider.GetRequiredService<ContextoSubasta>();
 
-            var subastas = _ContextoSubasta.Subasta.Where(x => x.FechaCierre <= DateTime.Now).Select(x => x.IdSubasta).ToList();
+            var subastas = _ContextoSubasta.Subasta.Where(x => x.FechaCierre <= DateTime.Now || !x.Habilitada).Select(x => x.IdSubasta).ToList();
             var productos = _ContextoSubasta.SubastaProducto.Where(x => !x.Notificado && subastas.Contains(x.IdSubasta)).ToList();
             SubastaProducto producto = new SubastaProducto();
             foreach (var item2 in productos)

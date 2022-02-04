@@ -20,7 +20,7 @@ namespace Cliente
       {
          InitializeComponent();
          Listar();
-         EnumerarSubastasAbiertas();
+         EnumerarSubastas();
          DimensionarColumnas();
       }
 
@@ -57,19 +57,23 @@ namespace Cliente
             }
          }
       }
-      public void EnumerarSubastasAbiertas()
+      public void EnumerarSubastas()
       {
          List<TPISubastas.Dominio.Subasta> SubastasAbiertas = new List<TPISubastas.Dominio.Subasta>();
+         List<TPISubastas.Dominio.Subasta> futurasSubastas = new List<TPISubastas.Dominio.Subasta>();
          var subastas = clienteSubasta.Listar();
          foreach (var item in subastas)
          {
             if (item.Habilitada)
             {
-               SubastasAbiertas.Add(item);
+               if (item.FechaInicio <= DateTime.Now.Date && item.FechaCierre > DateTime.Now.Date)
+                  SubastasAbiertas.Add(item);
             }
+            if(item.Habilitada && item.FechaInicio > DateTime.Now.Date)
+               futurasSubastas.Add(item);
          }
          lblSubastasAbiertas.Text = SubastasAbiertas.Count().ToString();
-
+         lblFuturasSubastas.Text = futurasSubastas.Count().ToString();
       }
 
       public void DimensionarColumnas()
@@ -91,8 +95,7 @@ namespace Cliente
          dgvPublicacionesSolicitadas.Columns[8].HeaderText = "IdUsuarioVendedor";
          dgvPublicacionesSolicitadas.Columns[10].Visible = false; //IdProducto
       }
-
-      private void btnAplicarCambios_Click(object sender, EventArgs e)
+      private void btnGuardarCambios_Click(object sender, EventArgs e)
       {
          List<TPISubastas.Dominio.SubastaProducto> aux = new List<TPISubastas.Dominio.SubastaProducto>();
          List<TPISubastas.Dominio.SubastaProducto> publicacionesSolicitadas = new List<TPISubastas.Dominio.SubastaProducto>();
@@ -106,9 +109,6 @@ namespace Cliente
             cliente.Actualizar(item, id);
          }
          Listar();
-
       }
-
-      
    }
 }

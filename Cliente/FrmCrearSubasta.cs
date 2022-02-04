@@ -21,8 +21,9 @@ namespace Cliente
       public FrmCrearSubasta()
       {         
          InitializeComponent();
-         LimpiarCampos();
+         LimpiarCampos();         
          Listar();
+         DimensionarColumnas();
       }
 
 
@@ -46,6 +47,23 @@ namespace Cliente
          txtBoxNombre.Text = "";
       }
 
+      public void DimensionarColumnas()
+      {
+         dgvCrearSubasta.Columns[0].Width = 80;
+         dgvCrearSubasta.Columns[0].ReadOnly = true;
+         dgvCrearSubasta.Columns[1].Width = 150;
+         dgvCrearSubasta.Columns[1].ReadOnly = true;
+         dgvCrearSubasta.Columns[2].Width = 150;
+         //dgvCrearSubasta.Columns[2].ReadOnly = true;
+         dgvCrearSubasta.Columns[3].Width = 150;
+         dgvCrearSubasta.Columns[4].Width = 100;
+         dgvCrearSubasta.Columns[4].ReadOnly = true;
+
+         dgvCrearSubasta.Columns[5].Width = 300;
+         dgvCrearSubasta.Columns[6].Width = 500;
+         dgvCrearSubasta.Columns[7].Width = 100;
+      }
+
       private void btnInsertar_Click(object sender, EventArgs e)
       {
          var subastasPendientes = new TPISubastas.Dominio.Subasta();
@@ -59,11 +77,9 @@ namespace Cliente
 
          if (subastasPendientes.FechaInicio.Value != null && subastasPendientes.FechaCierre.Value != DateTime.Now && subastasPendientes.Nombre != "" && subastasPendientes.Descripcion != "" && subastasPendientes.Duracion != 0)
          {
-
             try
             {
-               cliente.Agregar(subastasPendientes);
-               
+               cliente.Agregar(subastasPendientes);               
             }
             catch (Exception ex)
             {
@@ -100,13 +116,25 @@ namespace Cliente
       {
          var subastas = cliente.Listar();
          List<TPISubastas.Dominio.Subasta> subastasActuales = new List<TPISubastas.Dominio.Subasta>();
+         List<TPISubastas.Dominio.Subasta> subastasAbiertas = new List<TPISubastas.Dominio.Subasta>();
+         List<TPISubastas.Dominio.Subasta> futurasSuabastas = new List<TPISubastas.Dominio.Subasta>();
          foreach (var item in subastas)
          {
             if (item.FechaCreacion == DateTime.Today.Date)
             {
                subastasActuales.Add(item);
             }
+            if(item.FechaInicio <= DateTime.Today.Date && item.FechaCierre > DateTime.Today.Date && item.Habilitada)
+            {
+               subastasAbiertas.Add(item);
+            }
+            if (item.FechaInicio > DateTime.Today.Date && item.Habilitada)
+            {
+               futurasSuabastas.Add(item);
+            }
          }
+         lblFuturasSubastas.Text = futurasSuabastas.Count().ToString();
+         lblSubastasAbiertas.Text = subastasAbiertas.Count().ToString();
          dgvCrearSubasta.DataSource = subastasActuales;
          //dgvCrearSubasta.Refresh();
          dgvCrearSubasta.Show();
@@ -127,9 +155,9 @@ namespace Cliente
                actualizada.IdSubasta = item.IdSubasta;
                actualizada.Nombre = item.Nombre;
                actualizada.Habilitada = item.Habilitada;
-               actualizada.Duracion = item.Duracion;
-               
-               
+               actualizada.Duracion = int.Parse((item.FechaCierre.Value.Date - item.FechaInicio.Value.Date).Days.ToString());
+
+
                cliente.Actualizar(actualizada, actualizada.IdSubasta.ToString());
             }
             mensaje = new FrmSuccess("¡Los cambios se han guardado y aplicado de manera exitosa!");

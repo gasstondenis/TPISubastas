@@ -49,7 +49,7 @@ namespace TPISubastas.Sitio.Controllers
         private void CargarSubastasDisponibles(SubastaProductoFormulario modelo)
         {
             modelo.SubastasDisponibles = new List<SelectListItem>();
-            var subastas = _contexto.Subasta.Where(s => s.Habilitada && s.FechaInicio > DateTime.Now.Date && s.FechaCreacion.Date > DateTime.Now.Date).Select(s => new SelectListItem() { Text = s.Nombre, Value = s.IdSubasta.ToString() });
+            var subastas = _contexto.Subasta.Where(s => s.Habilitada && s.FechaInicio > DateTime.Now.Date).Select(s => new SelectListItem() { Text = s.Nombre, Value = s.IdSubasta.ToString() });
             modelo.SubastasDisponibles.AddRange(subastas);
         }
         private void CargarFormaPago(SubastaProductoFormulario modelo)

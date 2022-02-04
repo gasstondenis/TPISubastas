@@ -30,9 +30,9 @@ namespace Cliente
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductosVendidos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -58,6 +58,7 @@ namespace Cliente
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tablaProductosVendidos = new System.Windows.Forms.DataGridView();
+            this.btnExportarExcel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -121,11 +122,11 @@ namespace Cliente
             // 
             this.lbl10.AutoSize = true;
             this.lbl10.BackColor = System.Drawing.Color.Transparent;
-            this.lbl10.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl10.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.lbl10.ForeColor = System.Drawing.Color.Gray;
             this.lbl10.Location = new System.Drawing.Point(10, 74);
             this.lbl10.Name = "lbl10";
-            this.lbl10.Size = new System.Drawing.Size(189, 25);
+            this.lbl10.Size = new System.Drawing.Size(232, 25);
             this.lbl10.TabIndex = 2;
             this.lbl10.Text = "PRODUCTOS SIN OFERTAS";
             // 
@@ -186,11 +187,11 @@ namespace Cliente
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(10, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 25);
+            this.label6.Size = new System.Drawing.Size(86, 25);
             this.label6.TabIndex = 2;
             this.label6.Text = "MARCAS";
             // 
@@ -251,11 +252,11 @@ namespace Cliente
             // 
             this.lbl6.AutoSize = true;
             this.lbl6.BackColor = System.Drawing.Color.Transparent;
-            this.lbl6.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.lbl6.ForeColor = System.Drawing.Color.Gray;
             this.lbl6.Location = new System.Drawing.Point(10, 74);
             this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(132, 25);
+            this.lbl6.Size = new System.Drawing.Size(160, 25);
             this.lbl6.TabIndex = 2;
             this.lbl6.Text = "TOTAL VENDIDOS";
             // 
@@ -284,6 +285,7 @@ namespace Cliente
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel12.Controls.Add(this.btnExportarExcel);
             this.panel12.Controls.Add(this.lblBusqueda);
             this.panel12.Controls.Add(this.txtBoxBusqueda);
             this.panel12.Controls.Add(this.pictureBox6);
@@ -300,7 +302,7 @@ namespace Cliente
             this.lblBusqueda.BackColor = System.Drawing.Color.Transparent;
             this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.ForeColor = System.Drawing.Color.Gray;
-            this.lblBusqueda.Location = new System.Drawing.Point(82, 20);
+            this.lblBusqueda.Location = new System.Drawing.Point(82, 24);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(249, 25);
             this.lblBusqueda.TabIndex = 10;
@@ -311,7 +313,7 @@ namespace Cliente
             this.txtBoxBusqueda.BackColor = System.Drawing.Color.White;
             this.txtBoxBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxBusqueda.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxBusqueda.Location = new System.Drawing.Point(86, 43);
+            this.txtBoxBusqueda.Location = new System.Drawing.Point(86, 47);
             this.txtBoxBusqueda.Name = "txtBoxBusqueda";
             this.txtBoxBusqueda.Size = new System.Drawing.Size(372, 33);
             this.txtBoxBusqueda.TabIndex = 11;
@@ -321,7 +323,7 @@ namespace Cliente
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(42, 41);
+            this.pictureBox6.Location = new System.Drawing.Point(42, 45);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(37, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -332,7 +334,7 @@ namespace Cliente
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(34, 37);
+            this.pictureBox5.Location = new System.Drawing.Point(34, 41);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(431, 45);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -347,38 +349,74 @@ namespace Cliente
             this.tablaProductosVendidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaProductosVendidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tablaProductosVendidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaProductosVendidos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaProductosVendidos.DefaultCellStyle = dataGridViewCellStyle4;
             this.tablaProductosVendidos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tablaProductosVendidos.Location = new System.Drawing.Point(23, 98);
             this.tablaProductosVendidos.Name = "tablaProductosVendidos";
             this.tablaProductosVendidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaProductosVendidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaProductosVendidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tablaProductosVendidos.RowHeadersVisible = false;
             this.tablaProductosVendidos.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.tablaProductosVendidos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaProductosVendidos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tablaProductosVendidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.tablaProductosVendidos.Size = new System.Drawing.Size(1597, 706);
             this.tablaProductosVendidos.TabIndex = 7;
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportarExcel.BorderRadius = 7;
+            this.btnExportarExcel.ButtonText = "   Exportar a Excel ";
+            this.btnExportarExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportarExcel.DisabledColor = System.Drawing.Color.Gray;
+            this.btnExportarExcel.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage")));
+            this.btnExportarExcel.Iconimage_right = null;
+            this.btnExportarExcel.Iconimage_right_Selected = null;
+            this.btnExportarExcel.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage_Selected")));
+            this.btnExportarExcel.IconMarginLeft = 10;
+            this.btnExportarExcel.IconMarginRight = 0;
+            this.btnExportarExcel.IconRightVisible = true;
+            this.btnExportarExcel.IconRightZoom = 0D;
+            this.btnExportarExcel.IconVisible = true;
+            this.btnExportarExcel.IconZoom = 55D;
+            this.btnExportarExcel.IsTab = true;
+            this.btnExportarExcel.Location = new System.Drawing.Point(1408, 34);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnExportarExcel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnExportarExcel.selected = false;
+            this.btnExportarExcel.Size = new System.Drawing.Size(193, 46);
+            this.btnExportarExcel.TabIndex = 40;
+            this.btnExportarExcel.Text = "   Exportar a Excel ";
+            this.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportarExcel.Textcolor = System.Drawing.Color.White;
+            this.btnExportarExcel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
             // FrmProductosVendidos
             // 
@@ -438,5 +476,6 @@ namespace Cliente
       private System.Windows.Forms.TextBox txtBoxBusqueda;
       private System.Windows.Forms.PictureBox pictureBox6;
       private System.Windows.Forms.PictureBox pictureBox5;
+      private Bunifu.Framework.UI.BunifuFlatButton btnExportarExcel;
    }
 }

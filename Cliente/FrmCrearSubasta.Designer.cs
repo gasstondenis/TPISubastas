@@ -29,15 +29,10 @@ namespace Cliente
       /// </summary>
       private void InitializeComponent()
       {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCrearSubasta));
             this.dgvCrearSubasta = new System.Windows.Forms.DataGridView();
-            this.lblTotalSolicitudes = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -68,9 +63,12 @@ namespace Cliente
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblFuturasSubastas = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCrearSubasta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -83,6 +81,8 @@ namespace Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCrearSubasta
@@ -92,88 +92,31 @@ namespace Cliente
             this.dgvCrearSubasta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCrearSubasta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCrearSubasta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.NullValue = "SIN DATOS";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCrearSubasta.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.NullValue = "SIN DATOS";
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCrearSubasta.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCrearSubasta.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvCrearSubasta.Location = new System.Drawing.Point(23, 154);
             this.dgvCrearSubasta.Name = "dgvCrearSubasta";
             this.dgvCrearSubasta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvCrearSubasta.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvCrearSubasta.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCrearSubasta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvCrearSubasta.Size = new System.Drawing.Size(1043, 662);
             this.dgvCrearSubasta.TabIndex = 6;
             this.dgvCrearSubasta.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvCrearSubasta_CellValidating);
             this.dgvCrearSubasta.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCrearSubasta_RowHeaderMouseClick);
-            // 
-            // lblTotalSolicitudes
-            // 
-            this.lblTotalSolicitudes.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalSolicitudes.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSolicitudes.ForeColor = System.Drawing.Color.Gray;
-            this.lblTotalSolicitudes.Location = new System.Drawing.Point(279, 13);
-            this.lblTotalSolicitudes.Name = "lblTotalSolicitudes";
-            this.lblTotalSolicitudes.Size = new System.Drawing.Size(86, 50);
-            this.lblTotalSolicitudes.TabIndex = 3;
-            this.lblTotalSolicitudes.Text = "10";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(10, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(173, 25);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "TOTAL DE SOLICITUDES";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Silver;
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.ForeColor = System.Drawing.Color.Silver;
-            this.panel11.Location = new System.Drawing.Point(15, 69);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(350, 2);
-            this.panel11.TabIndex = 1;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel10
-            // 
-            this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Controls.Add(this.lblTotalSolicitudes);
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Controls.Add(this.pictureBox4);
-            this.panel10.Location = new System.Drawing.Point(7, 7);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(400, 113);
-            this.panel10.TabIndex = 4;
             // 
             // panel1
             // 
@@ -195,7 +138,7 @@ namespace Cliente
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.panel10);
+            this.panel4.Controls.Add(this.panel6);
             this.panel4.Location = new System.Drawing.Point(823, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(404, 123);
@@ -216,11 +159,11 @@ namespace Cliente
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(10, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 25);
+            this.label6.Size = new System.Drawing.Size(183, 25);
             this.label6.TabIndex = 2;
             this.label6.Text = "SUBASTAS ABIERTAS";
             // 
@@ -633,6 +576,63 @@ namespace Cliente
             this.label2.TabIndex = 18;
             this.label2.Text = "Fecha de inicio:";
             // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Controls.Add(this.lblFuturasSubastas);
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Location = new System.Drawing.Point(2, 5);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(400, 113);
+            this.panel6.TabIndex = 5;
+            // 
+            // lblFuturasSubastas
+            // 
+            this.lblFuturasSubastas.BackColor = System.Drawing.Color.Transparent;
+            this.lblFuturasSubastas.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuturasSubastas.ForeColor = System.Drawing.Color.Gray;
+            this.lblFuturasSubastas.Location = new System.Drawing.Point(279, 13);
+            this.lblFuturasSubastas.Name = "lblFuturasSubastas";
+            this.lblFuturasSubastas.Size = new System.Drawing.Size(86, 50);
+            this.lblFuturasSubastas.TabIndex = 3;
+            this.lblFuturasSubastas.Text = "10";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.Location = new System.Drawing.Point(10, 74);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(182, 25);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "FUTURAS SUBASTAS";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Silver;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.ForeColor = System.Drawing.Color.Silver;
+            this.panel7.Location = new System.Drawing.Point(15, 69);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(350, 2);
+            this.panel7.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmCrearSubasta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,9 +643,6 @@ namespace Cliente
             this.Name = "FrmCrearSubasta";
             this.Text = "FrmCrearSubasta";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCrearSubasta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -660,6 +657,9 @@ namespace Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
       }
@@ -667,11 +667,6 @@ namespace Cliente
       #endregion
 
       private System.Windows.Forms.DataGridView dgvCrearSubasta;
-      private System.Windows.Forms.Label lblTotalSolicitudes;
-      private System.Windows.Forms.Label label8;
-      private System.Windows.Forms.Panel panel11;
-      private System.Windows.Forms.PictureBox pictureBox4;
-      private System.Windows.Forms.Panel panel10;
       private System.Windows.Forms.Panel panel1;
       private System.Windows.Forms.PictureBox pictureBox3;
       private System.Windows.Forms.Panel panel4;
@@ -702,5 +697,10 @@ namespace Cliente
       private Bunifu.Framework.UI.BunifuFlatButton btnEliminarSubasta;
       private System.Windows.Forms.Panel panel5;
       private System.Windows.Forms.Label label7;
+      private System.Windows.Forms.Panel panel6;
+      private System.Windows.Forms.Label lblFuturasSubastas;
+      private System.Windows.Forms.Label label8;
+      private System.Windows.Forms.Panel panel7;
+      private System.Windows.Forms.PictureBox pictureBox1;
    }
 }

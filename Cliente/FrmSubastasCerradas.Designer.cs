@@ -29,212 +29,56 @@ namespace Cliente
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubastasCerradas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubastasCerradas));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblProductosVendidos = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lineShape = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.lblCantidadSubastasCerradas = new System.Windows.Forms.Label();
-            this.labelelementos = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnExportarExcel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnProdSinOfertas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnProductosVendidos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tablaSubastasCerradas = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblCantElementos = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaSubastasCerradas)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(292, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 50);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "10";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(10, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "CATEGORÍAS";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Silver;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.ForeColor = System.Drawing.Color.Silver;
-            this.panel7.Location = new System.Drawing.Point(15, 69);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(350, 2);
-            this.panel7.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Location = new System.Drawing.Point(7, 7);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(400, 113);
-            this.panel6.TabIndex = 4;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Location = new System.Drawing.Point(413, 3);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Location = new System.Drawing.Point(514, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(404, 123);
+            this.panel2.Size = new System.Drawing.Size(611, 123);
             this.panel2.TabIndex = 1;
-            // 
-            // lblProductosVendidos
-            // 
-            this.lblProductosVendidos.BackColor = System.Drawing.Color.Transparent;
-            this.lblProductosVendidos.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductosVendidos.ForeColor = System.Drawing.Color.Gray;
-            this.lblProductosVendidos.Location = new System.Drawing.Point(292, 13);
-            this.lblProductosVendidos.Name = "lblProductosVendidos";
-            this.lblProductosVendidos.Size = new System.Drawing.Size(73, 50);
-            this.lblProductosVendidos.TabIndex = 3;
-            this.lblProductosVendidos.Text = "10";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(10, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "PRODUCTOS VENDIDOS";
-            // 
-            // lineShape
-            // 
-            this.lineShape.BackColor = System.Drawing.Color.Silver;
-            this.lineShape.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lineShape.ForeColor = System.Drawing.Color.Silver;
-            this.lineShape.Location = new System.Drawing.Point(15, 69);
-            this.lineShape.Name = "lineShape";
-            this.lineShape.Size = new System.Drawing.Size(350, 2);
-            this.lineShape.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.lblProductosVendidos);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.lineShape);
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Location = new System.Drawing.Point(4, 7);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(400, 113);
-            this.panel5.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(404, 123);
+            this.panel1.Size = new System.Drawing.Size(505, 123);
             this.panel1.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(292, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 50);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "10";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(10, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 25);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "MARCAS";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel1.Controls.Add(this.panel12);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -242,122 +86,126 @@ namespace Cliente
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1650, 1000);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Location = new System.Drawing.Point(823, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(404, 123);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel8.Controls.Add(this.label5);
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.pictureBox3);
-            this.panel8.Location = new System.Drawing.Point(7, 7);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(400, 113);
-            this.panel8.TabIndex = 4;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Silver;
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.ForeColor = System.Drawing.Color.Silver;
-            this.panel9.Location = new System.Drawing.Point(15, 69);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(350, 2);
-            this.panel9.TabIndex = 1;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.panel10);
-            this.panel4.Location = new System.Drawing.Point(1233, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(404, 123);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel10
-            // 
-            this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Controls.Add(this.lblCantidadSubastasCerradas);
-            this.panel10.Controls.Add(this.labelelementos);
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Controls.Add(this.pictureBox4);
-            this.panel10.Location = new System.Drawing.Point(7, 7);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(400, 113);
-            this.panel10.TabIndex = 4;
-            // 
-            // lblCantidadSubastasCerradas
-            // 
-            this.lblCantidadSubastasCerradas.BackColor = System.Drawing.Color.Transparent;
-            this.lblCantidadSubastasCerradas.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadSubastasCerradas.ForeColor = System.Drawing.Color.Gray;
-            this.lblCantidadSubastasCerradas.Location = new System.Drawing.Point(292, 13);
-            this.lblCantidadSubastasCerradas.Name = "lblCantidadSubastasCerradas";
-            this.lblCantidadSubastasCerradas.Size = new System.Drawing.Size(73, 50);
-            this.lblCantidadSubastasCerradas.TabIndex = 3;
-            this.lblCantidadSubastasCerradas.Text = "10";
-            // 
-            // labelelementos
-            // 
-            this.labelelementos.AutoSize = true;
-            this.labelelementos.BackColor = System.Drawing.Color.Transparent;
-            this.labelelementos.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelelementos.ForeColor = System.Drawing.Color.Gray;
-            this.labelelementos.Location = new System.Drawing.Point(10, 74);
-            this.labelelementos.Name = "labelelementos";
-            this.labelelementos.Size = new System.Drawing.Size(190, 25);
-            this.labelelementos.TabIndex = 2;
-            this.labelelementos.Text = "CANTIDAD DE ELEMENTOS";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Silver;
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.ForeColor = System.Drawing.Color.Silver;
-            this.panel11.Location = new System.Drawing.Point(15, 69);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(350, 2);
-            this.panel11.TabIndex = 1;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
             // panel12
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel12.Controls.Add(this.btnExportarExcel);
+            this.panel12.Controls.Add(this.btnProdSinOfertas);
+            this.panel12.Controls.Add(this.btnProductosVendidos);
             this.panel12.Controls.Add(this.tablaSubastasCerradas);
             this.panel12.Location = new System.Drawing.Point(3, 132);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1647, 838);
             this.panel12.TabIndex = 3;
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportarExcel.BorderRadius = 7;
+            this.btnExportarExcel.ButtonText = "   Exportar a Excel ";
+            this.btnExportarExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportarExcel.DisabledColor = System.Drawing.Color.Gray;
+            this.btnExportarExcel.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage")));
+            this.btnExportarExcel.Iconimage_right = null;
+            this.btnExportarExcel.Iconimage_right_Selected = null;
+            this.btnExportarExcel.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage_Selected")));
+            this.btnExportarExcel.IconMarginLeft = 10;
+            this.btnExportarExcel.IconMarginRight = 0;
+            this.btnExportarExcel.IconRightVisible = true;
+            this.btnExportarExcel.IconRightZoom = 0D;
+            this.btnExportarExcel.IconVisible = true;
+            this.btnExportarExcel.IconZoom = 55D;
+            this.btnExportarExcel.IsTab = true;
+            this.btnExportarExcel.Location = new System.Drawing.Point(1380, 39);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnExportarExcel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnExportarExcel.selected = false;
+            this.btnExportarExcel.Size = new System.Drawing.Size(193, 44);
+            this.btnExportarExcel.TabIndex = 40;
+            this.btnExportarExcel.Text = "   Exportar a Excel ";
+            this.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportarExcel.Textcolor = System.Drawing.Color.White;
+            this.btnExportarExcel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
+            // 
+            // btnProdSinOfertas
+            // 
+            this.btnProdSinOfertas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProdSinOfertas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProdSinOfertas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProdSinOfertas.BorderRadius = 7;
+            this.btnProdSinOfertas.ButtonText = "  Productos sin ofertas";
+            this.btnProdSinOfertas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProdSinOfertas.DisabledColor = System.Drawing.Color.Gray;
+            this.btnProdSinOfertas.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProdSinOfertas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProdSinOfertas.Iconimage")));
+            this.btnProdSinOfertas.Iconimage_right = null;
+            this.btnProdSinOfertas.Iconimage_right_Selected = null;
+            this.btnProdSinOfertas.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnProdSinOfertas.Iconimage_Selected")));
+            this.btnProdSinOfertas.IconMarginLeft = 10;
+            this.btnProdSinOfertas.IconMarginRight = 0;
+            this.btnProdSinOfertas.IconRightVisible = true;
+            this.btnProdSinOfertas.IconRightZoom = 0D;
+            this.btnProdSinOfertas.IconVisible = true;
+            this.btnProdSinOfertas.IconZoom = 73D;
+            this.btnProdSinOfertas.IsTab = true;
+            this.btnProdSinOfertas.Location = new System.Drawing.Point(54, 39);
+            this.btnProdSinOfertas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProdSinOfertas.Name = "btnProdSinOfertas";
+            this.btnProdSinOfertas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProdSinOfertas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnProdSinOfertas.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnProdSinOfertas.selected = false;
+            this.btnProdSinOfertas.Size = new System.Drawing.Size(225, 44);
+            this.btnProdSinOfertas.TabIndex = 39;
+            this.btnProdSinOfertas.Text = "  Productos sin ofertas";
+            this.btnProdSinOfertas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProdSinOfertas.Textcolor = System.Drawing.Color.White;
+            this.btnProdSinOfertas.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdSinOfertas.Click += new System.EventHandler(this.btnProdSinOfertas_Click);
+            // 
+            // btnProductosVendidos
+            // 
+            this.btnProductosVendidos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosVendidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosVendidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProductosVendidos.BorderRadius = 7;
+            this.btnProductosVendidos.ButtonText = "   Productos vendidos";
+            this.btnProductosVendidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductosVendidos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnProductosVendidos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosVendidos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProductosVendidos.Iconimage")));
+            this.btnProductosVendidos.Iconimage_right = null;
+            this.btnProductosVendidos.Iconimage_right_Selected = null;
+            this.btnProductosVendidos.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnProductosVendidos.Iconimage_Selected")));
+            this.btnProductosVendidos.IconMarginLeft = 10;
+            this.btnProductosVendidos.IconMarginRight = 0;
+            this.btnProductosVendidos.IconRightVisible = true;
+            this.btnProductosVendidos.IconRightZoom = 0D;
+            this.btnProductosVendidos.IconVisible = true;
+            this.btnProductosVendidos.IconZoom = 65D;
+            this.btnProductosVendidos.IsTab = true;
+            this.btnProductosVendidos.Location = new System.Drawing.Point(306, 39);
+            this.btnProductosVendidos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductosVendidos.Name = "btnProductosVendidos";
+            this.btnProductosVendidos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosVendidos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnProductosVendidos.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnProductosVendidos.selected = false;
+            this.btnProductosVendidos.Size = new System.Drawing.Size(217, 44);
+            this.btnProductosVendidos.TabIndex = 38;
+            this.btnProductosVendidos.Text = "   Productos vendidos";
+            this.btnProductosVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosVendidos.Textcolor = System.Drawing.Color.White;
+            this.btnProductosVendidos.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosVendidos.Click += new System.EventHandler(this.btnProductosVendidos_Click);
             // 
             // tablaSubastasCerradas
             // 
@@ -377,7 +225,7 @@ namespace Cliente
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaSubastasCerradas.DefaultCellStyle = dataGridViewCellStyle1;
             this.tablaSubastasCerradas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaSubastasCerradas.Location = new System.Drawing.Point(23, 21);
+            this.tablaSubastasCerradas.Location = new System.Drawing.Point(23, 125);
             this.tablaSubastasCerradas.Name = "tablaSubastasCerradas";
             this.tablaSubastasCerradas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.tablaSubastasCerradas.RowHeadersVisible = false;
@@ -388,8 +236,85 @@ namespace Cliente
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaSubastasCerradas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaSubastasCerradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaSubastasCerradas.Size = new System.Drawing.Size(1597, 794);
+            this.tablaSubastasCerradas.Size = new System.Drawing.Size(1597, 690);
             this.tablaSubastasCerradas.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.lblCantElementos);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Location = new System.Drawing.Point(3, 7);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(608, 113);
+            this.panel5.TabIndex = 5;
+            // 
+            // lblCantElementos
+            // 
+            this.lblCantElementos.BackColor = System.Drawing.Color.Transparent;
+            this.lblCantElementos.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantElementos.ForeColor = System.Drawing.Color.Gray;
+            this.lblCantElementos.Location = new System.Drawing.Point(499, 8);
+            this.lblCantElementos.Name = "lblCantElementos";
+            this.lblCantElementos.Size = new System.Drawing.Size(73, 50);
+            this.lblCantElementos.TabIndex = 3;
+            this.lblCantElementos.Text = "10";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(10, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "CANTIDAD DE ELEMENTOS";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Silver;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.ForeColor = System.Drawing.Color.Silver;
+            this.panel6.Location = new System.Drawing.Point(15, 61);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(572, 2);
+            this.panel6.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1131, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(516, 118);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(502, 118);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
             // 
             // FrmSubastasCerradas
             // 
@@ -400,56 +325,35 @@ namespace Cliente
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSubastasCerradas";
             this.Text = "FrmSubastasCerradas";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablaSubastasCerradas)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblProductosVendidos;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel lineShape;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label lblCantidadSubastasCerradas;
-        private System.Windows.Forms.Label labelelementos;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.DataGridView tablaSubastasCerradas;
-    }
+      private Bunifu.Framework.UI.BunifuFlatButton btnProductosVendidos;
+      private Bunifu.Framework.UI.BunifuFlatButton btnProdSinOfertas;
+      private Bunifu.Framework.UI.BunifuFlatButton btnExportarExcel;
+      private System.Windows.Forms.Panel panel5;
+      private System.Windows.Forms.Label lblCantElementos;
+      private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.Panel panel6;
+      private System.Windows.Forms.PictureBox pictureBox1;
+      private System.Windows.Forms.PictureBox pictureBox3;
+      private System.Windows.Forms.PictureBox pictureBox2;
+   }
 }

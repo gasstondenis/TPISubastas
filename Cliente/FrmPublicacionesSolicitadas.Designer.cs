@@ -30,8 +30,8 @@ namespace Cliente
       private void InitializeComponent()
       {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPublicacionesSolicitadas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblSubastasAbiertas = new System.Windows.Forms.Label();
@@ -47,18 +47,27 @@ namespace Cliente
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.btnAplicarCambios = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnGuardarCambios = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dgvPublicacionesSolicitadas = new System.Windows.Forms.DataGridView();
-            this.btnCrearSubasta = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblFuturasSubastas = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPublicacionesSolicitadas)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -97,11 +106,11 @@ namespace Cliente
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(10, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 25);
+            this.label6.Size = new System.Drawing.Size(183, 25);
             this.label6.TabIndex = 2;
             this.label6.Text = "SUBASTAS ABIERTAS";
             // 
@@ -140,6 +149,7 @@ namespace Cliente
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(404, 123);
@@ -181,11 +191,11 @@ namespace Cliente
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Dubai", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.label8.ForeColor = System.Drawing.Color.Gray;
             this.label8.Location = new System.Drawing.Point(10, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(173, 25);
+            this.label8.Size = new System.Drawing.Size(208, 25);
             this.label8.TabIndex = 2;
             this.label8.Text = "TOTAL DE SOLICITUDES";
             // 
@@ -214,39 +224,48 @@ namespace Cliente
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel12.Controls.Add(this.btnCrearSubasta);
-            this.panel12.Controls.Add(this.btnAplicarCambios);
+            this.panel12.Controls.Add(this.btnGuardarCambios);
             this.panel12.Controls.Add(this.dgvPublicacionesSolicitadas);
             this.panel12.Location = new System.Drawing.Point(3, 132);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1647, 838);
             this.panel12.TabIndex = 3;
             // 
-            // btnAplicarCambios
+            // btnGuardarCambios
             // 
-            this.btnAplicarCambios.ActiveBorderThickness = 1;
-            this.btnAplicarCambios.ActiveCornerRadius = 20;
-            this.btnAplicarCambios.ActiveFillColor = System.Drawing.Color.SteelBlue;
-            this.btnAplicarCambios.ActiveForecolor = System.Drawing.Color.White;
-            this.btnAplicarCambios.ActiveLineColor = System.Drawing.Color.SteelBlue;
-            this.btnAplicarCambios.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAplicarCambios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAplicarCambios.BackgroundImage")));
-            this.btnAplicarCambios.ButtonText = "Aplicar cambios";
-            this.btnAplicarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAplicarCambios.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAplicarCambios.ForeColor = System.Drawing.Color.White;
-            this.btnAplicarCambios.IdleBorderThickness = 1;
-            this.btnAplicarCambios.IdleCornerRadius = 20;
-            this.btnAplicarCambios.IdleFillColor = System.Drawing.Color.SteelBlue;
-            this.btnAplicarCambios.IdleForecolor = System.Drawing.Color.Transparent;
-            this.btnAplicarCambios.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.btnAplicarCambios.Location = new System.Drawing.Point(1301, 25);
-            this.btnAplicarCambios.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnAplicarCambios.Name = "btnAplicarCambios";
-            this.btnAplicarCambios.Size = new System.Drawing.Size(286, 53);
-            this.btnAplicarCambios.TabIndex = 7;
-            this.btnAplicarCambios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAplicarCambios.Click += new System.EventHandler(this.btnAplicarCambios_Click);
+            this.btnGuardarCambios.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnGuardarCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnGuardarCambios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardarCambios.BorderRadius = 7;
+            this.btnGuardarCambios.ButtonText = "   Guardar cambios";
+            this.btnGuardarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarCambios.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGuardarCambios.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnGuardarCambios.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardarCambios.Iconimage")));
+            this.btnGuardarCambios.Iconimage_right = null;
+            this.btnGuardarCambios.Iconimage_right_Selected = null;
+            this.btnGuardarCambios.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnGuardarCambios.Iconimage_Selected")));
+            this.btnGuardarCambios.IconMarginLeft = 10;
+            this.btnGuardarCambios.IconMarginRight = 0;
+            this.btnGuardarCambios.IconRightVisible = true;
+            this.btnGuardarCambios.IconRightZoom = 0D;
+            this.btnGuardarCambios.IconVisible = true;
+            this.btnGuardarCambios.IconZoom = 55D;
+            this.btnGuardarCambios.IsTab = true;
+            this.btnGuardarCambios.Location = new System.Drawing.Point(1403, 29);
+            this.btnGuardarCambios.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnGuardarCambios.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnGuardarCambios.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardarCambios.selected = false;
+            this.btnGuardarCambios.Size = new System.Drawing.Size(193, 46);
+            this.btnGuardarCambios.TabIndex = 38;
+            this.btnGuardarCambios.Text = "   Guardar cambios";
+            this.btnGuardarCambios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarCambios.Textcolor = System.Drawing.Color.White;
+            this.btnGuardarCambios.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // dgvPublicacionesSolicitadas
             // 
@@ -256,55 +275,95 @@ namespace Cliente
             this.dgvPublicacionesSolicitadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPublicacionesSolicitadas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPublicacionesSolicitadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.NullValue = "SIN DATOS";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPublicacionesSolicitadas.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.NullValue = "SIN DATOS";
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPublicacionesSolicitadas.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPublicacionesSolicitadas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvPublicacionesSolicitadas.Location = new System.Drawing.Point(23, 90);
             this.dgvPublicacionesSolicitadas.Name = "dgvPublicacionesSolicitadas";
             this.dgvPublicacionesSolicitadas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPublicacionesSolicitadas.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPublicacionesSolicitadas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPublicacionesSolicitadas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPublicacionesSolicitadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPublicacionesSolicitadas.Size = new System.Drawing.Size(1597, 726);
             this.dgvPublicacionesSolicitadas.TabIndex = 6;
             // 
-            // btnCrearSubasta
+            // panel2
             // 
-            this.btnCrearSubasta.ActiveBorderThickness = 1;
-            this.btnCrearSubasta.ActiveCornerRadius = 20;
-            this.btnCrearSubasta.ActiveFillColor = System.Drawing.Color.SteelBlue;
-            this.btnCrearSubasta.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCrearSubasta.ActiveLineColor = System.Drawing.Color.SteelBlue;
-            this.btnCrearSubasta.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCrearSubasta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCrearSubasta.BackgroundImage")));
-            this.btnCrearSubasta.ButtonText = "Crear nueva subasta";
-            this.btnCrearSubasta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrearSubasta.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearSubasta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearSubasta.IdleBorderThickness = 1;
-            this.btnCrearSubasta.IdleCornerRadius = 20;
-            this.btnCrearSubasta.IdleFillColor = System.Drawing.Color.SteelBlue;
-            this.btnCrearSubasta.IdleForecolor = System.Drawing.Color.Transparent;
-            this.btnCrearSubasta.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.btnCrearSubasta.Location = new System.Drawing.Point(63, 25);
-            this.btnCrearSubasta.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnCrearSubasta.Name = "btnCrearSubasta";
-            this.btnCrearSubasta.Size = new System.Drawing.Size(286, 53);
-            this.btnCrearSubasta.TabIndex = 8;
-         this.btnCrearSubasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;      
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(404, 123);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.lblFuturasSubastas);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Location = new System.Drawing.Point(7, 7);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(400, 113);
+            this.panel5.TabIndex = 4;
+            // 
+            // lblFuturasSubastas
+            // 
+            this.lblFuturasSubastas.BackColor = System.Drawing.Color.Transparent;
+            this.lblFuturasSubastas.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuturasSubastas.ForeColor = System.Drawing.Color.Gray;
+            this.lblFuturasSubastas.Location = new System.Drawing.Point(279, 13);
+            this.lblFuturasSubastas.Name = "lblFuturasSubastas";
+            this.lblFuturasSubastas.Size = new System.Drawing.Size(86, 50);
+            this.lblFuturasSubastas.TabIndex = 3;
+            this.lblFuturasSubastas.Text = "10";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(10, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "FUTURAS SUBASTAS";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Silver;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.ForeColor = System.Drawing.Color.Silver;
+            this.panel6.Location = new System.Drawing.Point(15, 69);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(350, 2);
+            this.panel6.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmPublicacionesSolicitadas
             // 
@@ -320,12 +379,17 @@ namespace Cliente
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPublicacionesSolicitadas)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
       }
@@ -348,7 +412,12 @@ namespace Cliente
       private System.Windows.Forms.PictureBox pictureBox4;
       private System.Windows.Forms.Panel panel12;
       private System.Windows.Forms.DataGridView dgvPublicacionesSolicitadas;
-      private Bunifu.Framework.UI.BunifuThinButton2 btnAplicarCambios;
-      private Bunifu.Framework.UI.BunifuThinButton2 btnCrearSubasta;
+      private Bunifu.Framework.UI.BunifuFlatButton btnGuardarCambios;
+      private System.Windows.Forms.Panel panel2;
+      private System.Windows.Forms.Panel panel5;
+      private System.Windows.Forms.Label lblFuturasSubastas;
+      private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.Panel panel6;
+      private System.Windows.Forms.PictureBox pictureBox1;
    }
 }

@@ -10,55 +10,57 @@ using TPISubastas.Dominio;
 
 namespace TPISubastas.Sitio.HostedServices
 {
-    public class SubastaHabilitadaHostedService : IHostedService, IDisposable
-    {
-        private IServiceScopeFactory _ScopeFactory;
-        private Timer _timer;
+   public class SubastaHabilitadaHostedService : IHostedService, IDisposable
+   {
+      //Este servicio desactiva las subastas llegado su tiempo de cierre
+
+      private IServiceScopeFactory _ScopeFactory;
+      private Timer _timer;
 
 
-        public SubastaHabilitadaHostedService(IServiceScopeFactory scopeFactory)
-        {
-            _ScopeFactory = scopeFactory;
-        }
+      public SubastaHabilitadaHostedService(IServiceScopeFactory scopeFactory)
+      {
+         _ScopeFactory = scopeFactory;
+      }
 
-        public Task StartAsync(CancellationToken cancellationToken)
-        {
-            _timer = new Timer(SubastaHabilitada, null, TimeSpan.FromSeconds(10), TimeSpan.FromMinutes(1));
-            return Task.CompletedTask;
-        }
+      public Task StartAsync(CancellationToken cancellationToken)
+      {
+         _timer = new Timer(SubastaHabilitada, null, TimeSpan.FromSeconds(10), TimeSpan.FromMinutes(1));
+         return Task.CompletedTask;
+      }
 
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            _timer?.Change(Timeout.Infinite, 0);
-            return Task.CompletedTask;
-        }
-        public void Dispose()
-        {
-            _timer?.Dispose();
-        }
+      public Task StopAsync(CancellationToken cancellationToken)
+      {
+         _timer?.Change(Timeout.Infinite, 0);
+         return Task.CompletedTask;
+      }
+      public void Dispose()
+      {
+         _timer?.Dispose();
+      }
 
-        public void SubastaHabilitada(object state)
-        {
-            using (var scope = _ScopeFactory.CreateScope())
+      public void SubastaHabilitada(object state)
+      {
+         using (var scope = _ScopeFactory.CreateScope())
+         {
+            var _ContextoSubasta = scope.ServiceProvider.GetRequiredService<ContextoSubasta>();
+
+            var subastas = _ContextoSubasta.Subasta.Where(x => x.FechaCierre <= DateTime.Now && x.Habilitada == true).ToList();
+
+            Subasta subasta = new Subasta();
+            foreach (var item2 in subastas)
             {
-                var _ContextoSubasta = scope.ServiceProvider.GetRequiredService<ContextoSubasta>();
+               subasta = item2;
 
-                var subastas = _ContextoSubasta.Subasta.Where(x => x.FechaCierre <= DateTime.Now && x.Habilitada == true).ToList();
-                
-                Subasta subasta = new Subasta();
-                foreach (var item2 in subastas)
-                {
-                    subasta = item2;
+               if (subasta != null)
+               {
+                  subasta.Habilitada = false;
+                  _ContextoSubasta.Entry(subasta).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                  _ContextoSubasta.SaveChanges();
+               }
 
-                    if (subasta != null)
-                    {
-                        subasta.Habilitada = false;
-                        _ContextoSubasta.Entry(subasta).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                        _ContextoSubasta.SaveChanges();
-                    }                    
-
-                }
             }
-        }
-    }
+         }
+      }
+   }
 }

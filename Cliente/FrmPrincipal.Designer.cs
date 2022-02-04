@@ -35,7 +35,6 @@ namespace Cliente
             this.lblDashboard = new System.Windows.Forms.Label();
             this.Wrapper = new System.Windows.Forms.Panel();
             this.Sidebar = new System.Windows.Forms.Panel();
-            this.btnFuturasSubastas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LineShapeSidebar = new System.Windows.Forms.Panel();
             this.Flecha = new System.Windows.Forms.PictureBox();
@@ -49,6 +48,7 @@ namespace Cliente
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnFuturasSubastas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.Sidebar.SuspendLayout();
@@ -92,9 +92,9 @@ namespace Cliente
             this.lblDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.lblDashboard.Location = new System.Drawing.Point(22, 18);
             this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(128, 24);
+            this.lblDashboard.Size = new System.Drawing.Size(315, 24);
             this.lblDashboard.TabIndex = 1;
-            this.lblDashboard.Text = "DASHBOARD";
+            this.lblDashboard.Text = "PANEL DE CONTROL TUPsubastas";
             // 
             // Wrapper
             // 
@@ -132,42 +132,6 @@ namespace Cliente
             this.Sidebar.Name = "Sidebar";
             this.Sidebar.Size = new System.Drawing.Size(270, 884);
             this.Sidebar.TabIndex = 2;
-            // 
-            // btnFuturasSubastas
-            // 
-            this.btnFuturasSubastas.Activecolor = System.Drawing.Color.Transparent;
-            this.btnFuturasSubastas.BackColor = System.Drawing.Color.Transparent;
-            this.btnFuturasSubastas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFuturasSubastas.BorderRadius = 0;
-            this.btnFuturasSubastas.ButtonText = "   FUTURAS SUBASTAS";
-            this.btnFuturasSubastas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFuturasSubastas.DisabledColor = System.Drawing.Color.Gray;
-            this.btnFuturasSubastas.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnFuturasSubastas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFuturasSubastas.Iconimage")));
-            this.btnFuturasSubastas.Iconimage_right = null;
-            this.btnFuturasSubastas.Iconimage_right_Selected = null;
-            this.btnFuturasSubastas.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnFuturasSubastas.Iconimage_Selected")));
-            this.btnFuturasSubastas.IconMarginLeft = 0;
-            this.btnFuturasSubastas.IconMarginRight = 0;
-            this.btnFuturasSubastas.IconRightVisible = true;
-            this.btnFuturasSubastas.IconRightZoom = 0D;
-            this.btnFuturasSubastas.IconVisible = true;
-            this.btnFuturasSubastas.IconZoom = 70D;
-            this.btnFuturasSubastas.IsTab = true;
-            this.btnFuturasSubastas.Location = new System.Drawing.Point(12, 677);
-            this.btnFuturasSubastas.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFuturasSubastas.Name = "btnFuturasSubastas";
-            this.btnFuturasSubastas.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnFuturasSubastas.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnFuturasSubastas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(195)))), ((int)(((byte)(140)))));
-            this.btnFuturasSubastas.selected = false;
-            this.btnFuturasSubastas.Size = new System.Drawing.Size(236, 40);
-            this.btnFuturasSubastas.TabIndex = 15;
-            this.btnFuturasSubastas.Text = "   FUTURAS SUBASTAS";
-            this.btnFuturasSubastas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuturasSubastas.Textcolor = System.Drawing.Color.White;
-            this.btnFuturasSubastas.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuturasSubastas.Click += new System.EventHandler(this.btnFuturasSubastas_Click);
             // 
             // panel1
             // 
@@ -456,7 +420,7 @@ namespace Cliente
             this.lblNombreUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(63, 231);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(43, 231);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(78, 23);
             this.lblNombreUsuario.TabIndex = 3;
@@ -485,6 +449,42 @@ namespace Cliente
             this.label1.Size = new System.Drawing.Size(202, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "TUPsubastas";
+            // 
+            // btnFuturasSubastas
+            // 
+            this.btnFuturasSubastas.Activecolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.BackColor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFuturasSubastas.BorderRadius = 0;
+            this.btnFuturasSubastas.ButtonText = "   FUTURAS SUBASTAS";
+            this.btnFuturasSubastas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFuturasSubastas.DisabledColor = System.Drawing.Color.Gray;
+            this.btnFuturasSubastas.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFuturasSubastas.Iconimage")));
+            this.btnFuturasSubastas.Iconimage_right = null;
+            this.btnFuturasSubastas.Iconimage_right_Selected = null;
+            this.btnFuturasSubastas.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnFuturasSubastas.Iconimage_Selected")));
+            this.btnFuturasSubastas.IconMarginLeft = 0;
+            this.btnFuturasSubastas.IconMarginRight = 0;
+            this.btnFuturasSubastas.IconRightVisible = true;
+            this.btnFuturasSubastas.IconRightZoom = 0D;
+            this.btnFuturasSubastas.IconVisible = true;
+            this.btnFuturasSubastas.IconZoom = 70D;
+            this.btnFuturasSubastas.IsTab = true;
+            this.btnFuturasSubastas.Location = new System.Drawing.Point(12, 677);
+            this.btnFuturasSubastas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFuturasSubastas.Name = "btnFuturasSubastas";
+            this.btnFuturasSubastas.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.OnHovercolor = System.Drawing.Color.Transparent;
+            this.btnFuturasSubastas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(195)))), ((int)(((byte)(140)))));
+            this.btnFuturasSubastas.selected = false;
+            this.btnFuturasSubastas.Size = new System.Drawing.Size(236, 40);
+            this.btnFuturasSubastas.TabIndex = 15;
+            this.btnFuturasSubastas.Text = "   FUTURAS SUBASTAS";
+            this.btnFuturasSubastas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFuturasSubastas.Textcolor = System.Drawing.Color.White;
+            this.btnFuturasSubastas.TextFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuturasSubastas.Click += new System.EventHandler(this.btnFuturasSubastas_Click);
             // 
             // FrmPrincipal
             // 

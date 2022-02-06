@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cliente.frmNotificaciones;
+using Cliente.LoginModel;
 using SpreadsheetLight;
 
 namespace Cliente
 {
    public partial class FrmProductosPorSubasta : Form
    {
+      private ClienteAPI<TPISubastas.Dominio.SubastaProducto> cliente = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", User.Usuario, User.Contraseña);
+      private ClienteAPI<TPISubastas.Dominio.Oferta> clienteOferta = new ClienteAPI<TPISubastas.Dominio.Oferta>("https://localhost:44347/", "Oferta", User.Usuario, User.Contraseña);
+
       public List<TPISubastas.Dominio.SubastaProducto> productos = new List<TPISubastas.Dominio.SubastaProducto>();
       List<string> productosMarcas = new List<string>();
 
@@ -104,6 +109,61 @@ namespace Cliente
             }
          }
          excel.Visible = true;
+      }
+
+      private void btnOfertasProducto_Click(object sender, EventArgs e)
+      {
+         if (dgvProductos.CurrentCell != null)
+         {
+            int fila = dgvProductos.CurrentCell.RowIndex;
+            var idString = dgvProductos.Rows[fila].Cells[0].Value.ToString();
+            var idInt = int.Parse(idString);
+
+            var producto = cliente.Obtener(idInt);
+
+            var todasLasOfertas = clienteOferta.Listar();
+
+            List<TPISubastas.Dominio.Oferta> ofertasPorProducto = new List<TPISubastas.Dominio.Oferta>();
+
+            foreach (var item in todasLasOfertas)
+            {
+               if (item.IdSubastaProducto == producto.IdSubastaProducto)
+               {
+                  ofertasPorProducto.Add(item);
+               }
+
+            }
+            frmOfertasPorProducto frmOfertasPorProducto = new frmOfertasPorProducto();
+            frmOfertasPorProducto.dgvOfertas.DataSource = ofertasPorProducto;
+            frmOfertasPorProducto.DimensionarColumnas();
+            frmOfertasPorProducto.lblCantResultados.Text = ofertasPorProducto.Count().ToString();
+            if (ofertasPorProducto.Count() != 0)
+            {
+               frmOfertasPorProducto.lblOfertaAlta.Text = "$" + ofertasPorProducto.OrderByDescending(x => x.Monto).FirstOrDefault().Monto.ToString().Trim();
+               frmOfertasPorProducto.lblOfertaBaja.Text = "$" + ofertasPorProducto.OrderBy(x => x.Monto).FirstOrDefault().Monto.ToString().Trim();
+            }
+            else
+            {
+               frmOfertasPorProducto.lblOfertaAlta.Text = "N/A";
+               frmOfertasPorProducto.lblOfertaBaja.Text = "N/A";
+            }
+            frmOfertasPorProducto.lblTitulo.Text = frmOfertasPorProducto.lblTitulo.Text+producto.NombreProducto;
+            frmOfertasPorProducto.Show();
+            frmOfertasPorProducto.dgvOfertas.Refresh();
+         }
+         else
+         {
+            DialogResult resultado = new DialogResult();
+            Form mensaje = new FrmInformation("No se ha seleccionado ningún producto");
+            resultado = mensaje.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();
+
+            }
+         }
+         
       }
    }
 }

@@ -53,12 +53,13 @@ namespace Cliente
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnOfertasProducto = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnExportarExcel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBoxBusqueda = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tablaProductosVendidos = new System.Windows.Forms.DataGridView();
-            this.btnExportarExcel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -285,6 +286,7 @@ namespace Cliente
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel12.Controls.Add(this.btnOfertasProducto);
             this.panel12.Controls.Add(this.btnExportarExcel);
             this.panel12.Controls.Add(this.lblBusqueda);
             this.panel12.Controls.Add(this.txtBoxBusqueda);
@@ -295,6 +297,78 @@ namespace Cliente
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1647, 838);
             this.panel12.TabIndex = 3;
+            // 
+            // btnOfertasProducto
+            // 
+            this.btnOfertasProducto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnOfertasProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnOfertasProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOfertasProducto.BorderRadius = 7;
+            this.btnOfertasProducto.ButtonText = " Ofertas del producto";
+            this.btnOfertasProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOfertasProducto.DisabledColor = System.Drawing.Color.Gray;
+            this.btnOfertasProducto.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnOfertasProducto.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnOfertasProducto.Iconimage")));
+            this.btnOfertasProducto.Iconimage_right = null;
+            this.btnOfertasProducto.Iconimage_right_Selected = null;
+            this.btnOfertasProducto.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnOfertasProducto.Iconimage_Selected")));
+            this.btnOfertasProducto.IconMarginLeft = 0;
+            this.btnOfertasProducto.IconMarginRight = 0;
+            this.btnOfertasProducto.IconRightVisible = true;
+            this.btnOfertasProducto.IconRightZoom = 0D;
+            this.btnOfertasProducto.IconVisible = true;
+            this.btnOfertasProducto.IconZoom = 63D;
+            this.btnOfertasProducto.IsTab = true;
+            this.btnOfertasProducto.Location = new System.Drawing.Point(1147, 34);
+            this.btnOfertasProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOfertasProducto.Name = "btnOfertasProducto";
+            this.btnOfertasProducto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnOfertasProducto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnOfertasProducto.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnOfertasProducto.selected = false;
+            this.btnOfertasProducto.Size = new System.Drawing.Size(227, 48);
+            this.btnOfertasProducto.TabIndex = 41;
+            this.btnOfertasProducto.Text = " Ofertas del producto";
+            this.btnOfertasProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOfertasProducto.Textcolor = System.Drawing.Color.White;
+            this.btnOfertasProducto.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfertasProducto.Click += new System.EventHandler(this.btnOfertasProducto_Click);
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportarExcel.BorderRadius = 7;
+            this.btnExportarExcel.ButtonText = "   Exportar a Excel ";
+            this.btnExportarExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportarExcel.DisabledColor = System.Drawing.Color.Gray;
+            this.btnExportarExcel.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage")));
+            this.btnExportarExcel.Iconimage_right = null;
+            this.btnExportarExcel.Iconimage_right_Selected = null;
+            this.btnExportarExcel.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage_Selected")));
+            this.btnExportarExcel.IconMarginLeft = 10;
+            this.btnExportarExcel.IconMarginRight = 0;
+            this.btnExportarExcel.IconRightVisible = true;
+            this.btnExportarExcel.IconRightZoom = 0D;
+            this.btnExportarExcel.IconVisible = true;
+            this.btnExportarExcel.IconZoom = 55D;
+            this.btnExportarExcel.IsTab = true;
+            this.btnExportarExcel.Location = new System.Drawing.Point(1408, 34);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnExportarExcel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnExportarExcel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnExportarExcel.selected = false;
+            this.btnExportarExcel.Size = new System.Drawing.Size(193, 48);
+            this.btnExportarExcel.TabIndex = 40;
+            this.btnExportarExcel.Text = "   Exportar a Excel ";
+            this.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportarExcel.Textcolor = System.Drawing.Color.White;
+            this.btnExportarExcel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
             // lblBusqueda
             // 
@@ -382,42 +456,6 @@ namespace Cliente
             this.tablaProductosVendidos.Size = new System.Drawing.Size(1597, 706);
             this.tablaProductosVendidos.TabIndex = 7;
             // 
-            // btnExportarExcel
-            // 
-            this.btnExportarExcel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
-            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
-            this.btnExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExportarExcel.BorderRadius = 7;
-            this.btnExportarExcel.ButtonText = "   Exportar a Excel ";
-            this.btnExportarExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportarExcel.DisabledColor = System.Drawing.Color.Gray;
-            this.btnExportarExcel.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
-            this.btnExportarExcel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage")));
-            this.btnExportarExcel.Iconimage_right = null;
-            this.btnExportarExcel.Iconimage_right_Selected = null;
-            this.btnExportarExcel.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Iconimage_Selected")));
-            this.btnExportarExcel.IconMarginLeft = 10;
-            this.btnExportarExcel.IconMarginRight = 0;
-            this.btnExportarExcel.IconRightVisible = true;
-            this.btnExportarExcel.IconRightZoom = 0D;
-            this.btnExportarExcel.IconVisible = true;
-            this.btnExportarExcel.IconZoom = 55D;
-            this.btnExportarExcel.IsTab = true;
-            this.btnExportarExcel.Location = new System.Drawing.Point(1408, 34);
-            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
-            this.btnExportarExcel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
-            this.btnExportarExcel.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnExportarExcel.selected = false;
-            this.btnExportarExcel.Size = new System.Drawing.Size(193, 46);
-            this.btnExportarExcel.TabIndex = 40;
-            this.btnExportarExcel.Text = "   Exportar a Excel ";
-            this.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportarExcel.Textcolor = System.Drawing.Color.White;
-            this.btnExportarExcel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
-            // 
             // FrmProductosVendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,5 +515,6 @@ namespace Cliente
       private System.Windows.Forms.PictureBox pictureBox6;
       private System.Windows.Forms.PictureBox pictureBox5;
       private Bunifu.Framework.UI.BunifuFlatButton btnExportarExcel;
+      private Bunifu.Framework.UI.BunifuFlatButton btnOfertasProducto;
    }
 }

@@ -136,6 +136,7 @@ namespace Cliente
       {
          SeleccionandoBotones((Bunifu.Framework.UI.BunifuFlatButton)sender);
          SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
+         AbrirFormulariosEnWrapper(new frmInformes());
       }
 
       private Form formActivado = null;

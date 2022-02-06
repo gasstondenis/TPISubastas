@@ -58,6 +58,7 @@ namespace TPISubastas.Sitio.HostedServices
                var oferta = _ContextoSubasta.Oferta.Where(x => x.IdSubastaProducto == producto.IdSubastaProducto).OrderByDescending(x => x.Monto).FirstOrDefault();
                if (producto.IdEstadoSubasta == 3)
                {
+                  //En caso de que el producto haya sido vendido, se llama al método NotificarGanador el cual envia un email al ganador de la subasta
                   NotificarGanador(oferta, producto, _ContextoSubasta);
                   producto.Notificado = true;
                   producto.IdUsuarioComprador = oferta.IdUsuario;
@@ -66,6 +67,7 @@ namespace TPISubastas.Sitio.HostedServices
                }
                else if (producto.IdEstadoSubasta == 5)
                {
+                  //En caso de que el producto NO haya sido vendido, se llama al método NotificarVendedor el cual envia un email al vendedor del producto
                   NotificarVendedor(oferta, producto, _ContextoSubasta);
                   producto.Notificado = true;
                   _ContextoSubasta.Entry(producto).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

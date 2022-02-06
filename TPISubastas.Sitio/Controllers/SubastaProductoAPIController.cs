@@ -36,6 +36,13 @@ namespace TPISubastas.Sitio.Controllers
          _contexto.SaveChanges();
       }
 
+      // GET api/<SubastaProductoAPIController>/5
+      [HttpGet("{id}")]
+      public SubastaProducto Get(int id)
+      {
+         return _contexto.SubastaProducto.FirstOrDefault(x => x.IdSubastaProducto == id);
+      }
+
       // PUT api/<SubastaProductoAPIController>/5
       [HttpPut("{id}")]
       public void Put(int id, [FromBody] SubastaProducto value)

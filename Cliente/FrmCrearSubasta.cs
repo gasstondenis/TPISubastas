@@ -19,9 +19,9 @@ namespace Cliente
       DialogResult resultado = new DialogResult();
       Form mensaje;
       public FrmCrearSubasta()
-      {         
+      {
          InitializeComponent();
-         LimpiarCampos();         
+         LimpiarCampos();
          Listar();
          DimensionarColumnas();
       }
@@ -40,7 +40,7 @@ namespace Cliente
       }
       private void LimpiarCampos()
       {
-         txtBoxDescripcion.Text = "";          
+         txtBoxDescripcion.Text = "";
          dtpFechaInicio.Value = DateTime.Now.Date;
          dtpFechaCierre.Value = DateTime.Now.Date.AddDays(1);
          nudDuracion.Value = 1;
@@ -68,7 +68,7 @@ namespace Cliente
       {
          var subastasPendientes = new TPISubastas.Dominio.Subasta();
          subastasPendientes.Descripcion = txtBoxDescripcion.Text;
-         subastasPendientes.Duracion = (int) nudDuracion.Value;
+         subastasPendientes.Duracion = (int)nudDuracion.Value;
          subastasPendientes.Nombre = txtBoxNombre.Text;
          subastasPendientes.FechaInicio = dtpFechaInicio.Value.Date;
          subastasPendientes.FechaCreacion = DateTime.Now.Date;
@@ -79,7 +79,7 @@ namespace Cliente
          {
             try
             {
-               cliente.Agregar(subastasPendientes);               
+               cliente.Agregar(subastasPendientes);
             }
             catch (Exception ex)
             {
@@ -110,7 +110,7 @@ namespace Cliente
          }
          LimpiarCampos();
          Listar();
-         
+
       }
       private void Listar()
       {
@@ -124,7 +124,7 @@ namespace Cliente
             {
                subastasActuales.Add(item);
             }
-            if(item.FechaInicio <= DateTime.Today.Date && item.FechaCierre > DateTime.Today.Date && item.Habilitada)
+            if (item.FechaInicio <= DateTime.Today.Date && item.FechaCierre > DateTime.Today.Date && item.Habilitada)
             {
                subastasAbiertas.Add(item);
             }
@@ -142,59 +142,27 @@ namespace Cliente
 
       private void btnGuardarCambios_Click(object sender, EventArgs e)
       {
-         List<TPISubastas.Dominio.Subasta> subastas = (List<TPISubastas.Dominio.Subasta>)dgvCrearSubasta.DataSource;
-         TPISubastas.Dominio.Subasta actualizada = new TPISubastas.Dominio.Subasta();
-         try
+         if (dgvCrearSubasta.CurrentCell != null)
          {
-            foreach (var item in subastas)
-            {
-               actualizada.FechaInicio = item.FechaInicio;
-               actualizada.FechaCierre = item.FechaCierre;
-               actualizada.FechaCreacion = item.FechaCreacion;
-               actualizada.Descripcion = item.Descripcion;
-               actualizada.IdSubasta = item.IdSubasta;
-               actualizada.Nombre = item.Nombre;
-               actualizada.Habilitada = item.Habilitada;
-               actualizada.Duracion = int.Parse((item.FechaCierre.Value.Date - item.FechaInicio.Value.Date).Days.ToString());
-
-
-               cliente.Actualizar(actualizada, actualizada.IdSubasta.ToString());
-            }
-            mensaje = new FrmSuccess("¡Los cambios se han guardado y aplicado de manera exitosa!");
-            resultado = mensaje.ShowDialog();
-            if (resultado == DialogResult.OK)
-            {
-               mensaje.Close();
-            }
-            Listar();
-         }
-         catch (Exception ex)
-         {
-            mensaje = new FrmInformation("Ha ocurrido un error al guardar los cambios: " + ex.Message);
-            resultado = mensaje.ShowDialog();
-            if (resultado == DialogResult.OK)
-            {
-               mensaje.Close();
-            }
-         }
-
-
-      }
-
-      private void btnEliminarSubasta_Click(object sender, EventArgs e)
-      {
-         mensaje = new FrmInformation("¿Eliminar la subasta?");
-         resultado = mensaje.ShowDialog();
-         if (resultado == DialogResult.OK)
-         {
-            mensaje.Close();
+            List<TPISubastas.Dominio.Subasta> subastas = (List<TPISubastas.Dominio.Subasta>)dgvCrearSubasta.DataSource;
+            TPISubastas.Dominio.Subasta actualizada = new TPISubastas.Dominio.Subasta();
             try
             {
-               int fila = dgvCrearSubasta.CurrentCell.RowIndex;
-               var id = dgvCrearSubasta.Rows[fila].Cells[0].Value.ToString();
-               cliente.Eliminar(int.Parse(id));
+               foreach (var item in subastas)
+               {
+                  actualizada.FechaInicio = item.FechaInicio;
+                  actualizada.FechaCierre = item.FechaCierre;
+                  actualizada.FechaCreacion = item.FechaCreacion;
+                  actualizada.Descripcion = item.Descripcion;
+                  actualizada.IdSubasta = item.IdSubasta;
+                  actualizada.Nombre = item.Nombre;
+                  actualizada.Habilitada = item.Habilitada;
+                  actualizada.Duracion = int.Parse((item.FechaCierre.Value.Date - item.FechaInicio.Value.Date).Days.ToString());
 
-               mensaje = new FrmSuccess("¡La subasta seleccionada se ha eliminado correctamente!");
+
+                  cliente.Actualizar(actualizada, actualizada.IdSubasta.ToString());
+               }
+               mensaje = new FrmSuccess("¡Los cambios se han guardado y aplicado de manera exitosa!");
                resultado = mensaje.ShowDialog();
                if (resultado == DialogResult.OK)
                {
@@ -204,7 +172,7 @@ namespace Cliente
             }
             catch (Exception ex)
             {
-               mensaje = new FrmInformation("Ha ocurrido un error al eliminar la subasta: " + ex.Message);
+               mensaje = new FrmInformation("Ha ocurrido un error al guardar los cambios: " + ex.Message);
                resultado = mensaje.ShowDialog();
                if (resultado == DialogResult.OK)
                {
@@ -212,14 +180,69 @@ namespace Cliente
                }
             }
          }
-         
-        
+         else
+         {
+            mensaje = new FrmInformation("No se ha seleccionado ninguna subasta");
+            resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();
+            }
+         }
+      }
+
+      private void btnEliminarSubasta_Click(object sender, EventArgs e)
+      {
+         if (dgvCrearSubasta.CurrentCell != null)
+         {
+            mensaje = new FrmInformation("¿Eliminar la subasta?");
+            resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();
+               try
+               {
+
+                  int fila = dgvCrearSubasta.CurrentCell.RowIndex;
+                  var id = dgvCrearSubasta.Rows[fila].Cells[0].Value.ToString();
+                  cliente.Eliminar(int.Parse(id));
+
+                  mensaje = new FrmSuccess("¡La subasta seleccionada se ha eliminado correctamente!");
+                  resultado = mensaje.ShowDialog();
+                  if (resultado == DialogResult.OK)
+                  {
+                     mensaje.Close();
+                  }
+                  Listar();
+
+
+               }
+               catch (Exception ex)
+               {
+                  mensaje = new FrmInformation("Ha ocurrido un error al eliminar la subasta: " + ex.Message);
+                  resultado = mensaje.ShowDialog();
+                  if (resultado == DialogResult.OK)
+                  {
+                     mensaje.Close();
+                  }
+               }
+            }
+         }
+         else
+         {
+            mensaje = new FrmInformation("No se ha seleccionado ninguna subasta");
+            resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();
+            }
+         }
       }
 
       private void dgvCrearSubasta_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
       {
-                           
-            dgvCrearSubasta.Rows[e.RowIndex].Selected = false;
+
+         dgvCrearSubasta.Rows[e.RowIndex].Selected = false;
       }
 
       private void dtpFechaCierre_ValueChanged(object sender, EventArgs e)
@@ -228,9 +251,9 @@ namespace Cliente
          nudDuracion.Minimum = 1;
          try
          {
-            nudDuracion.Value = int.Parse((dtpFechaCierre.Value.Date - dtpFechaInicio.Value.Date).Days.ToString());            
+            nudDuracion.Value = int.Parse((dtpFechaCierre.Value.Date - dtpFechaInicio.Value.Date).Days.ToString());
          }
-         catch(Exception ex)
+         catch (Exception ex)
          {
             mensaje = new FrmInformation("La fecha de cierre de la subasta debe ser mayor a la fecha de inicio y la diferencia entre ambas no debe ser mayor a 31 dias.");
             resultado = mensaje.ShowDialog();
@@ -244,6 +267,6 @@ namespace Cliente
          }
       }
 
-     
+
    }
 }

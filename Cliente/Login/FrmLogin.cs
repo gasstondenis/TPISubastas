@@ -138,6 +138,29 @@ namespace Cliente
             txtBoxContraseña.Focus();
       }
 
+      private void btnRegistrarse_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            VisitLink();
+         }
+         catch(Exception ex)
+         {
+            DialogResult resultado2 = new DialogResult();
+            Form mensaje2 = new FrmInformation("El sitio no está disponible actualmente o no se encuentra conectado a internet.");
+            resultado2 = mensaje2.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje2.Close();               
+            }
+         }
+      }
+      private void VisitLink()
+      {        
+         System.Diagnostics.Process.Start("https://localhost:44347/Account/Register");
+      }
+     
+
       private void FrmLogin_MouseMove(object sender, MouseEventArgs e)
       {
          if (m == 1)

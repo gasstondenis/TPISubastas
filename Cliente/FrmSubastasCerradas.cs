@@ -71,14 +71,14 @@ namespace Cliente
 
       public void DimensionarColumnas()
       {
-         tablaSubastasCerradas.Columns[0].Width = 80;
-         tablaSubastasCerradas.Columns[1].Width = 150;
-         tablaSubastasCerradas.Columns[2].Width = 150;
-         tablaSubastasCerradas.Columns[3].Width = 150;
-         tablaSubastasCerradas.Columns[4].Width = 100;
+         tablaSubastasCerradas.Columns[0].Width = 100;
+         tablaSubastasCerradas.Columns[1].Width = 180;
+         tablaSubastasCerradas.Columns[2].Width = 180;
+         tablaSubastasCerradas.Columns[3].Width = 180;
+         tablaSubastasCerradas.Columns[4].Width = 140;
          tablaSubastasCerradas.Columns[5].Width = 300;
          tablaSubastasCerradas.Columns[6].Width = 500;
-         tablaSubastasCerradas.Columns[7].Width = 100;
+         tablaSubastasCerradas.Columns[7].Width = 140;
       }
 
       private void btnProductosVendidos_Click(object sender, EventArgs e)

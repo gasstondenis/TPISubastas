@@ -16,6 +16,7 @@ namespace Cliente
    {
 
       private ClienteAPI<TPISubastas.Dominio.Subasta> cliente = new ClienteAPI<TPISubastas.Dominio.Subasta>("https://localhost:44347/", "Subasta", User.Usuario, User.Contraseña);
+      private ClienteAPI<TPISubastas.Dominio.SubastaProducto> clienteProducto = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", User.Usuario, User.Contraseña);
       DialogResult resultado = new DialogResult();
       Form mensaje;
 
@@ -57,19 +58,19 @@ namespace Cliente
 
       public void DimensionarColumnas()
       {
-         tablaSubastasAbiertas.Columns[0].Width = 80;
+         tablaSubastasAbiertas.Columns[0].Width = 100;
          tablaSubastasAbiertas.Columns[0].ReadOnly = true;
-         tablaSubastasAbiertas.Columns[1].Width = 150;
+         tablaSubastasAbiertas.Columns[1].Width = 190;
          tablaSubastasAbiertas.Columns[1].ReadOnly = true;
-         tablaSubastasAbiertas.Columns[2].Width = 150;
+         tablaSubastasAbiertas.Columns[2].Width = 190;
          tablaSubastasAbiertas.Columns[2].ReadOnly = true;
-         tablaSubastasAbiertas.Columns[3].Width = 150;
-         tablaSubastasAbiertas.Columns[4].Width = 100;
+         tablaSubastasAbiertas.Columns[3].Width = 190;
+         tablaSubastasAbiertas.Columns[4].Width = 140;
          tablaSubastasAbiertas.Columns[4].ReadOnly = true;
 
          tablaSubastasAbiertas.Columns[5].Width = 300;
          tablaSubastasAbiertas.Columns[6].Width = 500;
-         tablaSubastasAbiertas.Columns[7].Width = 100;
+         tablaSubastasAbiertas.Columns[7].Width = 140;
       }
 
       public void BuscarElementos(int id)
@@ -131,6 +132,30 @@ namespace Cliente
                mensaje.Close();
             }
          }
+      }
+
+      private void btnProductosDeLaSubasta_Click(object sender, EventArgs e)
+      {
+         int fila = tablaSubastasAbiertas.CurrentCell.RowIndex;
+         var idString = tablaSubastasAbiertas.Rows[fila].Cells[0].Value.ToString();
+         var idInt = int.Parse(idString);
+
+         List<TPISubastas.Dominio.SubastaProducto> productosDeLaSubasta = new List<TPISubastas.Dominio.SubastaProducto>();
+         var productos = clienteProducto.Listar();
+         foreach (var item in productos)
+         {
+            if (item.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.Aprobado) && item.IdSubasta == idInt)
+               productosDeLaSubasta.Add(item);
+         }
+         FrmProductosPorSubasta frmProductosPorSubasta = new FrmProductosPorSubasta();
+         frmProductosPorSubasta.productos = productosDeLaSubasta;
+         frmProductosPorSubasta.lblCantResultados.Text = productosDeLaSubasta.Count().ToString();
+         //frmProductosPorSubasta.lblTituloVentana.Text = "Productos sin oferta de la subasta seleccionada";
+         frmProductosPorSubasta.vendidos = false;
+         frmProductosPorSubasta.todos = true;
+         frmProductosPorSubasta.Show();
+         frmProductosPorSubasta.dgvProductos.DataSource = productosDeLaSubasta;
+         frmProductosPorSubasta.dgvProductos.Refresh();
       }
    }
 }

@@ -15,6 +15,7 @@ namespace Cliente
    public partial class FrmCrearSubasta : Form
    {
       private ClienteAPI<TPISubastas.Dominio.Subasta> cliente = new ClienteAPI<TPISubastas.Dominio.Subasta>("https://localhost:44347/", "Subasta", User.Usuario, User.Contraseña);
+      private ClienteAPI<TPISubastas.Dominio.SubastaProducto> clienteProductos = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", User.Usuario, User.Contraseña);
 
       DialogResult resultado = new DialogResult();
       Form mensaje;
@@ -49,19 +50,19 @@ namespace Cliente
 
       public void DimensionarColumnas()
       {
-         dgvCrearSubasta.Columns[0].Width = 80;
+         dgvCrearSubasta.Columns[0].Width = 120;
          dgvCrearSubasta.Columns[0].ReadOnly = true;
-         dgvCrearSubasta.Columns[1].Width = 150;
+         dgvCrearSubasta.Columns[1].Width = 180;
          dgvCrearSubasta.Columns[1].ReadOnly = true;
-         dgvCrearSubasta.Columns[2].Width = 150;
+         dgvCrearSubasta.Columns[2].Width = 180;
          //dgvCrearSubasta.Columns[2].ReadOnly = true;
-         dgvCrearSubasta.Columns[3].Width = 150;
-         dgvCrearSubasta.Columns[4].Width = 100;
+         dgvCrearSubasta.Columns[3].Width = 180;
+         dgvCrearSubasta.Columns[4].Width = 130;
          dgvCrearSubasta.Columns[4].ReadOnly = true;
 
          dgvCrearSubasta.Columns[5].Width = 300;
          dgvCrearSubasta.Columns[6].Width = 500;
-         dgvCrearSubasta.Columns[7].Width = 100;
+         dgvCrearSubasta.Columns[7].Width = 140;
       }
 
       private void btnInsertar_Click(object sender, EventArgs e)
@@ -193,6 +194,13 @@ namespace Cliente
 
       private void btnEliminarSubasta_Click(object sender, EventArgs e)
       {
+         
+         //No se pueden eliminar subastas con fecha de inicio igual o menor a la fecha actual
+         //A fines prácticos de explicación, la modificación de fecha de inicio de una subasta estará PERMITIDA. No obstante, esto no es lo ideal en un entorno de producción
+         //
+         //Antes de eliminar una subasta se comprobará que no existan solicitudes de publicación de productos a la misma, en caso de existir alguna/s se eliminaran...
+         //...Para posteriormente eliminar la subasta. NO se dará aviso a los solicitantes de la eliminación de su producto ni de su solicitud
+         //
          if (dgvCrearSubasta.CurrentCell != null)
          {
             mensaje = new FrmInformation("¿Eliminar la subasta?");
@@ -201,19 +209,40 @@ namespace Cliente
             {
                mensaje.Close();
                try
-               {
-
+               {                  
                   int fila = dgvCrearSubasta.CurrentCell.RowIndex;
                   var id = dgvCrearSubasta.Rows[fila].Cells[0].Value.ToString();
-                  cliente.Eliminar(int.Parse(id));
+                  var subastaAbierta = cliente.Obtener(int.Parse(id));
+                  if(subastaAbierta == null || subastaAbierta.FechaInicio > DateTime.Now.Date) {
+                     var productos = clienteProductos.Listar();
+                     var solicitudes = productos.Where(x => x.IdSubasta == (int.Parse(id)));
+                     if (solicitudes != null)
+                     {
+                        foreach (var item in solicitudes)
+                        {
+                           clienteProductos.Eliminar(item.IdSubastaProducto);
+                        }
+                     }
+                     cliente.Eliminar(int.Parse(id));
+                     mensaje = new FrmSuccess("¡La subasta seleccionada se ha eliminado correctamente!");
+                     resultado = mensaje.ShowDialog();
+                     if (resultado == DialogResult.OK)
+                     {
+                        mensaje.Close();
+                     }
+                     Listar();
 
-                  mensaje = new FrmSuccess("¡La subasta seleccionada se ha eliminado correctamente!");
-                  resultado = mensaje.ShowDialog();
-                  if (resultado == DialogResult.OK)
-                  {
-                     mensaje.Close();
                   }
-                  Listar();
+                  else
+                  {
+                     mensaje = new FrmInformation("No puede eliminar una subasta abierta, sólo puede desactivarla.");
+                     resultado = mensaje.ShowDialog();
+                     if (resultado == DialogResult.OK)
+                     {
+                        mensaje.Close();
+                     }
+                     Listar();
+                  }
 
 
                }

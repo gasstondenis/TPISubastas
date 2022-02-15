@@ -27,6 +27,7 @@
                             <li>
                                 <a class="p-2 bd-highlight" id="vender" asp-controller="Subasta" asp-action="Crear">Vender</a>
                             </li>
+
                             <li>
                                 <a class="p-2 bd-highlight" asp-controller="Account" asp-action="Register">Registrarse</a>
                             </li>
@@ -34,20 +35,24 @@
                             <li>
                                 <a class="p-2 bd-highlight" id="login" asp-controller="Account" asp-action="Login">Iniciar Sesión</a>
                             </li>
+                            <li>
+                                <a class="p-2 bd-highlight" id="about" asp-controller="Home" asp-action="About">Sobre nosotros</a>
+                            </li>
 
                         }
                         else
                         {
+
                             <li>
                                 <a class="p-2 bd-highlight" id="vender" asp-controller="Subasta" asp-action="Crear">Vender</a>
                             </li>
                             <li>
-                                <a id="logout" class="p-2 bd-highlight" id="vender" asp-controller="Account" asp-action="Logout">Cerrar sesión</a>
+                                <a id="logout" class="p-2 bd-highlight" asp-controller="Account" asp-action="Logout">Cerrar sesión</a>
+                            </li>
+                            <li>
+                                <a class="p-2 bd-highlight" id="about" asp-controller="Home" asp-action="About">Sobre nosotros</a>
                             </li>
                         }
-
-
-
                     </ul>
 
                 </div>

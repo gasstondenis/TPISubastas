@@ -1,0 +1,13 @@
+﻿.container #logo img {
+    height: 700px;
+}
+
+.container #info h3 {    
+    background-color: burlywood;
+    border-radius: 8px;
+    font-size: 28px;
+}
+
+.container #info p {
+    font-size: 20px;
+}

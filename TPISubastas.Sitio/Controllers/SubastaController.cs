@@ -37,9 +37,10 @@ namespace TPISubastas.Sitio.Controllers
             Cantidad = 1;
          }
          SubastaListado listado = new SubastaListado();
-         var consulta = _contexto.Subasta.Where(x => x.Habilitada && x.FechaCierre > DateTime.Now && x.FechaInicio < DateTime.Now);
-         int totalelementos = consulta.Count();
+         var consulta = _contexto.Subasta.Where(x => x.Habilitada && x.FechaCierre > DateTime.Now);        
+         int totalelementos = consulta.Count();        
          listado.Subastas = consulta.Skip((Pagina - 1) * Cantidad).Take(Cantidad).Select(fuente => new SubastaItem(fuente)).ToList();
+         listado.FuturasSubastas = consulta.Select(x => new SubastaItem(x)).ToList();
          listado.TotalPaginas = (totalelementos / Cantidad) + 1;
          listado.Cantidad = Cantidad;
          listado.Pagina = Pagina;
@@ -54,8 +55,13 @@ namespace TPISubastas.Sitio.Controllers
       }
       private void CargarFormaPago(SubastaProductoFormulario modelo)
       {
-
-
+         modelo.OpcionesPago = new List<SelectListItem>();
+         List<SelectListItem> opciones = new List<SelectListItem>();
+         opciones.Add(new SelectListItem() {Text = "Efectivo", Value = "Efectivo" });
+         opciones.Add(new SelectListItem() {Text = "Crédito", Value = "Crédito" });
+         opciones.Add(new SelectListItem() {Text = "Transferencia", Value = "Transferencia" });
+         
+         modelo.OpcionesPago.AddRange(opciones);
       }
 
       [Authorize]
@@ -74,6 +80,7 @@ namespace TPISubastas.Sitio.Controllers
       {
          if (ModelState.IsValid)
          {
+            
             TPISubastas.Dominio.SubastaProducto nuevo = new Dominio.SubastaProducto();
             nuevo.IdSubasta = modelo.IdSubasta;
             nuevo.IdEstadoSubasta = (int)TPISubastas.Dominio.Estados.Propuesto;

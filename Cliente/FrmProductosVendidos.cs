@@ -106,19 +106,19 @@ namespace Cliente
 
       public void DimensionarColumnas()
       {
-         tablaProductosVendidos.Columns[0].Width = 100; //IdSubastaProducto
-         tablaProductosVendidos.Columns[1].Width = 80; //IdSubasta
+         tablaProductosVendidos.Columns[0].Width = 150; //IdSubastaProducto
+         tablaProductosVendidos.Columns[1].Width = 120; //IdSubasta
          tablaProductosVendidos.Columns[2].Width = 400; //NombreProducto
-         tablaProductosVendidos.Columns[3].Width = 200; //MarcaProducto
+         tablaProductosVendidos.Columns[3].Width = 240; //MarcaProducto
          tablaProductosVendidos.Columns[4].Width = 450; //DescripciónProducto
-         tablaProductosVendidos.Columns[5].Width = 100; //ImagenProducto
-         tablaProductosVendidos.Columns[6].Width = 100; //FormaPago 
-         tablaProductosVendidos.Columns[7].Width = 150; // MontoInicial
-         tablaProductosVendidos.Columns[8].Width = 100;  //IdUsuarioVendedor
-         tablaProductosVendidos.Columns[9].Width = 100; //IdUsuarioComprador
-         tablaProductosVendidos.Columns[11].Width = 100; //IdEstadoSubasta
-         tablaProductosVendidos.Columns[12].Width = 100;
-         tablaProductosVendidos.Columns[13].Width = 150;
+         tablaProductosVendidos.Columns[5].Width = 140; //ImagenProducto
+         tablaProductosVendidos.Columns[6].Width = 140; //FormaPago 
+         tablaProductosVendidos.Columns[7].Width = 190; // MontoInicial
+         tablaProductosVendidos.Columns[8].Width = 140;  //IdUsuarioVendedor
+         tablaProductosVendidos.Columns[9].Width = 160; //IdUsuarioComprador
+         tablaProductosVendidos.Columns[11].Width = 140; //IdEstadoSubasta
+         tablaProductosVendidos.Columns[12].Width = 140;
+         tablaProductosVendidos.Columns[13].Width = 180;
 
          tablaProductosVendidos.Columns[8].HeaderText = "IdUsuarioVendedor";
          tablaProductosVendidos.Columns[10].Visible = false;

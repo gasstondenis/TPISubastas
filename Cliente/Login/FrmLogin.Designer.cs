@@ -43,10 +43,12 @@ namespace Cliente
             this.txtBoxContraseña = new System.Windows.Forms.TextBox();
             this.btnIniciarSesion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnRegistrarse = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrarse)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -207,12 +209,28 @@ namespace Cliente
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Ha olvidado su contraseña?";
             // 
+            // btnRegistrarse
+            // 
+            this.btnRegistrarse.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarse.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarse.Image")));
+            this.btnRegistrarse.ImageActive = null;
+            this.btnRegistrarse.Location = new System.Drawing.Point(12, 12);
+            this.btnRegistrarse.Name = "btnRegistrarse";
+            this.btnRegistrarse.Size = new System.Drawing.Size(40, 40);
+            this.btnRegistrarse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRegistrarse.TabIndex = 11;
+            this.btnRegistrarse.TabStop = false;
+            this.btnRegistrarse.Zoom = 10;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtBoxContraseña);
@@ -225,9 +243,10 @@ namespace Cliente
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogin";
+            this.Text = "Login";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseUp);
@@ -235,6 +254,7 @@ namespace Cliente
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrarse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +274,6 @@ namespace Cliente
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton btnSalir;
         private System.Windows.Forms.PictureBox pictureBox1;
-    }
+      private Bunifu.Framework.UI.BunifuImageButton btnRegistrarse;
+   }
 }

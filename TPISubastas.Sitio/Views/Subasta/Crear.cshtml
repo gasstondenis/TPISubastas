@@ -66,7 +66,7 @@
                 <div class="form-group row">
                     <label asp-for="FormaPago" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
-                        <input asp-for="FormaPago" class="form-control"/>
+                        <select asp-for="FormaPago" asp-items="@(Model.OpcionesPago)" class="form-control"><option value="">Elija una forma de pago</option></select>
                         <span asp-validation-for="FormaPago" class="text-danger"></span>
                     </div>
 

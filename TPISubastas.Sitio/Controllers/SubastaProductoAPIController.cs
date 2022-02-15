@@ -68,6 +68,17 @@ namespace TPISubastas.Sitio.Controllers
             _contexto.SaveChanges();
          }
       }
+      // DELETE api/<SubastaProductoAPIController>/5
+      [HttpDelete("{id}")]
+      public void Delete(int id)
+      {
+         var original = _contexto.SubastaProducto.FirstOrDefault(x => x.IdSubastaProducto == id);
 
+         if (original != null)
+         {
+            _contexto.Entry(original).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+            _contexto.SaveChanges();
+         }
+      }
    }
 }

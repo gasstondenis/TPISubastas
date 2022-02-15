@@ -40,6 +40,7 @@ namespace Cliente
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnProductosDeLaSubasta = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dgvFuturasSubastas = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -165,12 +166,49 @@ namespace Cliente
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel12.Controls.Add(this.btnProductosDeLaSubasta);
             this.panel12.Controls.Add(this.btnGuardarCambios);
             this.panel12.Controls.Add(this.dgvFuturasSubastas);
             this.panel12.Location = new System.Drawing.Point(3, 132);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1647, 868);
             this.panel12.TabIndex = 3;
+            // 
+            // btnProductosDeLaSubasta
+            // 
+            this.btnProductosDeLaSubasta.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosDeLaSubasta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosDeLaSubasta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProductosDeLaSubasta.BorderRadius = 7;
+            this.btnProductosDeLaSubasta.ButtonText = "   Productos de la subasta";
+            this.btnProductosDeLaSubasta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductosDeLaSubasta.DisabledColor = System.Drawing.Color.Gray;
+            this.btnProductosDeLaSubasta.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosDeLaSubasta.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProductosDeLaSubasta.Iconimage")));
+            this.btnProductosDeLaSubasta.Iconimage_right = null;
+            this.btnProductosDeLaSubasta.Iconimage_right_Selected = null;
+            this.btnProductosDeLaSubasta.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnProductosDeLaSubasta.Iconimage_Selected")));
+            this.btnProductosDeLaSubasta.IconMarginLeft = 10;
+            this.btnProductosDeLaSubasta.IconMarginRight = 0;
+            this.btnProductosDeLaSubasta.IconRightVisible = true;
+            this.btnProductosDeLaSubasta.IconRightZoom = 0D;
+            this.btnProductosDeLaSubasta.IconVisible = true;
+            this.btnProductosDeLaSubasta.IconZoom = 73D;
+            this.btnProductosDeLaSubasta.IsTab = true;
+            this.btnProductosDeLaSubasta.Location = new System.Drawing.Point(71, 28);
+            this.btnProductosDeLaSubasta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductosDeLaSubasta.Name = "btnProductosDeLaSubasta";
+            this.btnProductosDeLaSubasta.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnProductosDeLaSubasta.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnProductosDeLaSubasta.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnProductosDeLaSubasta.selected = false;
+            this.btnProductosDeLaSubasta.Size = new System.Drawing.Size(260, 46);
+            this.btnProductosDeLaSubasta.TabIndex = 40;
+            this.btnProductosDeLaSubasta.Text = "   Productos de la subasta";
+            this.btnProductosDeLaSubasta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductosDeLaSubasta.Textcolor = System.Drawing.Color.White;
+            this.btnProductosDeLaSubasta.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosDeLaSubasta.Click += new System.EventHandler(this.btnProductosDeLaSubasta_Click);
             // 
             // dgvFuturasSubastas
             // 
@@ -193,8 +231,9 @@ namespace Cliente
             this.dgvFuturasSubastas.Location = new System.Drawing.Point(23, 90);
             this.dgvFuturasSubastas.Name = "dgvFuturasSubastas";
             this.dgvFuturasSubastas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvFuturasSubastas.RowHeadersWidth = 51;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -284,14 +323,14 @@ namespace Cliente
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1650, 1000);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1455, 894);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // FrmFuturasSubastas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1650, 1000);
+            this.ClientSize = new System.Drawing.Size(1455, 894);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmFuturasSubastas";
@@ -330,5 +369,6 @@ namespace Cliente
       private System.Windows.Forms.PictureBox pictureBox4;
       private System.Windows.Forms.Panel panel1;
       private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+      private Bunifu.Framework.UI.BunifuFlatButton btnProductosDeLaSubasta;
    }
 }

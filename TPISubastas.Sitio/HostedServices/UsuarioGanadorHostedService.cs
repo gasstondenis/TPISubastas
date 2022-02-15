@@ -84,12 +84,12 @@ namespace TPISubastas.Sitio.HostedServices
          Usuario usuarioGanador = usuario;
          email.EmailDestino = usuarioGanador.Email;
          email.AsuntoEmail = "¡Felicidades! Ha ganado la subasta de su producto:";
-         email.enviar(String.Format("Hola <b>{0} {1}</b>, tenemos el agrado de informarle que fué ganador del remate del producto  <b>{2}</b>, por lo que a la brevedad el vendedor se contactará con usted. ¡Felicidades! </br></br>Atte: El equipo de TUPsubastas", usuarioGanador.Nombre, usuarioGanador.Apellido, producto.NombreProducto));
+         email.enviar(String.Format("Hola <b>{0} {1}</b>, tenemos el agrado de informarle que fué ganador del remate del producto <b>{2}</b> con su oferta de <b>${3}</b>, por lo que a la brevedad el vendedor se contactará con usted. ¡Felicidades! </br></br>Atte: El equipo de TUPsubastas", usuarioGanador.Nombre, usuarioGanador.Apellido, producto.NombreProducto, datos.Monto));
 
          var usuarioVendedor = _ContextoSubasta.Usuario.Where(x => x.IdUsuario == producto.IdUsuario).FirstOrDefault();        
          email.EmailDestino = usuarioVendedor.Email;
          email.AsuntoEmail = "¡Felicidades! Su producto ha sido subastado:";
-         email.enviar(String.Format("Hola <b>{0} {1}</b>, tenemos el agrado de informarle que su producto <b>{2}</b> ha sido subastado exitosamente. El usuario <b>{3}</b> queda al aguardo de que se contacte con él a su email <b>{4}</b>. Saludos! </br></br>Atte: El equipo de TUPsubastas", usuarioVendedor.Nombre, usuarioVendedor.Apellido, producto.NombreProducto, usuarioGanador.Nombre+" "+usuarioGanador.Apellido, usuarioGanador.Email));
+         email.enviar(String.Format("Hola <b>{0} {1}</b>, tenemos el agrado de informarle que su producto <b>{2}</b> ha sido subastado exitosamente por el valor de <b>${3}</b>. El usuario <b>{4}</b> queda al aguardo de que se contacte con él a su email <b>{5}</b>. Saludos! </br></br>Atte: El equipo de TUPsubastas", usuarioVendedor.Nombre, usuarioVendedor.Apellido, producto.NombreProducto, datos.Monto, usuarioGanador.Nombre+" "+usuarioGanador.Apellido, usuarioGanador.Email));
 
 
       }

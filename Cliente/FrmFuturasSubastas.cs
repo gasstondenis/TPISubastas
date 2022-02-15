@@ -156,7 +156,30 @@ namespace Cliente
          }
       }
 
-      
+      private void btnProductosDeLaSubasta_Click(object sender, EventArgs e)
+      {
+         int fila = dgvFuturasSubastas.CurrentCell.RowIndex;
+         var idString = dgvFuturasSubastas.Rows[fila].Cells[0].Value.ToString();
+         var idInt = int.Parse(idString);
+
+         List<TPISubastas.Dominio.SubastaProducto> productosDeLaSubasta = new List<TPISubastas.Dominio.SubastaProducto>();
+         var productos = clienteProducto.Listar();
+         foreach (var item in productos)
+         {
+            if (item.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.Aprobado) && item.IdSubasta == idInt)
+               productosDeLaSubasta.Add(item);
+         }
+         FrmProductosPorSubasta frmProductosPorSubasta = new FrmProductosPorSubasta();
+         frmProductosPorSubasta.productos = productosDeLaSubasta;
+         frmProductosPorSubasta.lblCantResultados.Text = productosDeLaSubasta.Count().ToString();
+         //frmProductosPorSubasta.lblTituloVentana.Text = "Productos sin oferta de la subasta seleccionada";
+         frmProductosPorSubasta.vendidos = false;
+         frmProductosPorSubasta.todos = true;
+         frmProductosPorSubasta.Show();
+         frmProductosPorSubasta.dgvProductos.DataSource = productosDeLaSubasta;
+         frmProductosPorSubasta.dgvProductos.Refresh();
+
+      }
    }
 
 }

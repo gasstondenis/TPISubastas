@@ -58,21 +58,21 @@ namespace Cliente
       }
       public void DimensionarColumnas()
       {
-         dgvSubastasCerradas.Columns[0].Width = 80;
+         dgvSubastasCerradas.Columns[0].Width = 150;
          dgvSubastasCerradas.Columns[0].ReadOnly = true;
-         dgvSubastasCerradas.Columns[1].Width = 150;
+         dgvSubastasCerradas.Columns[1].Width = 200;
          dgvSubastasCerradas.Columns[1].ReadOnly = true;
-         dgvSubastasCerradas.Columns[2].Width = 150;
+         dgvSubastasCerradas.Columns[2].Width = 200;
          dgvSubastasCerradas.Columns[2].ReadOnly = true;
-         dgvSubastasCerradas.Columns[3].Width = 150;
+         dgvSubastasCerradas.Columns[3].Width = 200;
          dgvSubastasCerradas.Columns[3].ReadOnly = true;
-         dgvSubastasCerradas.Columns[4].Width = 100;
+         dgvSubastasCerradas.Columns[4].Width = 160;
          dgvSubastasCerradas.Columns[4].ReadOnly = true;
          dgvSubastasCerradas.Columns[5].Width = 300;
          dgvSubastasCerradas.Columns[5].ReadOnly = true;
          dgvSubastasCerradas.Columns[6].Width = 500;
          dgvSubastasCerradas.Columns[6].ReadOnly = true;
-         dgvSubastasCerradas.Columns[7].Width = 100;
+         dgvSubastasCerradas.Columns[7].Width = 160;
          dgvSubastasCerradas.Columns[7].ReadOnly = true;
       }
 

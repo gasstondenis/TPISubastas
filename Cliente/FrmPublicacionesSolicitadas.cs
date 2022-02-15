@@ -16,6 +16,9 @@ namespace Cliente
    {
       private ClienteAPI<TPISubastas.Dominio.SubastaProducto> cliente = new ClienteAPI<TPISubastas.Dominio.SubastaProducto>("https://localhost:44347/", "SubastaProducto", User.Usuario, User.Contraseña);
       private ClienteAPI<TPISubastas.Dominio.Subasta> clienteSubasta = new ClienteAPI<TPISubastas.Dominio.Subasta>("https://localhost:44347/", "Subasta", User.Usuario, User.Contraseña);
+      DialogResult resultado = new DialogResult();
+      Form mensaje;
+
       public FrmPublicacionesSolicitadas()
       {
          InitializeComponent();
@@ -69,7 +72,7 @@ namespace Cliente
                if (item.FechaInicio <= DateTime.Now.Date && item.FechaCierre > DateTime.Now.Date)
                   SubastasAbiertas.Add(item);
             }
-            if(item.Habilitada && item.FechaInicio > DateTime.Now.Date)
+            if (item.Habilitada && item.FechaInicio > DateTime.Now.Date)
                futurasSubastas.Add(item);
          }
          lblSubastasAbiertas.Text = SubastasAbiertas.Count().ToString();
@@ -78,17 +81,22 @@ namespace Cliente
 
       public void DimensionarColumnas()
       {
-         dgvPublicacionesSolicitadas.Columns[0].Width = 100; //IdSubastaProducto
-         dgvPublicacionesSolicitadas.Columns[1].Width = 80; //IdSubasta
+         dgvPublicacionesSolicitadas.Columns[0].Width = 150; //IdSubastaProducto
+         dgvPublicacionesSolicitadas.Columns[1].Width = 120; //IdSubasta
          dgvPublicacionesSolicitadas.Columns[2].Width = 400; //NombreProducto
-         dgvPublicacionesSolicitadas.Columns[3].Width = 200; //MarcaProducto
+         dgvPublicacionesSolicitadas.Columns[3].Width = 240; //MarcaProducto
          dgvPublicacionesSolicitadas.Columns[4].Width = 450; //DescripciónProducto
-         dgvPublicacionesSolicitadas.Columns[5].Width = 100; //ImagenProducto
-         dgvPublicacionesSolicitadas.Columns[6].Width = 100; //FormaPago 
-         dgvPublicacionesSolicitadas.Columns[7].Width = 150; //MontoInicial
-         dgvPublicacionesSolicitadas.Columns[8].Width = 100;  //IdUsuarioVendedor
+         dgvPublicacionesSolicitadas.Columns[5].Width = 140; //ImagenProducto
+         dgvPublicacionesSolicitadas.Columns[6].Width = 140; //FormaPago 
+         dgvPublicacionesSolicitadas.Columns[7].Width = 190; //MontoInicial
+         dgvPublicacionesSolicitadas.Columns[8].Width = 140;  //IdUsuarioVendedor
+         dgvPublicacionesSolicitadas.Columns[11].Width = 140; //IdEstadoSubasta
 
-         dgvPublicacionesSolicitadas.Columns[11].Width = 100; //IdEstadoSubasta
+         dgvPublicacionesSolicitadas.Columns[0].ReadOnly = true; //IdSubastaProducto
+         dgvPublicacionesSolicitadas.Columns[1].ReadOnly = true; //IdSubasta
+         dgvPublicacionesSolicitadas.Columns[8].ReadOnly = true;  //IdUsuarioVendedor         
+         dgvPublicacionesSolicitadas.Columns[12].ReadOnly = true; //Notificado
+         dgvPublicacionesSolicitadas.Columns[13].ReadOnly = true; //Oferta final
 
 
          dgvPublicacionesSolicitadas.Columns[9].Visible = false; //IdUsuarioComprador
@@ -109,6 +117,98 @@ namespace Cliente
             cliente.Actualizar(item, id);
          }
          Listar();
+      }
+
+      private void btnEliminarSolicitud_Click(object sender, EventArgs e)
+      {
+         if (dgvPublicacionesSolicitadas.CurrentCell != null)
+         {
+            mensaje = new FrmInformation("¿Eliminar la solicitud?");
+            resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();              
+               try
+               {
+                  int fila = dgvPublicacionesSolicitadas.CurrentCell.RowIndex;
+                  var id = dgvPublicacionesSolicitadas.Rows[fila].Cells[0].Value.ToString();
+                  cliente.Eliminar(int.Parse(id));
+                  mensaje = new FrmSuccess("¡La solicitud seleccionada se ha ELIMINADO correctamente!");
+                  resultado = mensaje.ShowDialog();
+                  if (resultado == DialogResult.OK)
+                  {
+                     mensaje.Close();
+                  }
+                  Listar();
+               }
+               catch(Exception ex)
+               {
+                  mensaje = new FrmInformation("Ha ocurrido un error al eliminar la solicitud: " + ex.Message);
+                  resultado = mensaje.ShowDialog();
+                  if (resultado == DialogResult.OK)
+                  {
+                     mensaje.Close();
+                  }
+                  Listar();
+               }
+            }
+         }
+         else
+         {
+            mensaje = new FrmInformation("No se ha seleccionado ninguna solicitud");
+            resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();
+            }
+         }
+      }
+
+      private void btnAprobarSolicitud_Click(object sender, EventArgs e)
+      {
+         if (dgvPublicacionesSolicitadas.CurrentCell != null)
+         {
+            mensaje = new FrmInformation("¿Aprobar la solicitud?");
+            resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();
+               try
+               {
+                  int fila = dgvPublicacionesSolicitadas.CurrentCell.RowIndex;
+                  var id = dgvPublicacionesSolicitadas.Rows[fila].Cells[0].Value.ToString();
+                  var solicitud = cliente.Obtener(int.Parse(id));
+                  solicitud.IdEstadoSubasta = ((int)TPISubastas.Dominio.Estados.Aprobado);
+                  cliente.Actualizar(solicitud, id);
+                  mensaje = new FrmSuccess("¡La solicitud seleccionada se ha APROBADO correctamente!");
+                  resultado = mensaje.ShowDialog();
+                  if (resultado == DialogResult.OK)
+                  {
+                     mensaje.Close();
+                  }
+                  Listar();
+               }
+               catch (Exception ex)
+               {
+                  mensaje = new FrmInformation("Ha ocurrido un error al aprobar la solicitud: " + ex.Message);
+                  resultado = mensaje.ShowDialog();
+                  if (resultado == DialogResult.OK)
+                  {
+                     mensaje.Close();
+                  }
+                  Listar();
+               }
+            }
+         }
+         else
+         {
+            mensaje = new FrmInformation("No se ha seleccionado ninguna solicitud");
+            resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+               mensaje.Close();
+            }
+         }
       }
    }
 }

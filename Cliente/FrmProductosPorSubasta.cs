@@ -22,6 +22,7 @@ namespace Cliente
       List<string> productosMarcas = new List<string>();
 
       public bool vendidos;
+      public bool todos;
 
       public FrmProductosPorSubasta()
       {
@@ -47,9 +48,13 @@ namespace Cliente
                {
                   prod = productos.Where(x => x.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.Vendido) && x.MarcaProducto.ToUpper().Trim() == item);
                }
-               else if (!vendidos)
+               else if (!vendidos && !todos)
                {
                   prod = productos.Where(x => x.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.NoVendido) && x.MarcaProducto.ToUpper().Trim() == item);
+               }
+               else if (!vendidos && todos)
+               {
+                  prod = productos.Where(x => x.IdEstadoSubasta == ((int)TPISubastas.Dominio.Estados.Aprobado) && x.MarcaProducto.ToUpper().Trim() == item);
                }
                prodToDgv.AddRange(prod);
               

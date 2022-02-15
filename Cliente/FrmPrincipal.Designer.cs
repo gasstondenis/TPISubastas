@@ -420,7 +420,7 @@ namespace Cliente
             this.lblNombreUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(43, 231);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(58, 231);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(78, 23);
             this.lblNombreUsuario.TabIndex = 3;
@@ -496,9 +496,10 @@ namespace Cliente
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmPrincipal";
+            this.Text = "Principal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();

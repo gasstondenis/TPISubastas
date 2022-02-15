@@ -32,17 +32,21 @@
 
             @foreach (var item in Model.Subastas)
             {
-                <li class="list-group-item">
-                    <div class="tarjeta">
-                        <a href="/Subasta/DetalleSubasta?IdSubasta=@item.IdSubasta">
-                            <img src="~/img/subastas.jpg" />
-                            <h3>@item.Nombre</h3>
-                            <h5>Abierta desde el @item.FechaInicioStr</h5>
-                            <h5>Hasta el @item.FechaCierreStr</h5>
-                            <p>@item.Descripcion</p>
-                        </a>
-                    </div>
-                </li>
+                if (item.FechaInicio < DateTime.Now)
+                {
+                    <li class="list-group-item">
+                        <div class="tarjeta">
+
+                            <a href="/Subasta/DetalleSubasta?IdSubasta=@item.IdSubasta">
+                                <img src="~/img/subastas.png" />
+                                <h3>@item.Nombre</h3>
+                                <h5>Abierta desde el @item.FechaInicioStr</h5>
+                                <h5>Hasta el @item.FechaCierreStr</h5>
+                                <p>@item.Descripcion</p>
+                            </a>
+                        </div>
+                    </li>
+                }
             }
 
         </ul>
@@ -91,6 +95,40 @@
             }
         </ul>
     </nav>
+    <br />
+
+
+
+    <h2 class="h2-secciones">Futuras subastas</h2>
+
+    <br />
+    
+
+
+</div>
+
+<div>
+    <ul class="list-group content">
+
+        @foreach (var item in Model.FuturasSubastas)
+        {
+            if (item.FechaInicio > DateTime.Now)
+            {
+                <li class="list-group-item">
+                    <div class="tarjeta">
+                        <a href="/Subasta/Crear">
+                            <img src="~/img/revisa.png" />
+                            <h3>@item.Nombre</h3>
+                            <h5>Abierta desde el @item.FechaInicioStr</h5>
+                            <h5>Hasta el @item.FechaCierreStr</h5>
+                            <p>@item.Descripcion</p>
+                        </a>
+                    </div>
+                </li>
+            }
+        }
+
+    </ul>
 
 </div>
 

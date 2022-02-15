@@ -32,6 +32,7 @@ namespace Cliente
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPublicacionesSolicitadas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblSubastasAbiertas = new System.Windows.Forms.Label();
@@ -40,6 +41,12 @@ namespace Cliente
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblFuturasSubastas = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblTotalSolicitudes = new System.Windows.Forms.Label();
@@ -47,27 +54,23 @@ namespace Cliente
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnEliminarSolicitud = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAprobarSolicitud = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnGuardarCambios = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dgvPublicacionesSolicitadas = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblFuturasSubastas = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPublicacionesSolicitadas)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -155,6 +158,71 @@ namespace Cliente
             this.panel1.Size = new System.Drawing.Size(404, 123);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(404, 123);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.lblFuturasSubastas);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Location = new System.Drawing.Point(7, 7);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(400, 113);
+            this.panel5.TabIndex = 4;
+            // 
+            // lblFuturasSubastas
+            // 
+            this.lblFuturasSubastas.BackColor = System.Drawing.Color.Transparent;
+            this.lblFuturasSubastas.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuturasSubastas.ForeColor = System.Drawing.Color.Gray;
+            this.lblFuturasSubastas.Location = new System.Drawing.Point(279, 13);
+            this.lblFuturasSubastas.Name = "lblFuturasSubastas";
+            this.lblFuturasSubastas.Size = new System.Drawing.Size(86, 50);
+            this.lblFuturasSubastas.TabIndex = 3;
+            this.lblFuturasSubastas.Text = "10";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(10, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "FUTURAS SUBASTAS";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Silver;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.ForeColor = System.Drawing.Color.Silver;
+            this.panel6.Location = new System.Drawing.Point(15, 69);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(350, 2);
+            this.panel6.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel10);
@@ -224,12 +292,86 @@ namespace Cliente
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel12.Controls.Add(this.btnEliminarSolicitud);
+            this.panel12.Controls.Add(this.btnAprobarSolicitud);
             this.panel12.Controls.Add(this.btnGuardarCambios);
             this.panel12.Controls.Add(this.dgvPublicacionesSolicitadas);
             this.panel12.Location = new System.Drawing.Point(3, 132);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1647, 838);
             this.panel12.TabIndex = 3;
+            // 
+            // btnEliminarSolicitud
+            // 
+            this.btnEliminarSolicitud.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnEliminarSolicitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnEliminarSolicitud.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarSolicitud.BorderRadius = 7;
+            this.btnEliminarSolicitud.ButtonText = "   Eliminar solicitud";
+            this.btnEliminarSolicitud.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarSolicitud.DisabledColor = System.Drawing.Color.Gray;
+            this.btnEliminarSolicitud.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnEliminarSolicitud.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnEliminarSolicitud.Iconimage")));
+            this.btnEliminarSolicitud.Iconimage_right = null;
+            this.btnEliminarSolicitud.Iconimage_right_Selected = null;
+            this.btnEliminarSolicitud.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnEliminarSolicitud.Iconimage_Selected")));
+            this.btnEliminarSolicitud.IconMarginLeft = 10;
+            this.btnEliminarSolicitud.IconMarginRight = 0;
+            this.btnEliminarSolicitud.IconRightVisible = true;
+            this.btnEliminarSolicitud.IconRightZoom = 0D;
+            this.btnEliminarSolicitud.IconVisible = true;
+            this.btnEliminarSolicitud.IconZoom = 55D;
+            this.btnEliminarSolicitud.IsTab = true;
+            this.btnEliminarSolicitud.Location = new System.Drawing.Point(842, 29);
+            this.btnEliminarSolicitud.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarSolicitud.Name = "btnEliminarSolicitud";
+            this.btnEliminarSolicitud.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnEliminarSolicitud.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnEliminarSolicitud.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnEliminarSolicitud.selected = false;
+            this.btnEliminarSolicitud.Size = new System.Drawing.Size(199, 46);
+            this.btnEliminarSolicitud.TabIndex = 40;
+            this.btnEliminarSolicitud.Text = "   Eliminar solicitud";
+            this.btnEliminarSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarSolicitud.Textcolor = System.Drawing.Color.White;
+            this.btnEliminarSolicitud.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarSolicitud.Click += new System.EventHandler(this.btnEliminarSolicitud_Click);
+            // 
+            // btnAprobarSolicitud
+            // 
+            this.btnAprobarSolicitud.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnAprobarSolicitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnAprobarSolicitud.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAprobarSolicitud.BorderRadius = 7;
+            this.btnAprobarSolicitud.ButtonText = "   Aprobar solicitud";
+            this.btnAprobarSolicitud.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAprobarSolicitud.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAprobarSolicitud.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnAprobarSolicitud.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAprobarSolicitud.Iconimage")));
+            this.btnAprobarSolicitud.Iconimage_right = null;
+            this.btnAprobarSolicitud.Iconimage_right_Selected = null;
+            this.btnAprobarSolicitud.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnAprobarSolicitud.Iconimage_Selected")));
+            this.btnAprobarSolicitud.IconMarginLeft = 10;
+            this.btnAprobarSolicitud.IconMarginRight = 0;
+            this.btnAprobarSolicitud.IconRightVisible = true;
+            this.btnAprobarSolicitud.IconRightZoom = 0D;
+            this.btnAprobarSolicitud.IconVisible = true;
+            this.btnAprobarSolicitud.IconZoom = 55D;
+            this.btnAprobarSolicitud.IsTab = true;
+            this.btnAprobarSolicitud.Location = new System.Drawing.Point(1061, 29);
+            this.btnAprobarSolicitud.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAprobarSolicitud.Name = "btnAprobarSolicitud";
+            this.btnAprobarSolicitud.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btnAprobarSolicitud.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(15)))), ((int)(((byte)(44)))));
+            this.btnAprobarSolicitud.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAprobarSolicitud.selected = false;
+            this.btnAprobarSolicitud.Size = new System.Drawing.Size(199, 46);
+            this.btnAprobarSolicitud.TabIndex = 39;
+            this.btnAprobarSolicitud.Text = "   Aprobar solicitud";
+            this.btnAprobarSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAprobarSolicitud.Textcolor = System.Drawing.Color.White;
+            this.btnAprobarSolicitud.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAprobarSolicitud.Click += new System.EventHandler(this.btnAprobarSolicitud_Click);
             // 
             // btnGuardarCambios
             // 
@@ -274,96 +416,39 @@ namespace Cliente
             this.dgvPublicacionesSolicitadas.BackgroundColor = System.Drawing.Color.White;
             this.dgvPublicacionesSolicitadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPublicacionesSolicitadas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPublicacionesSolicitadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.NullValue = "SIN DATOS";
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPublicacionesSolicitadas.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPublicacionesSolicitadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPublicacionesSolicitadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.NullValue = "SIN DATOS";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPublicacionesSolicitadas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPublicacionesSolicitadas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvPublicacionesSolicitadas.Location = new System.Drawing.Point(23, 90);
             this.dgvPublicacionesSolicitadas.Name = "dgvPublicacionesSolicitadas";
             this.dgvPublicacionesSolicitadas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPublicacionesSolicitadas.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPublicacionesSolicitadas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPublicacionesSolicitadas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPublicacionesSolicitadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPublicacionesSolicitadas.Size = new System.Drawing.Size(1597, 726);
             this.dgvPublicacionesSolicitadas.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(404, 123);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.lblFuturasSubastas);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Location = new System.Drawing.Point(7, 7);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(400, 113);
-            this.panel5.TabIndex = 4;
-            // 
-            // lblFuturasSubastas
-            // 
-            this.lblFuturasSubastas.BackColor = System.Drawing.Color.Transparent;
-            this.lblFuturasSubastas.Font = new System.Drawing.Font("Dubai", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuturasSubastas.ForeColor = System.Drawing.Color.Gray;
-            this.lblFuturasSubastas.Location = new System.Drawing.Point(279, 13);
-            this.lblFuturasSubastas.Name = "lblFuturasSubastas";
-            this.lblFuturasSubastas.Size = new System.Drawing.Size(86, 50);
-            this.lblFuturasSubastas.TabIndex = 3;
-            this.lblFuturasSubastas.Text = "10";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(10, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "FUTURAS SUBASTAS";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.ForeColor = System.Drawing.Color.Silver;
-            this.panel6.Location = new System.Drawing.Point(15, 69);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 2);
-            this.panel6.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // FrmPublicacionesSolicitadas
             // 
@@ -380,16 +465,16 @@ namespace Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPublicacionesSolicitadas)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
       }
@@ -419,5 +504,7 @@ namespace Cliente
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Panel panel6;
       private System.Windows.Forms.PictureBox pictureBox1;
+      private Bunifu.Framework.UI.BunifuFlatButton btnEliminarSolicitud;
+      private Bunifu.Framework.UI.BunifuFlatButton btnAprobarSolicitud;
    }
 }

@@ -108,17 +108,17 @@ namespace Cliente
       }
       public void DimensionarColumnas()
       {
-         dgvProductosSinOfertas.Columns[0].Width = 100; //IdSubastaProducto
-         dgvProductosSinOfertas.Columns[1].Width = 80; //IdSubasta
+         dgvProductosSinOfertas.Columns[0].Width = 140; //IdSubastaProducto
+         dgvProductosSinOfertas.Columns[1].Width = 120; //IdSubasta
          dgvProductosSinOfertas.Columns[2].Width = 400; //NombreProducto
-         dgvProductosSinOfertas.Columns[3].Width = 200; //MarcaProducto
+         dgvProductosSinOfertas.Columns[3].Width = 210; //MarcaProducto
          dgvProductosSinOfertas.Columns[4].Width = 450; //DescripciónProducto
-         dgvProductosSinOfertas.Columns[5].Width = 100; //ImagenProducto
-         dgvProductosSinOfertas.Columns[6].Width = 100; //FormaPago 
+         dgvProductosSinOfertas.Columns[5].Width = 140; //ImagenProducto
+         dgvProductosSinOfertas.Columns[6].Width = 140; //FormaPago 
          dgvProductosSinOfertas.Columns[7].Width = 150; // MontoInicial
-         dgvProductosSinOfertas.Columns[8].Width = 100;  //IdUsuarioVendedor
-         dgvProductosSinOfertas.Columns[9].Width = 100; //IdUsuarioComprador
-         dgvProductosSinOfertas.Columns[11].Width = 100; //IdEstadoSubasta
+         dgvProductosSinOfertas.Columns[8].Width = 150;  //IdUsuarioVendedor
+         dgvProductosSinOfertas.Columns[9].Width = 150; //IdUsuarioComprador
+         dgvProductosSinOfertas.Columns[11].Width = 140; //IdEstadoSubasta
 
          dgvProductosSinOfertas.Columns[8].HeaderText = "IdUsuarioVendedor";
          dgvProductosSinOfertas.Columns[10].Visible = false;

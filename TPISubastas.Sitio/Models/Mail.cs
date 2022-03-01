@@ -14,7 +14,7 @@ namespace TPISubastas.Sitio.Models
           public string Body { get; set; }
         */
         private string EmailOrigen = "emaildevpruebas@gmail.com";
-        string password = "devpruebas";
+        string password = "**********"; 
         public string EmailDestino { get; set; }
         public string AsuntoEmail { get; set; }
 
